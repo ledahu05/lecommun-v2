@@ -7,9 +7,9 @@
 
 ### Authentification
 
-- [ ] **AUTH-01**: L'utilisateur peut se connecter avec son nom (chris/alex) et mot de passe
-- [ ] **AUTH-02**: La session persiste 30 jours sans reconnexion
-- [ ] **AUTH-03**: Toutes les routes sauf /login sont protégées
+- [x] **AUTH-01**: L'utilisateur peut se connecter avec son nom (chris/alex) et mot de passe
+- [x] **AUTH-02**: La session persiste 30 jours sans reconnexion
+- [x] **AUTH-03**: Toutes les routes sauf /login sont protégées
 
 ### Dashboard & Balance
 
@@ -46,8 +46,8 @@
 ### Infrastructure
 
 - [ ] **INF-01**: L'application est déployée sur Vercel (CD automatique sur push main)
-- [ ] **INF-02**: La DB Turso est provisionnée et le schéma (mois, depenses, ajustements) est appliqué
-- [ ] **INF-03**: Les variables d'environnement sont configurées (TURSO_DATABASE_URL, TURSO_AUTH_TOKEN, AUTH_SECRET, CHRIS_PASSWORD, ALEX_PASSWORD)
+- [x] **INF-02**: La DB Turso est provisionnée et le schéma (mois, depenses, ajustements) est appliqué
+- [x] **INF-03**: Les variables d'environnement sont configurées (TURSO_DATABASE_URL, TURSO_AUTH_TOKEN, AUTH_SECRET, CHRIS_PASSWORD, ALEX_PASSWORD)
 
 ## v2 Requirements
 
@@ -84,11 +84,11 @@
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | INF-01 | Phase 1 | Pending |
-| INF-02 | Phase 1 | Pending |
-| INF-03 | Phase 1 | Pending |
-| AUTH-01 | Phase 1 | Pending |
-| AUTH-02 | Phase 1 | Pending |
-| AUTH-03 | Phase 1 | Pending |
+| INF-02 | Phase 1 | Complete |
+| INF-03 | Phase 1 | Complete |
+| AUTH-01 | Phase 1 | Complete |
+| AUTH-02 | Phase 1 | Complete |
+| AUTH-03 | Phase 1 | Complete |
 | DASH-01 | Phase 2 | Pending |
 | DASH-02 | Phase 2 | Pending |
 | DASH-03 | Phase 2 | Pending |
