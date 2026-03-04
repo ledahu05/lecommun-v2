@@ -22,7 +22,12 @@ Four phases deliver the full v1 app. Phase 1 establishes infrastructure and auth
   2. Toute URL de l'app redirige vers /login si la session est absente ou expirée
   3. L'application est accessible via Vercel en production avec CD automatique sur push main
   4. La base de données Turso contient les tables mois, depenses, ajustements avec le schéma correct
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Bootstrap Next.js 15, schéma DB Drizzle, config auth NextAuth v5 Edge-safe, infrastructure Playwright
+- [ ] 01-02-PLAN.md — Page de connexion Chris/Alex, middleware protection des routes, layout app et bottom nav
+- [ ] 01-03-PLAN.md — Provisionnement Turso + Vercel, migration DB, variables d'environnement, validation E2E
 
 ### Phase 2: Balance
 **Goal**: La balance du mois courant est toujours visible, juste, et se reporte automatiquement d'un mois à l'autre
@@ -63,7 +68,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Fondation | 0/TBD | Not started | - |
+| 1. Fondation | 0/3 | Planned | - |
 | 2. Balance | 0/TBD | Not started | - |
 | 3. Saisie | 0/TBD | Not started | - |
 | 4. Historique | 0/TBD | Not started | - |
