@@ -1,0 +1,1036 @@
+{
+  "_meta": {
+    "description": "Fixtures E2E pour Le Commun — extraites du classeur Compta_commune.xlsx",
+    "source": "Compta_commune.xlsx (juillet 2021 -> mars 2026)",
+    "generated": "2026-03-04",
+    "usage": "Playwright / Cypress — seed DB avant chaque test suite"
+  },
+  "users": [
+    {
+      "id": "chris",
+      "name": "Chris",
+      "username": "chris"
+    },
+    {
+      "id": "alex",
+      "name": "Alex",
+      "username": "alex"
+    }
+  ],
+  "mois": [
+    {
+      "id": 1,
+      "annee": 2024,
+      "mois": 11,
+      "periode": "Novembre 2024",
+      "balance_reportee": 0,
+      "_scenario": "balance_negative — Alex doit a Chris (taxe habitation 1960 euros)"
+    },
+    {
+      "id": 2,
+      "annee": 2024,
+      "mois": 12,
+      "periode": "Decembre 2024",
+      "balance_reportee": -891.5,
+      "_scenario": "balance_positive avec report negatif du mois precedent"
+    },
+    {
+      "id": 3,
+      "annee": 2026,
+      "mois": 1,
+      "periode": "Janvier 2026",
+      "balance_reportee": -656.0,
+      "_scenario": "mois complet avec ajustements multiples"
+    },
+    {
+      "id": 4,
+      "annee": 2026,
+      "mois": 2,
+      "periode": "Fevrier 2026",
+      "balance_reportee": -27.0,
+      "_scenario": "Alex rembourse 600 euros par virement"
+    },
+    {
+      "id": 5,
+      "annee": 2026,
+      "mois": 3,
+      "periode": "Mars 2026",
+      "balance_reportee": -290.0,
+      "_scenario": "mois en cours — partiellement rempli"
+    }
+  ],
+  "depenses": [
+    {
+      "id": 101,
+      "mois_id": 1,
+      "categorie": "alimentation",
+      "sous_categorie": "marche_pain",
+      "paye_par": "alex",
+      "montant": 32.0,
+      "label": "marche/pain",
+      "date_depense": "2024-11-05"
+    },
+    {
+      "id": 102,
+      "mois_id": 1,
+      "categorie": "alimentation",
+      "sous_categorie": "viande",
+      "paye_par": "chris",
+      "montant": 15.0,
+      "label": "viande",
+      "date_depense": "2024-11-08"
+    },
+    {
+      "id": 103,
+      "mois_id": 1,
+      "categorie": "alimentation",
+      "sous_categorie": "intermarche",
+      "paye_par": "chris",
+      "montant": 90.0,
+      "label": "intermarche",
+      "date_depense": "2024-11-12"
+    },
+    {
+      "id": 104,
+      "mois_id": 1,
+      "categorie": "alimentation",
+      "sous_categorie": "intermarche",
+      "paye_par": "alex",
+      "montant": 346.0,
+      "label": "intermarche",
+      "date_depense": "2024-11-15"
+    },
+    {
+      "id": 105,
+      "mois_id": 1,
+      "categorie": "habitation",
+      "sous_categorie": "energie",
+      "paye_par": "chris",
+      "montant": 105.0,
+      "label": "direct energie",
+      "date_depense": "2024-11-01"
+    },
+    {
+      "id": 106,
+      "mois_id": 1,
+      "categorie": "habitation",
+      "sous_categorie": "loyer",
+      "paye_par": "alex",
+      "montant": 567.0,
+      "label": "loyer + charges",
+      "date_depense": "2024-11-01"
+    },
+    {
+      "id": 107,
+      "mois_id": 1,
+      "categorie": "habitation",
+      "sous_categorie": "assurance",
+      "paye_par": "alex",
+      "montant": 29.0,
+      "label": "assurance",
+      "date_depense": "2024-11-01"
+    },
+    {
+      "id": 108,
+      "mois_id": 1,
+      "categorie": "habitation",
+      "sous_categorie": "internet",
+      "paye_par": "chris",
+      "montant": 43.0,
+      "label": "internet",
+      "date_depense": "2024-11-01"
+    },
+    {
+      "id": 109,
+      "mois_id": 1,
+      "categorie": "habitation",
+      "sous_categorie": "taxe_habitation",
+      "paye_par": "chris",
+      "montant": 1960.0,
+      "label": "taxe habitation",
+      "date_depense": "2024-11-20"
+    },
+    {
+      "id": 110,
+      "mois_id": 1,
+      "categorie": "loisirs",
+      "sous_categorie": "restaurant",
+      "paye_par": "chris",
+      "montant": 156.0,
+      "label": "restaurant",
+      "date_depense": "2024-11-22"
+    },
+    {
+      "id": 111,
+      "mois_id": 1,
+      "categorie": "loisirs",
+      "sous_categorie": "restaurant",
+      "paye_par": "alex",
+      "montant": 88.0,
+      "label": "restaurant",
+      "date_depense": "2024-11-22"
+    },
+    {
+      "id": 112,
+      "mois_id": 1,
+      "categorie": "loisirs",
+      "sous_categorie": "vacances",
+      "paye_par": "chris",
+      "montant": 610.0,
+      "label": "week-end/vacances",
+      "date_depense": "2024-11-16"
+    },
+    {
+      "id": 113,
+      "mois_id": 1,
+      "categorie": "loisirs",
+      "sous_categorie": "vacances",
+      "paye_par": "alex",
+      "montant": 379.0,
+      "label": "week-end/vacances",
+      "date_depense": "2024-11-16"
+    },
+    {
+      "id": 114,
+      "mois_id": 1,
+      "categorie": "vie_quotidienne",
+      "sous_categorie": "appartement",
+      "paye_par": "alex",
+      "montant": 57.0,
+      "label": "appartement",
+      "date_depense": "2024-11-10"
+    },
+    {
+      "id": 201,
+      "mois_id": 2,
+      "categorie": "alimentation",
+      "sous_categorie": "marche_pain",
+      "paye_par": "alex",
+      "montant": 8.0,
+      "label": "marche/pain",
+      "date_depense": "2024-12-07"
+    },
+    {
+      "id": 202,
+      "mois_id": 2,
+      "categorie": "alimentation",
+      "sous_categorie": "viande",
+      "paye_par": "alex",
+      "montant": 65.0,
+      "label": "viande",
+      "date_depense": "2024-12-14"
+    },
+    {
+      "id": 203,
+      "mois_id": 2,
+      "categorie": "alimentation",
+      "sous_categorie": "intermarche",
+      "paye_par": "chris",
+      "montant": 98.0,
+      "label": "intermarche",
+      "date_depense": "2024-12-10"
+    },
+    {
+      "id": 204,
+      "mois_id": 2,
+      "categorie": "alimentation",
+      "sous_categorie": "intermarche",
+      "paye_par": "alex",
+      "montant": 203.0,
+      "label": "intermarche",
+      "date_depense": "2024-12-18"
+    },
+    {
+      "id": 205,
+      "mois_id": 2,
+      "categorie": "habitation",
+      "sous_categorie": "loyer",
+      "paye_par": "alex",
+      "montant": 465.0,
+      "label": "loyer + charges",
+      "date_depense": "2024-12-01"
+    },
+    {
+      "id": 206,
+      "mois_id": 2,
+      "categorie": "habitation",
+      "sous_categorie": "assurance",
+      "paye_par": "alex",
+      "montant": 29.0,
+      "label": "assurance",
+      "date_depense": "2024-12-01"
+    },
+    {
+      "id": 207,
+      "mois_id": 2,
+      "categorie": "habitation",
+      "sous_categorie": "internet",
+      "paye_par": "chris",
+      "montant": 43.0,
+      "label": "internet",
+      "date_depense": "2024-12-01"
+    },
+    {
+      "id": 208,
+      "mois_id": 2,
+      "categorie": "habitation",
+      "sous_categorie": "energie",
+      "paye_par": "chris",
+      "montant": 98.0,
+      "label": "direct energie",
+      "date_depense": "2024-12-01"
+    },
+    {
+      "id": 209,
+      "mois_id": 2,
+      "categorie": "habitation",
+      "sous_categorie": "energie",
+      "paye_par": "alex",
+      "montant": 160.0,
+      "label": "direct energie",
+      "date_depense": "2024-12-01"
+    },
+    {
+      "id": 210,
+      "mois_id": 2,
+      "categorie": "vie_quotidienne",
+      "sous_categorie": "animaux",
+      "paye_par": "chris",
+      "montant": 122.0,
+      "label": "berlioz/rats",
+      "date_depense": "2024-12-05"
+    },
+    {
+      "id": 211,
+      "mois_id": 2,
+      "categorie": "vie_quotidienne",
+      "sous_categorie": "cadeaux",
+      "paye_par": "alex",
+      "montant": 58.0,
+      "label": "cadeaux",
+      "date_depense": "2024-12-20"
+    },
+    {
+      "id": 301,
+      "mois_id": 3,
+      "categorie": "alimentation",
+      "sous_categorie": "marche_pain",
+      "paye_par": "chris",
+      "montant": 41.0,
+      "label": "marche/pain",
+      "date_depense": "2026-01-04"
+    },
+    {
+      "id": 302,
+      "mois_id": 3,
+      "categorie": "alimentation",
+      "sous_categorie": "marche_pain",
+      "paye_par": "alex",
+      "montant": 32.0,
+      "label": "marche/pain",
+      "date_depense": "2026-01-04"
+    },
+    {
+      "id": 303,
+      "mois_id": 3,
+      "categorie": "alimentation",
+      "sous_categorie": "viande",
+      "paye_par": "alex",
+      "montant": 66.0,
+      "label": "viande",
+      "date_depense": "2026-01-11"
+    },
+    {
+      "id": 304,
+      "mois_id": 3,
+      "categorie": "alimentation",
+      "sous_categorie": "intermarche",
+      "paye_par": "chris",
+      "montant": 119.0,
+      "label": "intermarche",
+      "date_depense": "2026-01-18"
+    },
+    {
+      "id": 305,
+      "mois_id": 3,
+      "categorie": "alimentation",
+      "sous_categorie": "intermarche",
+      "paye_par": "alex",
+      "montant": 345.0,
+      "label": "intermarche",
+      "date_depense": "2026-01-18"
+    },
+    {
+      "id": 306,
+      "mois_id": 3,
+      "categorie": "habitation",
+      "sous_categorie": "loyer",
+      "paye_par": "alex",
+      "montant": 443.0,
+      "label": "loyer",
+      "date_depense": "2026-01-01"
+    },
+    {
+      "id": 307,
+      "mois_id": 3,
+      "categorie": "habitation",
+      "sous_categorie": "assurance",
+      "paye_par": "alex",
+      "montant": 475.0,
+      "label": "assurance annuelle",
+      "date_depense": "2026-01-01"
+    },
+    {
+      "id": 308,
+      "mois_id": 3,
+      "categorie": "habitation",
+      "sous_categorie": "eau",
+      "paye_par": "alex",
+      "montant": 115.0,
+      "label": "eau",
+      "date_depense": "2026-01-01"
+    },
+    {
+      "id": 309,
+      "mois_id": 3,
+      "categorie": "habitation",
+      "sous_categorie": "internet",
+      "paye_par": "chris",
+      "montant": 33.0,
+      "label": "internet",
+      "date_depense": "2026-01-01"
+    },
+    {
+      "id": 310,
+      "mois_id": 3,
+      "categorie": "habitation",
+      "sous_categorie": "energie",
+      "paye_par": "chris",
+      "montant": 160.0,
+      "label": "direct energie",
+      "date_depense": "2026-01-01"
+    },
+    {
+      "id": 311,
+      "mois_id": 3,
+      "categorie": "loisirs",
+      "sous_categorie": "vacances",
+      "paye_par": "chris",
+      "montant": 90.0,
+      "label": "week-end/vacances",
+      "date_depense": "2026-01-25"
+    },
+    {
+      "id": 312,
+      "mois_id": 3,
+      "categorie": "vie_quotidienne",
+      "sous_categorie": "animaux",
+      "paye_par": "alex",
+      "montant": 30.0,
+      "label": "berlioz/rats",
+      "date_depense": "2026-01-09"
+    },
+    {
+      "id": 401,
+      "mois_id": 4,
+      "categorie": "alimentation",
+      "sous_categorie": "marche_pain",
+      "paye_par": "alex",
+      "montant": 4.0,
+      "label": "marche/pain",
+      "date_depense": "2026-02-01"
+    },
+    {
+      "id": 402,
+      "mois_id": 4,
+      "categorie": "alimentation",
+      "sous_categorie": "viande",
+      "paye_par": "alex",
+      "montant": 15.0,
+      "label": "viande",
+      "date_depense": "2026-02-08"
+    },
+    {
+      "id": 403,
+      "mois_id": 4,
+      "categorie": "alimentation",
+      "sous_categorie": "intermarche",
+      "paye_par": "alex",
+      "montant": 161.0,
+      "label": "intermarche",
+      "date_depense": "2026-02-15"
+    },
+    {
+      "id": 404,
+      "mois_id": 4,
+      "categorie": "habitation",
+      "sous_categorie": "loyer",
+      "paye_par": "alex",
+      "montant": 180.0,
+      "label": "loyer",
+      "date_depense": "2026-02-01"
+    },
+    {
+      "id": 405,
+      "mois_id": 4,
+      "categorie": "habitation",
+      "sous_categorie": "assurance",
+      "paye_par": "alex",
+      "montant": 31.0,
+      "label": "assurance",
+      "date_depense": "2026-02-01"
+    },
+    {
+      "id": 406,
+      "mois_id": 4,
+      "categorie": "habitation",
+      "sous_categorie": "eau",
+      "paye_par": "alex",
+      "montant": 115.0,
+      "label": "eau",
+      "date_depense": "2026-02-01"
+    },
+    {
+      "id": 407,
+      "mois_id": 4,
+      "categorie": "habitation",
+      "sous_categorie": "internet",
+      "paye_par": "chris",
+      "montant": 33.0,
+      "label": "internet",
+      "date_depense": "2026-02-01"
+    },
+    {
+      "id": 408,
+      "mois_id": 4,
+      "categorie": "habitation",
+      "sous_categorie": "energie",
+      "paye_par": "chris",
+      "montant": 33.0,
+      "label": "direct energie",
+      "date_depense": "2026-02-01"
+    },
+    {
+      "id": 409,
+      "mois_id": 4,
+      "categorie": "loisirs",
+      "sous_categorie": "vacances",
+      "paye_par": "chris",
+      "montant": 398.0,
+      "label": "vacances maroc",
+      "date_depense": "2026-02-14"
+    },
+    {
+      "id": 410,
+      "mois_id": 4,
+      "categorie": "loisirs",
+      "sous_categorie": "vacances",
+      "paye_par": "alex",
+      "montant": 189.0,
+      "label": "vacances maroc",
+      "date_depense": "2026-02-14"
+    },
+    {
+      "id": 411,
+      "mois_id": 4,
+      "categorie": "vie_quotidienne",
+      "sous_categorie": "animaux",
+      "paye_par": "alex",
+      "montant": 92.0,
+      "label": "berlioz/rats",
+      "date_depense": "2026-02-12"
+    },
+    {
+      "id": 501,
+      "mois_id": 5,
+      "categorie": "habitation",
+      "sous_categorie": "assurance",
+      "paye_par": "alex",
+      "montant": 31.0,
+      "label": "assurance",
+      "date_depense": "2026-03-01"
+    },
+    {
+      "id": 502,
+      "mois_id": 5,
+      "categorie": "habitation",
+      "sous_categorie": "eau",
+      "paye_par": "alex",
+      "montant": 115.0,
+      "label": "eau",
+      "date_depense": "2026-03-01"
+    },
+    {
+      "id": 503,
+      "mois_id": 5,
+      "categorie": "habitation",
+      "sous_categorie": "internet",
+      "paye_par": "chris",
+      "montant": 33.0,
+      "label": "internet",
+      "date_depense": "2026-03-01"
+    }
+  ],
+  "ajustements": [
+    {
+      "id": 1001,
+      "mois_id": 3,
+      "de": "chris",
+      "vers": "alex",
+      "montant": 115.0,
+      "label": "appart",
+      "date_ajustement": "2026-01-01"
+    },
+    {
+      "id": 1002,
+      "mois_id": 3,
+      "de": "chris",
+      "vers": "alex",
+      "montant": 12.0,
+      "label": "pharma",
+      "date_ajustement": "2026-01-15"
+    },
+    {
+      "id": 1003,
+      "mois_id": 3,
+      "de": "chris",
+      "vers": "alex",
+      "montant": 136.0,
+      "label": "anniversaire",
+      "date_ajustement": "2026-01-20"
+    },
+    {
+      "id": 1004,
+      "mois_id": 3,
+      "de": "chris",
+      "vers": "alex",
+      "montant": 15.0,
+      "label": "bougie",
+      "date_ajustement": "2026-01-22"
+    },
+    {
+      "id": 1005,
+      "mois_id": 3,
+      "de": "alex",
+      "vers": "chris",
+      "montant": 39.0,
+      "label": "pharmacie",
+      "date_ajustement": "2026-01-18"
+    },
+    {
+      "id": 2001,
+      "mois_id": 4,
+      "de": "chris",
+      "vers": "alex",
+      "montant": 115.0,
+      "label": "appart",
+      "date_ajustement": "2026-02-01"
+    },
+    {
+      "id": 2002,
+      "mois_id": 4,
+      "de": "chris",
+      "vers": "alex",
+      "montant": 40.0,
+      "label": "divers",
+      "date_ajustement": "2026-02-10"
+    },
+    {
+      "id": 2003,
+      "mois_id": 4,
+      "de": "chris",
+      "vers": "alex",
+      "montant": 85.0,
+      "label": "maroc",
+      "date_ajustement": "2026-02-14"
+    },
+    {
+      "id": 2004,
+      "mois_id": 4,
+      "de": "chris",
+      "vers": "alex",
+      "montant": 9.0,
+      "label": "divers",
+      "date_ajustement": "2026-02-20"
+    },
+    {
+      "id": 2005,
+      "mois_id": 4,
+      "de": "alex",
+      "vers": "chris",
+      "montant": 600.0,
+      "label": "virement",
+      "date_ajustement": "2026-02-28"
+    },
+    {
+      "id": 3001,
+      "mois_id": 5,
+      "de": "chris",
+      "vers": "alex",
+      "montant": 115.0,
+      "label": "appart",
+      "date_ajustement": "2026-03-01"
+    },
+    {
+      "id": 3002,
+      "mois_id": 5,
+      "de": "alex",
+      "vers": "chris",
+      "montant": 400.0,
+      "label": "virement",
+      "date_ajustement": "2026-03-01"
+    }
+  ],
+  "expected_balances": [
+    {
+      "mois_id": 1,
+      "periode": "Novembre 2024",
+      "total_chris": 2874.0,
+      "total_alex": 1091.0,
+      "balance_mensuelle": -891.5,
+      "balance_reportee": 0,
+      "total_chris_vers_alex": -891.5,
+      "total_alex_vers_chris": 0,
+      "balance_finale": -891.5,
+      "debiteur": "alex",
+      "montant_du": 891.5,
+      "_note": "Chris a paye la taxe habitation (1960 euros) — Alex doit a Chris"
+    },
+    {
+      "mois_id": 2,
+      "periode": "Decembre 2024",
+      "total_chris": 263.0,
+      "total_alex": 523.0,
+      "balance_mensuelle": 130.0,
+      "balance_reportee": -891.5,
+      "total_chris_vers_alex": -761.5,
+      "total_alex_vers_chris": 0,
+      "balance_finale": -761.5,
+      "debiteur": "alex",
+      "montant_du": 761.5,
+      "_note": "Balance positive du mois mais le report negatif domine"
+    },
+    {
+      "mois_id": 3,
+      "periode": "Janvier 2026",
+      "total_chris": 443.0,
+      "total_alex": 1010.0,
+      "balance_mensuelle": 283.5,
+      "balance_reportee": -656.0,
+      "total_chris_vers_alex": 283.5,
+      "total_alex_vers_chris": 39.0,
+      "balance_finale": -84.5,
+      "debiteur": "alex",
+      "montant_du": 84.5,
+      "_note": "Mois complet avec ajustements (anniversaire, bougie, pharmacie)"
+    },
+    {
+      "mois_id": 4,
+      "periode": "Fevrier 2026",
+      "total_chris": 431.0,
+      "total_alex": 607.0,
+      "balance_mensuelle": 88.0,
+      "balance_reportee": -27.0,
+      "total_chris_vers_alex": 310.0,
+      "total_alex_vers_chris": 600.0,
+      "balance_finale": -290.0,
+      "debiteur": "alex",
+      "montant_du": 290.0,
+      "_note": "Alex rembourse 600 euros par virement — solde change de sens"
+    },
+    {
+      "mois_id": 5,
+      "periode": "Mars 2026",
+      "total_chris": 33.0,
+      "total_alex": 146.0,
+      "balance_mensuelle": 56.5,
+      "balance_reportee": -290.0,
+      "total_chris_vers_alex": -118.5,
+      "total_alex_vers_chris": 400.0,
+      "balance_finale": -518.5,
+      "debiteur": "alex",
+      "montant_du": 518.5,
+      "_note": "Mois en cours — seulement les charges fixes enregistrees"
+    }
+  ],
+  "test_scenarios": [
+    {
+      "id": "auth_01",
+      "name": "Connexion Chris — credentials valides",
+      "steps": [
+        {
+          "action": "navigate",
+          "url": "/login"
+        },
+        {
+          "action": "fill",
+          "field": "username",
+          "value": "chris"
+        },
+        {
+          "action": "fill",
+          "field": "password",
+          "value": "{{CHRIS_PASSWORD}}"
+        },
+        {
+          "action": "submit"
+        }
+      ],
+      "expected": {
+        "redirect": "/",
+        "user_badge": "Chris"
+      }
+    },
+    {
+      "id": "auth_02",
+      "name": "Connexion Alex — credentials valides",
+      "steps": [
+        {
+          "action": "navigate",
+          "url": "/login"
+        },
+        {
+          "action": "fill",
+          "field": "username",
+          "value": "alex"
+        },
+        {
+          "action": "fill",
+          "field": "password",
+          "value": "{{ALEX_PASSWORD}}"
+        },
+        {
+          "action": "submit"
+        }
+      ],
+      "expected": {
+        "redirect": "/",
+        "user_badge": "Alex"
+      }
+    },
+    {
+      "id": "auth_03",
+      "name": "Connexion — mot de passe incorrect",
+      "steps": [
+        {
+          "action": "navigate",
+          "url": "/login"
+        },
+        {
+          "action": "fill",
+          "field": "username",
+          "value": "chris"
+        },
+        {
+          "action": "fill",
+          "field": "password",
+          "value": "wrong_password"
+        },
+        {
+          "action": "submit"
+        }
+      ],
+      "expected": {
+        "stay_on": "/login",
+        "error_visible": true
+      }
+    },
+    {
+      "id": "auth_04",
+      "name": "Acces protege — redirection si non authentifie",
+      "steps": [
+        {
+          "action": "navigate_without_session",
+          "url": "/"
+        }
+      ],
+      "expected": {
+        "redirect": "/login"
+      }
+    },
+    {
+      "id": "balance_01",
+      "name": "Dashboard — balance mois en cours (mars 2026)",
+      "seed_mois_ids": [
+        5
+      ],
+      "expected": {
+        "balance_finale": -518.5,
+        "label_displayed": "Alex doit a Chris",
+        "montant_displayed": "518,50 €"
+      }
+    },
+    {
+      "id": "balance_02",
+      "name": "Dashboard — balance negative (Alex doit) novembre 2024",
+      "seed_mois_ids": [
+        1
+      ],
+      "expected": {
+        "balance_finale": -891.5,
+        "label_displayed": "Alex doit a Chris",
+        "montant_displayed": "891,50 €"
+      }
+    },
+    {
+      "id": "balance_03",
+      "name": "Balance — recalcul immediat apres saisie depense",
+      "seed_mois_ids": [
+        5
+      ],
+      "action": {
+        "type": "create_depense",
+        "payload": {
+          "paye_par": "chris",
+          "categorie": "alimentation",
+          "sous_categorie": "intermarche",
+          "montant": 87.5
+        }
+      },
+      "expected": {
+        "balance_updated": true,
+        "new_total_chris": 120.5,
+        "new_balance_mensuelle": 9.25
+      }
+    },
+    {
+      "id": "depense_01",
+      "name": "Saisie depense — Chris saisit un Intermarche",
+      "seed_mois_ids": [
+        5
+      ],
+      "input": {
+        "paye_par": "chris",
+        "categorie": "alimentation",
+        "sous_categorie": "intermarche",
+        "montant": 87.5,
+        "label": "courses semaine"
+      },
+      "expected": {
+        "depense_in_list": true,
+        "balance_updated": true
+      }
+    },
+    {
+      "id": "depense_02",
+      "name": "Saisie depense — montant negatif refuse",
+      "input": {
+        "paye_par": "alex",
+        "categorie": "alimentation",
+        "sous_categorie": "intermarche",
+        "montant": -50.0
+      },
+      "expected": {
+        "form_error": true,
+        "error_field": "montant"
+      }
+    },
+    {
+      "id": "depense_03",
+      "name": "Saisie depense — montant zero refuse",
+      "input": {
+        "paye_par": "chris",
+        "categorie": "habitation",
+        "sous_categorie": "eau",
+        "montant": 0
+      },
+      "expected": {
+        "form_error": true,
+        "error_field": "montant"
+      }
+    },
+    {
+      "id": "depense_04",
+      "name": "Suppression depense — balance recalculee",
+      "seed_mois_ids": [
+        5
+      ],
+      "action": {
+        "type": "delete_depense",
+        "id": 501
+      },
+      "expected": {
+        "depense_removed": true,
+        "balance_recalculated": true,
+        "new_total_alex": 115.0
+      }
+    },
+    {
+      "id": "ajustement_01",
+      "name": "Ajustement — Alex fait un virement de 300 euros",
+      "seed_mois_ids": [
+        5
+      ],
+      "input": {
+        "de": "alex",
+        "vers": "chris",
+        "montant": 300.0,
+        "label": "virement"
+      },
+      "expected": {
+        "ajustement_in_list": true,
+        "balance_updated": true
+      }
+    },
+    {
+      "id": "ajustement_02",
+      "name": "Ajustement — Chris avance pharmacie 45 euros pour Alex",
+      "seed_mois_ids": [
+        5
+      ],
+      "input": {
+        "de": "chris",
+        "vers": "alex",
+        "montant": 45.0,
+        "label": "pharmacie"
+      },
+      "expected": {
+        "ajustement_in_list": true,
+        "balance_updated": true
+      }
+    },
+    {
+      "id": "historique_01",
+      "name": "Historique — liste 5 mois affiches",
+      "seed_mois_ids": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "expected": {
+        "mois_count": 5,
+        "premier_mois_displayed": "Novembre 2024",
+        "dernier_mois_displayed": "Mars 2026"
+      }
+    },
+    {
+      "id": "historique_02",
+      "name": "Historique — detail decembre 2024 (balance avec report negatif)",
+      "seed_mois_ids": [
+        1,
+        2
+      ],
+      "navigate_to": "/historique/2",
+      "expected": {
+        "balance_mensuelle": 130.0,
+        "balance_reportee": -891.5,
+        "balance_finale": -761.5
+      }
+    },
+    {
+      "id": "historique_03",
+      "name": "Report automatique — balance finale mars devient report avril",
+      "seed_mois_ids": [
+        5
+      ],
+      "action": {
+        "type": "create_next_month"
+      },
+      "expected": {
+        "avril_2026_balance_reportee": -518.5
+      }
+    }
+  ]
+}
