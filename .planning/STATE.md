@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 01-fondation-01-01-PLAN.md
-last_updated: "2026-03-04T11:32:25.098Z"
+stopped_at: Completed 01-fondation-01-02-PLAN.md
+last_updated: "2026-03-04T11:38:41.278Z"
 last_activity: 2026-03-04 — Roadmap created, ready to begin Phase 1 planning
 progress:
   total_phases: 4
   completed_phases: 0
   total_plans: 3
-  completed_plans: 1
+  completed_plans: 2
   percent: 0
 ---
 
@@ -51,6 +51,7 @@ Progress: [░░░░░░░░░░] 0%
 
 *Updated after each plan completion*
 | Phase 01-fondation P01 | 5min | 3 tasks | 24 files |
+| Phase 01-fondation P02 | 3min | 3 tasks | 10 files |
 
 ## Accumulated Context
 
@@ -67,6 +68,9 @@ Recent decisions affecting current work:
 - [Phase 01-fondation]: NextAuth split config: authConfig in lib/auth/config.ts (Edge-safe, no DB) imported by middleware; full NextAuth in lib/auth/index.ts for server actions
 - [Phase 01-fondation]: Turso dialect in drizzle.config.ts must be 'turso' not 'sqlite' for Turso cloud database support
 - [Phase 01-fondation]: No src/ directory: app/, lib/, components/ at root level; tsconfig paths use './*' not './src/*'
+- [Phase 01-fondation]: signIn from next-auth/react in Client Components (not lib/auth/index which is server-only)
+- [Phase 01-fondation]: Route group (app) for protected pages; root page.tsx deleted to avoid route conflict
+- [Phase 01-fondation]: BottomNav: exact match for /, startsWith for /depenses, /ajustements, /historique
 
 ### Pending Todos
 
@@ -78,6 +82,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-04T11:32:25.097Z
-Stopped at: Completed 01-fondation-01-01-PLAN.md
+Last session: 2026-03-04T11:38:41.276Z
+Stopped at: Completed 01-fondation-01-02-PLAN.md
 Resume file: None

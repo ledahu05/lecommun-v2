@@ -68,7 +68,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Fondation | 0/3 | Planned | - |
+| 1. Fondation | 2/3 | In Progress|  |
 | 2. Balance | 0/TBD | Not started | - |
 | 3. Saisie | 0/TBD | Not started | - |
 | 4. Historique | 0/TBD | Not started | - |
