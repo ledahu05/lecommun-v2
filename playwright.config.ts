@@ -1,4 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
+import { config } from 'dotenv';
+
+// Charge .env.local pour que les tests accèdent aux mots de passe
+config({ path: '.env.local' });
 
 export default defineConfig({
   testDir: './tests',
