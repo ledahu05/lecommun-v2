@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 01-fondation-01-02-PLAN.md
-last_updated: "2026-03-04T11:38:41.278Z"
+stopped_at: Completed 01-fondation-01-03-PLAN.md — Phase 1 COMPLETE
+last_updated: "2026-03-04T15:45:19.935Z"
 last_activity: 2026-03-04 — Roadmap created, ready to begin Phase 1 planning
 progress:
   total_phases: 4
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 3
-  completed_plans: 2
-  percent: 0
+  completed_plans: 3
+  percent: 100
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-04)
 
 **Core value:** La balance nette entre Chris et Alex est toujours visible et juste — report automatique, zéro saisie manuelle, zéro erreur de copie.
-**Current focus:** Phase 1 — Fondation
+**Current focus:** Phase 2 — Depenses (next)
 
 ## Current Position
 
-Phase: 1 of 4 (Fondation)
-Plan: 0 of TBD in current phase
-Status: Ready to plan
-Last activity: 2026-03-04 — Roadmap created, ready to begin Phase 1 planning
+Phase: 1 of 4 (Fondation) — COMPLETE
+Plan: 3 of 3 in phase 1 (all done)
+Status: Phase 1 complete, ready for Phase 2
+Last activity: 2026-03-04 — Phase 1 complete: DB + Vercel + auth tests + mobile sign-off
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -52,6 +52,7 @@ Progress: [░░░░░░░░░░] 0%
 *Updated after each plan completion*
 | Phase 01-fondation P01 | 5min | 3 tasks | 24 files |
 | Phase 01-fondation P02 | 3min | 3 tasks | 10 files |
+| Phase 01-fondation P03 | 180 | 4 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -71,6 +72,8 @@ Recent decisions affecting current work:
 - [Phase 01-fondation]: signIn from next-auth/react in Client Components (not lib/auth/index which is server-only)
 - [Phase 01-fondation]: Route group (app) for protected pages; root page.tsx deleted to avoid route conflict
 - [Phase 01-fondation]: BottomNav: exact match for /, startsWith for /depenses, /ajustements, /historique
+- [Phase 01-fondation]: Turso DB provisioned by user via CLI — DB name lecommun matches project name
+- [Phase 01-fondation]: Vercel CD linked to GitHub main branch — automatic deploy on push, no staging needed for 2-person project
 
 ### Pending Todos
 
@@ -82,6 +85,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-04T11:38:41.276Z
-Stopped at: Completed 01-fondation-01-02-PLAN.md
+Last session: 2026-03-04T15:45:19.933Z
+Stopped at: Completed 01-fondation-01-03-PLAN.md — Phase 1 COMPLETE
 Resume file: None

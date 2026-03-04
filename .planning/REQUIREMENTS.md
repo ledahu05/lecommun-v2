@@ -45,7 +45,7 @@
 
 ### Infrastructure
 
-- [ ] **INF-01**: L'application est déployée sur Vercel (CD automatique sur push main)
+- [x] **INF-01**: L'application est déployée sur Vercel (CD automatique sur push main)
 - [x] **INF-02**: La DB Turso est provisionnée et le schéma (mois, depenses, ajustements) est appliqué
 - [x] **INF-03**: Les variables d'environnement sont configurées (TURSO_DATABASE_URL, TURSO_AUTH_TOKEN, AUTH_SECRET, CHRIS_PASSWORD, ALEX_PASSWORD)
 
@@ -83,7 +83,7 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INF-01 | Phase 1 | Pending |
+| INF-01 | Phase 1 | Complete |
 | INF-02 | Phase 1 | Complete |
 | INF-03 | Phase 1 | Complete |
 | AUTH-01 | Phase 1 | Complete |
