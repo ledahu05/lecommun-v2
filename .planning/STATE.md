@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 03-saisie-03-02-PLAN.md
-last_updated: "2026-03-05T08:57:51.864Z"
+stopped_at: Completed 03-saisie-03-03-PLAN.md
+last_updated: "2026-03-05T09:03:41.795Z"
 last_activity: "2026-03-04 — Phase 1 complete: DB + Vercel + auth tests + mobile sign-off"
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 11
-  completed_plans: 9
+  completed_plans: 10
   percent: 100
 ---
 
@@ -59,6 +59,7 @@ Progress: [██████████] 100%
 | Phase 02-balance P04 | 5 | 2 tasks | 2 files |
 | Phase 03-saisie P01 | 5 | 2 tasks | 2 files |
 | Phase 03-saisie P02 | 3 | 3 tasks | 7 files |
+| Phase 03-saisie P03 | 4 | 3 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -93,6 +94,7 @@ Recent decisions affecting current work:
 - [Phase 03-saisie]: test.fixme(true, msg) used instead of test.todo() — consistent with Phase 02 decision (Playwright 1.58.2 has no test.todo)
 - [Phase 03-saisie]: Zod v4: use parsed.error.issues instead of parsed.error.errors
 - [Phase 03-saisie]: Form action type wrapper: handleCreateDepense needed to satisfy React void | Promise<void> signature
+- [Phase 03-saisie]: AjustementForm uses implicit vers derivation from de — eliminates de === vers UX error class
 
 ### Pending Todos
 
@@ -104,6 +106,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-05T08:57:51.861Z
-Stopped at: Completed 03-saisie-03-02-PLAN.md
+Last session: 2026-03-05T09:03:41.792Z
+Stopped at: Completed 03-saisie-03-03-PLAN.md
 Resume file: None
