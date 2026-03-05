@@ -6,6 +6,7 @@ config({ path: '.env.local' });
 
 export default defineConfig({
   testDir: './tests',
+  testIgnore: ['**/unit/**'],
   fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: 0,
