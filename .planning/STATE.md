@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 04-historique-04-01-PLAN.md
-last_updated: "2026-03-05T09:41:27.001Z"
+stopped_at: Completed 04-historique-04-02-PLAN.md
+last_updated: "2026-03-05T09:49:22.892Z"
 last_activity: "2026-03-04 — Phase 1 complete: DB + Vercel + auth tests + mobile sign-off"
 progress:
   total_phases: 4
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 13
-  completed_plans: 12
+  completed_plans: 13
   percent: 100
 ---
 
@@ -62,6 +62,7 @@ Progress: [██████████] 100%
 | Phase 03-saisie P03 | 4 | 3 tasks | 7 files |
 | Phase 03-saisie P04 | 5 | 2 tasks | 0 files |
 | Phase 04-historique P01 | 2 | 1 tasks | 1 files |
+| Phase 04-historique P02 | 35 | 3 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -99,6 +100,8 @@ Recent decisions affecting current work:
 - [Phase 03-saisie]: AjustementForm uses implicit vers derivation from de — eliminates de === vers UX error class
 - [Phase 03-saisie]: Phase 3 gate requires both automated test pass AND explicit human mobile UX sign-off
 - [Phase 04-historique]: test.fixme(true, msg) used as stubs — test.todo() absent in Playwright 1.58.2
+- [Phase 04-historique]: getAllMois() computes balance_finale at query time via Promise.all — no cache, consistent with project pattern
+- [Phase 04-historique]: Separate HistoriqueDepenseItem/HistoriqueAjustementItem components (no delete button) — explicit read-only archive pattern
 
 ### Pending Todos
 
@@ -110,6 +113,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-05T09:41:26.998Z
-Stopped at: Completed 04-historique-04-01-PLAN.md
+Last session: 2026-03-05T09:49:22.889Z
+Stopped at: Completed 04-historique-04-02-PLAN.md
 Resume file: None

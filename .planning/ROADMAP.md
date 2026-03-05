@@ -9,7 +9,7 @@ Four phases deliver the full v1 app. Phase 1 establishes infrastructure and auth
 - [x] **Phase 1: Fondation** - Infrastructure Vercel + Turso provisionnée, authentification Chris/Alex opérationnelle (completed 2026-03-04)
 - [x] **Phase 2: Balance** - Dashboard avec balance du mois courant et report automatique entre mois (completed 2026-03-05)
 - [x] **Phase 3: Saisie** - Formulaires de saisie et suppression des dépenses et ajustements (completed 2026-03-05)
-- [ ] **Phase 4: Historique** - Consultation des mois archivés avec détail complet
+- [x] **Phase 4: Historique** - Consultation des mois archivés avec détail complet (completed 2026-03-05)
 
 ## Phase Details
 
@@ -87,4 +87,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Fondation | 3/3 | Complete   | 2026-03-04 |
 | 2. Balance | 4/4 | Complete   | 2026-03-05 |
 | 3. Saisie | 4/4 | Complete   | 2026-03-05 |
-| 4. Historique | 1/2 | In Progress|  |
+| 4. Historique | 2/2 | Complete   | 2026-03-05 |
