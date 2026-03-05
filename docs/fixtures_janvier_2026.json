@@ -1,0 +1,206 @@
+{
+  "_meta": {
+    "description": "Fixtures E2E — Janvier 2026 (mois_id 3)",
+    "source": "fixtures_e2e.json",
+    "generated": "2026-03-05"
+  },
+  "users": [
+    { "id": "chris", "name": "Chris", "username": "chris" },
+    { "id": "alex", "name": "Alex", "username": "alex" }
+  ],
+  "mois": [
+    {
+      "id": 3,
+      "annee": 2026,
+      "mois": 1,
+      "periode": "Janvier 2026",
+      "balance_reportee": -656.0,
+      "_scenario": "mois complet avec ajustements multiples"
+    }
+  ],
+  "depenses": [
+    {
+      "id": 301,
+      "mois_id": 3,
+      "categorie": "alimentation",
+      "sous_categorie": "marche_pain",
+      "paye_par": "chris",
+      "montant": 41.0,
+      "label": "marche/pain",
+      "date_depense": "2026-01-04"
+    },
+    {
+      "id": 302,
+      "mois_id": 3,
+      "categorie": "alimentation",
+      "sous_categorie": "marche_pain",
+      "paye_par": "alex",
+      "montant": 32.0,
+      "label": "marche/pain",
+      "date_depense": "2026-01-04"
+    },
+    {
+      "id": 303,
+      "mois_id": 3,
+      "categorie": "alimentation",
+      "sous_categorie": "viande",
+      "paye_par": "alex",
+      "montant": 66.0,
+      "label": "viande",
+      "date_depense": "2026-01-11"
+    },
+    {
+      "id": 304,
+      "mois_id": 3,
+      "categorie": "alimentation",
+      "sous_categorie": "intermarche",
+      "paye_par": "chris",
+      "montant": 119.0,
+      "label": "intermarche",
+      "date_depense": "2026-01-18"
+    },
+    {
+      "id": 305,
+      "mois_id": 3,
+      "categorie": "alimentation",
+      "sous_categorie": "intermarche",
+      "paye_par": "alex",
+      "montant": 345.0,
+      "label": "intermarche",
+      "date_depense": "2026-01-18"
+    },
+    {
+      "id": 306,
+      "mois_id": 3,
+      "categorie": "habitation",
+      "sous_categorie": "loyer",
+      "paye_par": "alex",
+      "montant": 443.0,
+      "label": "loyer",
+      "date_depense": "2026-01-01"
+    },
+    {
+      "id": 307,
+      "mois_id": 3,
+      "categorie": "habitation",
+      "sous_categorie": "assurance",
+      "paye_par": "alex",
+      "montant": 475.0,
+      "label": "assurance annuelle",
+      "date_depense": "2026-01-01"
+    },
+    {
+      "id": 308,
+      "mois_id": 3,
+      "categorie": "habitation",
+      "sous_categorie": "eau",
+      "paye_par": "alex",
+      "montant": 115.0,
+      "label": "eau",
+      "date_depense": "2026-01-01"
+    },
+    {
+      "id": 309,
+      "mois_id": 3,
+      "categorie": "habitation",
+      "sous_categorie": "internet",
+      "paye_par": "chris",
+      "montant": 33.0,
+      "label": "internet",
+      "date_depense": "2026-01-01"
+    },
+    {
+      "id": 310,
+      "mois_id": 3,
+      "categorie": "habitation",
+      "sous_categorie": "energie",
+      "paye_par": "chris",
+      "montant": 160.0,
+      "label": "direct energie",
+      "date_depense": "2026-01-01"
+    },
+    {
+      "id": 311,
+      "mois_id": 3,
+      "categorie": "loisirs",
+      "sous_categorie": "vacances",
+      "paye_par": "chris",
+      "montant": 90.0,
+      "label": "week-end/vacances",
+      "date_depense": "2026-01-25"
+    },
+    {
+      "id": 312,
+      "mois_id": 3,
+      "categorie": "vie_quotidienne",
+      "sous_categorie": "animaux",
+      "paye_par": "alex",
+      "montant": 30.0,
+      "label": "berlioz/rats",
+      "date_depense": "2026-01-09"
+    }
+  ],
+  "ajustements": [
+    {
+      "id": 1001,
+      "mois_id": 3,
+      "de": "chris",
+      "vers": "alex",
+      "montant": 115.0,
+      "label": "appart",
+      "date_ajustement": "2026-01-01"
+    },
+    {
+      "id": 1002,
+      "mois_id": 3,
+      "de": "chris",
+      "vers": "alex",
+      "montant": 12.0,
+      "label": "pharma",
+      "date_ajustement": "2026-01-15"
+    },
+    {
+      "id": 1003,
+      "mois_id": 3,
+      "de": "chris",
+      "vers": "alex",
+      "montant": 136.0,
+      "label": "anniversaire",
+      "date_ajustement": "2026-01-20"
+    },
+    {
+      "id": 1004,
+      "mois_id": 3,
+      "de": "chris",
+      "vers": "alex",
+      "montant": 15.0,
+      "label": "bougie",
+      "date_ajustement": "2026-01-22"
+    },
+    {
+      "id": 1005,
+      "mois_id": 3,
+      "de": "alex",
+      "vers": "chris",
+      "montant": 39.0,
+      "label": "pharmacie",
+      "date_ajustement": "2026-01-18"
+    }
+  ],
+  "expected_balances": [
+    {
+      "mois_id": 3,
+      "periode": "Janvier 2026",
+      "total_chris": 443.0,
+      "total_alex": 1010.0,
+      "balance_mensuelle": 283.5,
+      "balance_reportee": -656.0,
+      "total_chris_vers_alex": 283.5,
+      "total_alex_vers_chris": 39.0,
+      "balance_finale": -84.5,
+      "debiteur": "alex",
+      "montant_du": 84.5,
+      "_note": "Mois complet avec ajustements (anniversaire, bougie, pharmacie)"
+    }
+  ]
+}
