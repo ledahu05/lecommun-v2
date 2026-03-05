@@ -20,18 +20,18 @@
 
 ### Dépenses
 
-- [ ] **DEP-01**: L'utilisateur peut saisir une dépense avec catégorie, sous-catégorie, montant, payeur (chris/alex), date et libellé optionnel
-- [ ] **DEP-02**: L'utilisateur voit la liste des dépenses du mois courant
-- [ ] **DEP-03**: L'utilisateur peut supprimer une dépense
-- [ ] **DEP-04**: Une dépense avec montant ≤ 0 est rejetée (validation serveur + client)
-- [ ] **DEP-05**: Les catégories et sous-catégories sont fixes (alimentation, habitation, loisirs, vie quotidienne + leurs sous-catégories)
+- [x] **DEP-01**: L'utilisateur peut saisir une dépense avec catégorie, sous-catégorie, montant, payeur (chris/alex), date et libellé optionnel
+- [x] **DEP-02**: L'utilisateur voit la liste des dépenses du mois courant
+- [x] **DEP-03**: L'utilisateur peut supprimer une dépense
+- [x] **DEP-04**: Une dépense avec montant ≤ 0 est rejetée (validation serveur + client)
+- [x] **DEP-05**: Les catégories et sous-catégories sont fixes (alimentation, habitation, loisirs, vie quotidienne + leurs sous-catégories)
 
 ### Ajustements
 
-- [ ] **AJU-01**: L'utilisateur peut saisir un ajustement (virement, avance ponctuelle) avec direction (chris→alex ou alex→chris), montant, libellé obligatoire et date
-- [ ] **AJU-02**: L'utilisateur voit la liste des ajustements du mois courant
-- [ ] **AJU-03**: L'utilisateur peut supprimer un ajustement
-- [ ] **AJU-04**: Les ajustements sont intégrés dans le calcul de la balance finale
+- [x] **AJU-01**: L'utilisateur peut saisir un ajustement (virement, avance ponctuelle) avec direction (chris→alex ou alex→chris), montant, libellé obligatoire et date
+- [x] **AJU-02**: L'utilisateur voit la liste des ajustements du mois courant
+- [x] **AJU-03**: L'utilisateur peut supprimer un ajustement
+- [x] **AJU-04**: Les ajustements sont intégrés dans le calcul de la balance finale
 
 ### Report automatique de la balance
 
@@ -95,15 +95,15 @@
 | DASH-04 | Phase 2 | Complete |
 | RPT-01 | Phase 2 | Complete |
 | RPT-02 | Phase 2 | Complete |
-| DEP-01 | Phase 3 | Pending |
-| DEP-02 | Phase 3 | Pending |
-| DEP-03 | Phase 3 | Pending |
-| DEP-04 | Phase 3 | Pending |
-| DEP-05 | Phase 3 | Pending |
-| AJU-01 | Phase 3 | Pending |
-| AJU-02 | Phase 3 | Pending |
-| AJU-03 | Phase 3 | Pending |
-| AJU-04 | Phase 3 | Pending |
+| DEP-01 | Phase 3 | Complete |
+| DEP-02 | Phase 3 | Complete |
+| DEP-03 | Phase 3 | Complete |
+| DEP-04 | Phase 3 | Complete |
+| DEP-05 | Phase 3 | Complete |
+| AJU-01 | Phase 3 | Complete |
+| AJU-02 | Phase 3 | Complete |
+| AJU-03 | Phase 3 | Complete |
+| AJU-04 | Phase 3 | Complete |
 | HIS-01 | Phase 4 | Pending |
 | HIS-02 | Phase 4 | Pending |
 

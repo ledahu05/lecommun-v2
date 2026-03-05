@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 02-balance-02-04-PLAN.md
-last_updated: "2026-03-05T08:28:16.308Z"
+stopped_at: Completed 03-saisie-03-01-PLAN.md
+last_updated: "2026-03-05T08:53:17.490Z"
 last_activity: "2026-03-04 — Phase 1 complete: DB + Vercel + auth tests + mobile sign-off"
 progress:
   total_phases: 4
   completed_phases: 2
-  total_plans: 7
-  completed_plans: 7
+  total_plans: 11
+  completed_plans: 8
   percent: 100
 ---
 
@@ -57,6 +57,7 @@ Progress: [██████████] 100%
 | Phase 02-balance P01 | 18 | 3 tasks | 8 files |
 | Phase 02-balance P03 | 8 | 2 tasks | 4 files |
 | Phase 02-balance P04 | 5 | 2 tasks | 2 files |
+| Phase 03-saisie P01 | 5 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -88,6 +89,7 @@ Recent decisions affecting current work:
 - [Phase 02-balance]: BalanceCard uses Math.abs(balance_finale) for display — sign communicated via debiteurText label
 - [Phase 02-balance]: RPT-01 uses dynamic prev-month calculation for date-independent test robustness
 - [Phase 02-balance]: playwright.config.ts testIgnore excludes unit/ dir to prevent vitest CJS import error in Playwright runner
+- [Phase 03-saisie]: test.fixme(true, msg) used instead of test.todo() — consistent with Phase 02 decision (Playwright 1.58.2 has no test.todo)
 
 ### Pending Todos
 
@@ -99,6 +101,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-05T08:25:25.073Z
-Stopped at: Completed 02-balance-02-04-PLAN.md
+Last session: 2026-03-05T08:53:17.487Z
+Stopped at: Completed 03-saisie-03-01-PLAN.md
 Resume file: None
