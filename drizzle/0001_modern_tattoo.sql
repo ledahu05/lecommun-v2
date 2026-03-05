@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX `mois_annee_mois_unique` ON `mois` (`annee`,`mois`);

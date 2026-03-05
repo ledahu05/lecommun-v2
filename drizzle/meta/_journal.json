@@ -8,6 +8,13 @@
       "when": 1772635041699,
       "tag": "0000_fine_kitty_pryde",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1772698322887,
+      "tag": "0001_modern_tattoo",
+      "breakpoints": true
     }
   ]
 }

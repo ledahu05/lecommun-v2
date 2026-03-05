@@ -1,4 +1,4 @@
-import { sqliteTable, text, integer, real } from 'drizzle-orm/sqlite-core';
+import { sqliteTable, text, integer, real, uniqueIndex } from 'drizzle-orm/sqlite-core';
 
 export const mois = sqliteTable('mois', {
   id: integer('id').primaryKey({ autoIncrement: true }),
@@ -7,7 +7,9 @@ export const mois = sqliteTable('mois', {
   balance_reportee: real('balance_reportee').notNull().default(0),
   cree_le: integer('cree_le', { mode: 'timestamp' })
     .notNull().$defaultFn(() => new Date()),
-});
+}, (table) => ({
+  moisUniqueIdx: uniqueIndex('mois_annee_mois_unique').on(table.annee, table.mois),
+}));
 
 export const depenses = sqliteTable('depenses', {
   id: integer('id').primaryKey({ autoIncrement: true }),
