@@ -13,10 +13,10 @@
 
 ### Dashboard & Balance
 
-- [ ] **DASH-01**: L'utilisateur voit la balance du mois courant dès la connexion (qui doit combien à qui)
-- [ ] **DASH-02**: La balance affiche le détail : total Chris, total Alex, balance mensuelle, report du mois précédent
-- [ ] **DASH-03**: La ventilation par catégorie est visible (montant par personne pour alimentation, habitation, loisirs, vie quotidienne)
-- [ ] **DASH-04**: La balance se recalcule en temps réel à chaque affichage depuis les données brutes
+- [x] **DASH-01**: L'utilisateur voit la balance du mois courant dès la connexion (qui doit combien à qui)
+- [x] **DASH-02**: La balance affiche le détail : total Chris, total Alex, balance mensuelle, report du mois précédent
+- [x] **DASH-03**: La ventilation par catégorie est visible (montant par personne pour alimentation, habitation, loisirs, vie quotidienne)
+- [x] **DASH-04**: La balance se recalcule en temps réel à chaque affichage depuis les données brutes
 
 ### Dépenses
 
@@ -35,8 +35,8 @@
 
 ### Report automatique de la balance
 
-- [ ] **RPT-01**: Quand un nouveau mois est créé, la balance_reportee est automatiquement fixée à la balance_finale du mois précédent
-- [ ] **RPT-02**: La balance_reportee n'est jamais saisie manuellement
+- [x] **RPT-01**: Quand un nouveau mois est créé, la balance_reportee est automatiquement fixée à la balance_finale du mois précédent
+- [x] **RPT-02**: La balance_reportee n'est jamais saisie manuellement
 
 ### Historique
 
@@ -89,12 +89,12 @@
 | AUTH-01 | Phase 1 | Complete |
 | AUTH-02 | Phase 1 | Complete |
 | AUTH-03 | Phase 1 | Complete |
-| DASH-01 | Phase 2 | Pending |
-| DASH-02 | Phase 2 | Pending |
-| DASH-03 | Phase 2 | Pending |
-| DASH-04 | Phase 2 | Pending |
-| RPT-01 | Phase 2 | Pending |
-| RPT-02 | Phase 2 | Pending |
+| DASH-01 | Phase 2 | Complete |
+| DASH-02 | Phase 2 | Complete |
+| DASH-03 | Phase 2 | Complete |
+| DASH-04 | Phase 2 | Complete |
+| RPT-01 | Phase 2 | Complete |
+| RPT-02 | Phase 2 | Complete |
 | DEP-01 | Phase 3 | Pending |
 | DEP-02 | Phase 3 | Pending |
 | DEP-03 | Phase 3 | Pending |

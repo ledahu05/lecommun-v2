@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 01-fondation-01-03-PLAN.md — Phase 1 COMPLETE
-last_updated: "2026-03-04T17:06:33.871Z"
+stopped_at: Completed 02-balance-02-02-PLAN.md
+last_updated: "2026-03-05T08:16:07.116Z"
 last_activity: "2026-03-04 — Phase 1 complete: DB + Vercel + auth tests + mobile sign-off"
 progress:
   total_phases: 4
   completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
+  total_plans: 7
+  completed_plans: 5
   percent: 100
 ---
 
@@ -53,6 +53,8 @@ Progress: [██████████] 100%
 | Phase 01-fondation P01 | 5min | 3 tasks | 24 files |
 | Phase 01-fondation P02 | 3min | 3 tasks | 10 files |
 | Phase 01-fondation P03 | 180 | 4 tasks | 2 files |
+| Phase 02-balance P02 | 4 | 2 tasks | 7 files |
+| Phase 02-balance P01 | 18 | 3 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -74,6 +76,9 @@ Recent decisions affecting current work:
 - [Phase 01-fondation]: BottomNav: exact match for /, startsWith for /depenses, /ajustements, /historique
 - [Phase 01-fondation]: Turso DB provisioned by user via CLI — DB name lecommun matches project name
 - [Phase 01-fondation]: Vercel CD linked to GitHub main branch — automatic deploy on push, no staging needed for 2-person project
+- [Phase 02-balance]: Algorithm correction: total_chris_vers_alex includes balance_mensuelle — CLAUDE.md documentation was wrong, verified against fixtures_e2e.json mars 2026 (balance_finale = -518.5)
+- [Phase 02-balance]: vitest added for unit testing pure business logic; Playwright remains E2E only
+- [Phase 02-balance]: onConflictDoUpdate on (annee, mois) for idempotent month creation (race-condition-safe)
 
 ### Pending Todos
 
@@ -85,6 +90,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-04T15:45:19.933Z
-Stopped at: Completed 01-fondation-01-03-PLAN.md — Phase 1 COMPLETE
+Last session: 2026-03-05T08:16:01.650Z
+Stopped at: Completed 02-balance-02-02-PLAN.md
 Resume file: None
