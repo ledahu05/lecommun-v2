@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 02-balance-02-02-PLAN.md
-last_updated: "2026-03-05T08:16:07.116Z"
+stopped_at: Completed 02-balance-02-01-PLAN.md
+last_updated: "2026-03-05T08:16:15.635Z"
 last_activity: "2026-03-04 — Phase 1 complete: DB + Vercel + auth tests + mobile sign-off"
 progress:
   total_phases: 4
@@ -79,6 +79,9 @@ Recent decisions affecting current work:
 - [Phase 02-balance]: Algorithm correction: total_chris_vers_alex includes balance_mensuelle — CLAUDE.md documentation was wrong, verified against fixtures_e2e.json mars 2026 (balance_finale = -518.5)
 - [Phase 02-balance]: vitest added for unit testing pure business logic; Playwright remains E2E only
 - [Phase 02-balance]: onConflictDoUpdate on (annee, mois) for idempotent month creation (race-condition-safe)
+- [Phase 02-balance]: uniqueIndex defined inside sqliteTable second arg callback — standalone export not picked up by drizzle-kit generate
+- [Phase 02-balance]: SeedDepense/SeedAjustement use (annee, mois) instead of mois_id — resolved internally after INSERT to handle AUTOINCREMENT gaps
+- [Phase 02-balance]: test.fixme(true) instead of test.todo() — test.todo absent in Playwright 1.58.2
 
 ### Pending Todos
 
@@ -90,6 +93,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-05T08:16:01.650Z
-Stopped at: Completed 02-balance-02-02-PLAN.md
+Last session: 2026-03-05T08:16:15.633Z
+Stopped at: Completed 02-balance-02-01-PLAN.md
 Resume file: None
