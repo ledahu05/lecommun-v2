@@ -38,7 +38,13 @@ Plans:
   2. Le dashboard affiche le détail complet : total Chris, total Alex, balance mensuelle, report du mois précédent, et ventilation par catégorie
   3. La balance reflète immédiatement les données brutes à chaque chargement de page, sans cache
   4. Quand un nouveau mois commence, la balance_reportee est automatiquement la balance_finale du mois précédent — sans aucune saisie manuelle
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Fondations test : stubs E2E, helpers seed/auth, shadcn badge/separator/skeleton, unique index (annee, mois)
+- [ ] 02-02-PLAN.md — Logique métier : types/index.ts, lib/balance.ts (algorithme corrigé), lib/db/queries/
+- [ ] 02-03-PLAN.md — Dashboard UI : BalanceCard, BalanceSynthese, page.tsx RSC complet, loading.tsx skeleton
+- [ ] 02-04-PLAN.md — Tests E2E complets : DASH-01 à RPT-01 verts, suite Playwright complète
 
 ### Phase 3: Saisie
 **Goal**: Chris et Alex peuvent saisir et supprimer des dépenses et des ajustements au quotidien
@@ -69,6 +75,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Fondation | 3/3 | Complete   | 2026-03-04 |
-| 2. Balance | 0/TBD | Not started | - |
+| 2. Balance | 0/4 | Not started | - |
 | 3. Saisie | 0/TBD | Not started | - |
 | 4. Historique | 0/TBD | Not started | - |
