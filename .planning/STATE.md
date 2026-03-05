@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 02-balance-02-01-PLAN.md
-last_updated: "2026-03-05T08:16:15.635Z"
+stopped_at: Completed 02-balance-02-03-PLAN.md
+last_updated: "2026-03-05T08:19:59.481Z"
 last_activity: "2026-03-04 — Phase 1 complete: DB + Vercel + auth tests + mobile sign-off"
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 7
-  completed_plans: 5
+  completed_plans: 6
   percent: 100
 ---
 
@@ -55,6 +55,7 @@ Progress: [██████████] 100%
 | Phase 01-fondation P03 | 180 | 4 tasks | 2 files |
 | Phase 02-balance P02 | 4 | 2 tasks | 7 files |
 | Phase 02-balance P01 | 18 | 3 tasks | 8 files |
+| Phase 02-balance P03 | 8 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -82,6 +83,8 @@ Recent decisions affecting current work:
 - [Phase 02-balance]: uniqueIndex defined inside sqliteTable second arg callback — standalone export not picked up by drizzle-kit generate
 - [Phase 02-balance]: SeedDepense/SeedAjustement use (annee, mois) instead of mois_id — resolved internally after INSERT to handle AUTOINCREMENT gaps
 - [Phase 02-balance]: test.fixme(true) instead of test.todo() — test.todo absent in Playwright 1.58.2
+- [Phase 02-balance]: signOut button kept in dashboard header since layout.tsx has no logout mechanism
+- [Phase 02-balance]: BalanceCard uses Math.abs(balance_finale) for display — sign communicated via debiteurText label
 
 ### Pending Todos
 
@@ -93,6 +96,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-05T08:16:15.633Z
-Stopped at: Completed 02-balance-02-01-PLAN.md
+Last session: 2026-03-05T08:19:59.479Z
+Stopped at: Completed 02-balance-02-03-PLAN.md
 Resume file: None
