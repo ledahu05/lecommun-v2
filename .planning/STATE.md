@@ -1,17 +1,17 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: MVP
-status: archived
-stopped_at: v1.0 milestone complete
-last_updated: "2026-03-05T10:20:00.000Z"
-last_activity: "2026-03-05 — v1.0 MVP shipped: 4 phases, 13 plans, 22/22 tests, 23/23 requirements"
+milestone: v1.1
+milestone_name: Import & Gestion des Mois
+status: not_started
+stopped_at: defining requirements
+last_updated: "2026-03-05T00:00:00.000Z"
+last_activity: "2026-03-05 — Milestone v1.1 started"
 progress:
-  total_phases: 4
-  completed_phases: 4
-  total_plans: 13
-  completed_plans: 13
-  percent: 100
+  total_phases: 1
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State

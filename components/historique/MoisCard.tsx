@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import type { Mois } from '@/types';
+import { DeleteMoisButton } from './DeleteMoisButton';
 
 interface Props {
   mois: Mois;
@@ -22,13 +23,18 @@ export function MoisCard({ mois, balance_finale }: Props) {
   }
 
   return (
-    <Link
-      href={`/historique/${mois.id}`}
+    <div
       data-testid="mois-card"
-      className="flex items-center justify-between min-h-[48px] py-3 border-b last:border-b-0 hover:bg-muted/50 transition-colors"
+      className="flex items-center border-b last:border-b-0"
     >
-      <span className="font-medium text-base capitalize">{moisLabel}</span>
-      <span className="text-sm text-muted-foreground">{debiteurText}</span>
-    </Link>
+      <Link
+        href={`/historique/${mois.id}`}
+        className="flex flex-1 items-center justify-between min-h-[48px] py-3 pr-2 hover:bg-muted/50 transition-colors"
+      >
+        <span className="font-medium text-base capitalize">{moisLabel}</span>
+        <span className="text-sm text-muted-foreground">{debiteurText}</span>
+      </Link>
+      <DeleteMoisButton moisId={mois.id} moisLabel={moisLabel} />
+    </div>
   );
 }

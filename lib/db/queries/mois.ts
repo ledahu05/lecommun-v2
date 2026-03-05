@@ -4,6 +4,31 @@ import { eq, and, desc } from 'drizzle-orm';
 import type { Mois } from '@/types';
 import { calculerBalance } from '@/lib/balance';
 
+export async function getMoisByAnneeEtMois(annee: number, moisNum: number): Promise<Mois | null> {
+  const rows = await db
+    .select()
+    .from(mois)
+    .where(and(eq(mois.annee, annee), eq(mois.mois, moisNum)))
+    .limit(1);
+  return rows[0] ?? null;
+}
+
+export async function insertMois(data: {
+  annee: number;
+  moisNum: number;
+  balance_reportee: number;
+}): Promise<Mois> {
+  const [inserted] = await db
+    .insert(mois)
+    .values({ annee: data.annee, mois: data.moisNum, balance_reportee: data.balance_reportee })
+    .returning();
+  return inserted;
+}
+
+export async function deleteMois(id: number): Promise<void> {
+  await db.delete(mois).where(eq(mois.id, id));
+}
+
 export async function getOrCreateCurrentMois() {
   const now = new Date();
   const annee = now.getFullYear();
