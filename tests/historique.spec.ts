@@ -15,12 +15,35 @@ const NOV_2024 = {
 
 test.describe('HIS-01: Liste des mois archivés', () => {
   test('la page /historique liste tous les mois avec leur balance finale', async ({ page }) => {
-    test.fixme(true, 'not implemented — will be green after Plan 02');
+    await seedDatabase(NOV_2024);
+    await loginAs(page, 'chris');
+    await page.goto('/historique');
+    // At least one mois-card is visible
+    await expect(page.getByTestId('mois-card').first()).toBeVisible();
+    // The card shows the month label
+    await expect(page.getByTestId('mois-card').first()).toContainText('novembre 2024');
+    // The card is a link to /historique/[id]
+    const href = await page.getByTestId('mois-card').first().getAttribute('href');
+    expect(href).toMatch(/\/historique\/\d+/);
   });
 });
 
 test.describe("HIS-02: Détail d'un mois archivé", () => {
   test('/historique/[id] affiche les dépenses, ajustements et balance du mois archivé', async ({ page }) => {
-    test.fixme(true, 'not implemented — will be green after Plan 02');
+    await seedDatabase(NOV_2024);
+    await loginAs(page, 'chris');
+    // Navigate via the list
+    await page.goto('/historique');
+    await page.getByTestId('mois-card').first().click();
+    // Detail page loaded
+    await expect(page.getByTestId('historique-detail')).toBeVisible();
+    // Balance visible
+    await expect(page.getByTestId('balance-finale')).toBeVisible();
+    // At least one depense item visible
+    await expect(page.getByTestId('historique-depense-item').first()).toBeVisible();
+    // At least one ajustement item visible
+    await expect(page.getByTestId('historique-ajustement-item').first()).toBeVisible();
+    // No delete buttons present
+    await expect(page.getByRole('button', { name: /supprimer/i })).toHaveCount(0);
   });
 });
