@@ -56,7 +56,13 @@ Plans:
   3. L'utilisateur peut supprimer une dépense ou un ajustement, et la balance se recalcule aussitôt
   4. L'utilisateur peut saisir un ajustement (direction chris→alex ou alex→chris, montant, libellé obligatoire, date) et le voir intégré dans la balance finale
   5. Les catégories et sous-catégories disponibles sont fixes et conformes à lib/categories.ts
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Stubs Playwright : tests/depenses.spec.ts (DEP-01..05) et tests/ajustements.spec.ts (AJU-01..04)
+- [ ] 03-02-PLAN.md — Feature dépenses : queries DB, Server Actions Zod, page RSC, DepenseForm/List/Item, tests verts
+- [ ] 03-03-PLAN.md — Feature ajustements : queries DB, Server Actions Zod, page RSC, AjustementForm/List/Item, tests verts
+- [ ] 03-04-PLAN.md — Suite complète verte + validation mobile humaine
 
 ### Phase 4: Historique
 **Goal**: Chris et Alex peuvent consulter les mois archivés avec leur détail complet
@@ -76,5 +82,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Fondation | 3/3 | Complete   | 2026-03-04 |
 | 2. Balance | 4/4 | Complete   | 2026-03-05 |
-| 3. Saisie | 0/TBD | Not started | - |
+| 3. Saisie | 0/4 | Not started | - |
 | 4. Historique | 0/TBD | Not started | - |
