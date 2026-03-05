@@ -71,7 +71,11 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. L'utilisateur voit la liste de tous les mois passés avec leur balance finale
   2. L'utilisateur peut ouvrir un mois archivé et consulter ses dépenses, ajustements et balance détaillée
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — Stubs Playwright : tests/historique.spec.ts (HIS-01, HIS-02)
+- [ ] 04-02-PLAN.md — Feature historique : getAllMois query, list page, detail page [id], read-only components, tests verts, validation mobile
 
 ## Progress
 
@@ -83,4 +87,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Fondation | 3/3 | Complete   | 2026-03-04 |
 | 2. Balance | 4/4 | Complete   | 2026-03-05 |
 | 3. Saisie | 4/4 | Complete   | 2026-03-05 |
-| 4. Historique | 0/TBD | Not started | - |
+| 4. Historique | 0/2 | Not started | - |
