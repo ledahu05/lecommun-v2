@@ -1,6 +1,7 @@
 import { db } from '@/lib/db';
 import { mois, depenses, ajustements } from '@/lib/db/schema';
-import { eq, and } from 'drizzle-orm';
+import { eq, and, desc } from 'drizzle-orm';
+import type { Mois } from '@/types';
 import { calculerBalance } from '@/lib/balance';
 
 export async function getOrCreateCurrentMois() {
@@ -32,6 +33,24 @@ export async function getOrCreateCurrentMois() {
     .returning();
 
   return inserted;
+}
+
+export async function getAllMois(): Promise<Array<{ mois: Mois; balance_finale: number }>> {
+  const allMois = await db
+    .select()
+    .from(mois)
+    .orderBy(desc(mois.annee), desc(mois.mois));
+
+  const results = await Promise.all(
+    allMois.map(async (m) => {
+      const deps = await db.select().from(depenses).where(eq(depenses.mois_id, m.id));
+      const adjs = await db.select().from(ajustements).where(eq(ajustements.mois_id, m.id));
+      const balance = calculerBalance(deps, adjs, m.balance_reportee);
+      return { mois: m, balance_finale: balance.balance_finale };
+    })
+  );
+
+  return results;
 }
 
 async function computeBalanceReportee(annee: number, moisNum: number): Promise<number> {
