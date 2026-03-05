@@ -22,8 +22,8 @@ test.describe('HIS-01: Liste des mois archivés', () => {
     await expect(page.getByTestId('mois-card').first()).toBeVisible();
     // The card shows the month label
     await expect(page.getByTestId('mois-card').first()).toContainText('novembre 2024');
-    // The card is a link to /historique/[id]
-    const href = await page.getByTestId('mois-card').first().getAttribute('href');
+    // The card contains a link to /historique/[id]
+    const href = await page.getByTestId('mois-card').first().locator('a').getAttribute('href');
     expect(href).toMatch(/\/historique\/\d+/);
   });
 });

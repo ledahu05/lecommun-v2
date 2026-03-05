@@ -3,7 +3,7 @@
 ## Milestones
 
 - ✅ **v1.0 MVP** — Phases 1-4 (shipped 2026-03-05)
-- 📋 **v1.1** — TBD (plan with `/gsd:new-milestone`)
+- 🚧 **v1.1 Import & Gestion des Mois** — Phase 5 (in progress)
 
 ## Phases
 
@@ -19,6 +19,18 @@ Full archive: `.planning/milestones/v1.0-ROADMAP.md`
 
 </details>
 
+### v1.1 Import & Gestion des Mois
+
+**Phase 5: Import & Gestion des Mois**
+- Goal: Add upload and delete capabilities to the historique page
+- Requirements: IMPORT-01..05, DELETE-01..03
+- Success criteria:
+  1. User uploads `fixtures_janvier_2026.json` → month appears in history with correct data
+  2. Uploading an already-existing month shows an error (no duplicate created)
+  3. User clicks trash on a month → confirmation dialog appears
+  4. User confirms deletion → month disappears from history, depenses/ajustements gone
+  5. E2E tests pass for all 8 requirements (IMPORT-01..05, DELETE-01..03)
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -27,3 +39,4 @@ Full archive: `.planning/milestones/v1.0-ROADMAP.md`
 | 2. Balance | v1.0 | 4/4 | Complete | 2026-03-05 |
 | 3. Saisie | v1.0 | 4/4 | Complete | 2026-03-05 |
 | 4. Historique | v1.0 | 2/2 | Complete | 2026-03-05 |
+| 5. Import & Gestion des Mois | v1.1 | 0/1 | In progress | — |

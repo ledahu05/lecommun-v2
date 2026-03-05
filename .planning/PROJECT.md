@@ -10,6 +10,14 @@ v1.0 MVP livré le 2026-03-05 — l'app est production-ready et remplace le Goog
 
 La balance nette entre Chris et Alex est toujours visible et juste — report automatique chaque mois, zéro saisie manuelle, zéro risque d'erreur de copie.
 
+## Current Milestone: v1.1 Import & Gestion des Mois
+
+**Goal:** Permettre l'import de données historiques par fichier JSON et la suppression de mois depuis la page historique.
+
+**Target features:**
+- Upload d'un fichier JSON fixture pour importer un mois (mois + dépenses + ajustements)
+- Suppression d'un mois avec confirmation (cascade sur dépenses et ajustements)
+
 ## Requirements
 
 ### Validated
@@ -24,7 +32,8 @@ La balance nette entre Chris et Alex est toujours visible et juste — report au
 
 ### Active
 
-(None — fresh start for v1.1)
+- Import d'un mois depuis un fichier JSON fixture (upload depuis la page historique) — v1.1
+- Suppression d'un mois avec confirmation (cascade sur dépenses et ajustements) — v1.1
 
 ### Out of Scope
 
@@ -76,4 +85,4 @@ La balance nette entre Chris et Alex est toujours visible et juste — report au
 | HistoriqueDepenseItem/AjustementItem séparés (sans bouton supprimer) | Patron lecture-seule explicite pour l'archive | ✓ Good — HIS-02 E2E vérifie l'absence de delete buttons |
 
 ---
-*Last updated: 2026-03-05 after v1.0 milestone*
+*Last updated: 2026-03-05 after v1.1 milestone start*
