@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 03-saisie-03-04-PLAN.md
-last_updated: "2026-03-05T09:20:35.884Z"
+stopped_at: Completed 04-historique-04-01-PLAN.md
+last_updated: "2026-03-05T09:41:27.001Z"
 last_activity: "2026-03-04 — Phase 1 complete: DB + Vercel + auth tests + mobile sign-off"
 progress:
   total_phases: 4
   completed_phases: 3
-  total_plans: 11
-  completed_plans: 11
+  total_plans: 13
+  completed_plans: 12
   percent: 100
 ---
 
@@ -61,6 +61,7 @@ Progress: [██████████] 100%
 | Phase 03-saisie P02 | 3 | 3 tasks | 7 files |
 | Phase 03-saisie P03 | 4 | 3 tasks | 7 files |
 | Phase 03-saisie P04 | 5 | 2 tasks | 0 files |
+| Phase 04-historique P01 | 2 | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -97,6 +98,7 @@ Recent decisions affecting current work:
 - [Phase 03-saisie]: Form action type wrapper: handleCreateDepense needed to satisfy React void | Promise<void> signature
 - [Phase 03-saisie]: AjustementForm uses implicit vers derivation from de — eliminates de === vers UX error class
 - [Phase 03-saisie]: Phase 3 gate requires both automated test pass AND explicit human mobile UX sign-off
+- [Phase 04-historique]: test.fixme(true, msg) used as stubs — test.todo() absent in Playwright 1.58.2
 
 ### Pending Todos
 
@@ -108,6 +110,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-05T09:16:56.136Z
-Stopped at: Completed 03-saisie-03-04-PLAN.md
+Last session: 2026-03-05T09:41:26.998Z
+Stopped at: Completed 04-historique-04-01-PLAN.md
 Resume file: None

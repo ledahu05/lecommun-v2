@@ -40,8 +40,8 @@
 
 ### Historique
 
-- [ ] **HIS-01**: L'utilisateur peut consulter la liste des mois archivés
-- [ ] **HIS-02**: L'utilisateur peut consulter le détail d'un mois archivé (dépenses, ajustements, balance)
+- [x] **HIS-01**: L'utilisateur peut consulter la liste des mois archivés
+- [x] **HIS-02**: L'utilisateur peut consulter le détail d'un mois archivé (dépenses, ajustements, balance)
 
 ### Infrastructure
 
@@ -104,8 +104,8 @@
 | AJU-02 | Phase 3 | Complete |
 | AJU-03 | Phase 3 | Complete |
 | AJU-04 | Phase 3 | Complete |
-| HIS-01 | Phase 4 | Pending |
-| HIS-02 | Phase 4 | Pending |
+| HIS-01 | Phase 4 | Complete |
+| HIS-02 | Phase 4 | Complete |
 
 **Coverage:**
 - v1 requirements: 23 total

@@ -87,4 +87,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Fondation | 3/3 | Complete   | 2026-03-04 |
 | 2. Balance | 4/4 | Complete   | 2026-03-05 |
 | 3. Saisie | 4/4 | Complete   | 2026-03-05 |
-| 4. Historique | 0/2 | Not started | - |
+| 4. Historique | 1/2 | In Progress|  |
