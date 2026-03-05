@@ -1,11 +1,11 @@
 ---
 gsd_state_version: 1.0
 milestone: v1.0
-milestone_name: milestone
-status: completed
-stopped_at: Completed 04-historique-04-02-PLAN.md
-last_updated: "2026-03-05T09:51:36.824Z"
-last_activity: "2026-03-04 — Phase 1 complete: DB + Vercel + auth tests + mobile sign-off"
+milestone_name: MVP
+status: archived
+stopped_at: v1.0 milestone complete
+last_updated: "2026-03-05T10:20:00.000Z"
+last_activity: "2026-03-05 — v1.0 MVP shipped: 4 phases, 13 plans, 22/22 tests, 23/23 requirements"
 progress:
   total_phases: 4
   completed_phases: 4
@@ -18,10 +18,10 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-04)
+See: .planning/PROJECT.md (updated 2026-03-05 after v1.0)
 
 **Core value:** La balance nette entre Chris et Alex est toujours visible et juste — report automatique, zéro saisie manuelle, zéro erreur de copie.
-**Current focus:** Phase 2 — Depenses (next)
+**Current focus:** v1.0 archived — planning next milestone with `/gsd:new-milestone`
 
 ## Current Position
 

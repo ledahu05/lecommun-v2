@@ -1,0 +1,21 @@
+# Milestones
+
+## v1.0 MVP (Shipped: 2026-03-05)
+
+**Phases completed:** 4 phases, 13 plans
+**Timeline:** 2026-03-04 → 2026-03-05 (2 days)
+**Codebase:** 125 files, 2,535 LOC TypeScript, 22/22 Playwright tests green
+**Requirements:** 23/23 v1 requirements satisfied
+
+**Key accomplishments:**
+- Déploiement Next.js 15 + Turso + Drizzle ORM sur Vercel avec CD automatique — NextAuth v5 Edge-safe split config, sessions JWT 30 jours
+- Algorithme de balance corrigé avec report automatique mensuel (`balance_reportee = balance_finale` du mois précédent) — jamais de saisie manuelle
+- Dashboard RSC avec ventilation par catégorie, recalcul à chaque requête (`force-dynamic`), 5 tests E2E DASH-01..RPT-01 verts
+- Saisie des dépenses et ajustements avec Server Actions Zod, formulaires mobile-first (48px touch targets, 16px minimum), 9 tests E2E verts, validation UX 390px approuvée
+- Consultation de l'historique des mois archivés en lecture seule — liste + détail complet, remplace intégralement le Google Sheets de 55 mois
+
+**Tech debt carried forward:**
+- Nyquist VALIDATION.md files stuck at `draft` — never updated post-execution (process only)
+- Phase 1 production Vercel checks deferred (local Playwright 6/6 green, mobile sign-off approved)
+
+---
