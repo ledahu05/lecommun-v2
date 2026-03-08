@@ -40,21 +40,21 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| REC-01 | — | Pending |
-| REC-02 | — | Pending |
-| REC-03 | — | Pending |
-| REC-04 | — | Pending |
-| REC-05 | — | Pending |
-| RPT-01 | — | Pending |
-| RPT-02 | — | Pending |
-| RPT-03 | — | Pending |
-| RPT-04 | — | Pending |
+| REC-01 | Phase 8 | Pending |
+| REC-02 | Phase 8 | Pending |
+| REC-03 | Phase 8 | Pending |
+| REC-04 | Phase 8 | Pending |
+| REC-05 | Phase 8 | Pending |
+| RPT-01 | Phase 9 | Pending |
+| RPT-02 | Phase 9 | Pending |
+| RPT-03 | Phase 9 | Pending |
+| RPT-04 | Phase 9 | Pending |
 
 **Coverage:**
 - v1.4 requirements: 9 total
-- Mapped to phases: 0
-- Unmapped: 9 ⚠️
+- Mapped to phases: 9
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-08*
-*Last updated: 2026-03-08 after initial definition*
+*Last updated: 2026-03-08 after roadmap creation*
