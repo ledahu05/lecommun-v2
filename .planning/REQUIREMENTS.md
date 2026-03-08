@@ -17,10 +17,10 @@ Requirements for milestone v1.4 — Récurrences. Each maps to roadmap phases.
 
 ### Report automatique
 
-- [ ] **RPT-01**: À la création d'un nouveau mois, les dépenses récurrentes actives du mois précédent sont copiées automatiquement
-- [ ] **RPT-02**: À la création d'un nouveau mois, les ajustements récurrents actifs du mois précédent sont copiées automatiquement
-- [ ] **RPT-03**: Les items reportés sont des copies indépendantes (modifiables et supprimables)
-- [ ] **RPT-04**: Les items reportés héritent du flag récurrent de la source
+- [x] **RPT-01**: À la création d'un nouveau mois, les dépenses récurrentes actives du mois précédent sont copiées automatiquement
+- [x] **RPT-02**: À la création d'un nouveau mois, les ajustements récurrents actifs du mois précédent sont copiées automatiquement
+- [x] **RPT-03**: Les items reportés sont des copies indépendantes (modifiables et supprimables)
+- [x] **RPT-04**: Les items reportés héritent du flag récurrent de la source
 
 ## Future Requirements
 
@@ -45,10 +45,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | REC-03 | Phase 8 | Complete |
 | REC-04 | Phase 8 | Complete |
 | REC-05 | Phase 8 | Complete |
-| RPT-01 | Phase 9 | Pending |
-| RPT-02 | Phase 9 | Pending |
-| RPT-03 | Phase 9 | Pending |
-| RPT-04 | Phase 9 | Pending |
+| RPT-01 | Phase 9 | Complete |
+| RPT-02 | Phase 9 | Complete |
+| RPT-03 | Phase 9 | Complete |
+| RPT-04 | Phase 9 | Complete |
 
 **Coverage:**
 - v1.4 requirements: 9 total

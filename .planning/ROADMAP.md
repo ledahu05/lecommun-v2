@@ -54,7 +54,7 @@ Full archive: `.planning/milestones/v1.3-ROADMAP.md`
 **Milestone Goal:** Permettre de marquer des dépenses et ajustements comme récurrents pour qu'ils soient automatiquement reportés à chaque nouveau mois.
 
 - [x] **Phase 8: Flag récurrent** - Schema DB, toggle dans les formulaires, indicateur visuel dans les listes
-- [ ] **Phase 9: Report automatique** - Copie automatique des items récurrents lors de la création d'un nouveau mois
+- [x] **Phase 9: Report automatique** - Copie automatique des items récurrents lors de la création d'un nouveau mois (completed 2026-03-08)
 
 ## Phase Details
 
@@ -82,7 +82,7 @@ Plans:
   2. Quand un nouveau mois est créé, les ajustements marqués récurrents du mois précédent apparaissent automatiquement dans le nouveau mois
   3. User peut modifier ou supprimer un item reporté sans affecter l'original du mois précédent
   4. Les items reportés conservent le flag récurrent (ils seront à nouveau reportés au mois suivant)
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 
 Plans:
 - [ ] 09-01-PLAN.md — Copy recurrent items into new month on creation
@@ -102,4 +102,4 @@ Phases execute in numeric order.
 | 6. Balance Initiale | v1.2 | 1/1 | Complete | 2026-03-08 |
 | 7. Modales et saisie rapide | v1.3 | 2/2 | Complete | 2026-03-08 |
 | 8. Flag récurrent | v1.4 | 2/2 | Complete | 2026-03-08 |
-| 9. Report automatique | v1.4 | 0/1 | Not started | - |
+| 9. Report automatique | 1/1 | Complete   | 2026-03-08 | - |
