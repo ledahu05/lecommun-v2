@@ -18,6 +18,7 @@ export async function insertAjustement(data: {
   montant: number;
   label: string;
   date_ajustement: Date;
+  recurrent?: boolean;
 }): Promise<void> {
   await db.insert(ajustements).values({
     mois_id: data.mois_id,
@@ -26,7 +27,14 @@ export async function insertAjustement(data: {
     montant: data.montant,
     label: data.label,
     date_ajustement: data.date_ajustement,
+    recurrent: data.recurrent ? 1 : 0,
   });
+}
+
+export async function toggleAjustementRecurrent(id: number): Promise<void> {
+  const [row] = await db.select({ recurrent: ajustements.recurrent }).from(ajustements).where(eq(ajustements.id, id)).limit(1);
+  if (!row) return;
+  await db.update(ajustements).set({ recurrent: row.recurrent ? 0 : 1 }).where(eq(ajustements.id, id));
 }
 
 export async function deleteAjustement(id: number): Promise<void> {

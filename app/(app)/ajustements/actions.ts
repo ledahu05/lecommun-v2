@@ -2,7 +2,7 @@
 
 import { z } from 'zod';
 import { revalidatePath } from 'next/cache';
-import { insertAjustement, deleteAjustement } from '@/lib/db/queries/ajustements';
+import { insertAjustement, deleteAjustement, toggleAjustementRecurrent } from '@/lib/db/queries/ajustements';
 import { getOrCreateCurrentMois } from '@/lib/db/queries/mois';
 
 const AjustementSchema = z
@@ -36,6 +36,7 @@ export async function actionCreateAjustement(
   }
 
   const moisCourant = await getOrCreateCurrentMois();
+  const recurrent = formData.get('recurrent') === 'on';
 
   await insertAjustement({
     mois_id: moisCourant.id,
@@ -44,6 +45,7 @@ export async function actionCreateAjustement(
     montant: parsed.data.montant,
     label: parsed.data.label,
     date_ajustement: new Date(parsed.data.date_ajustement),
+    recurrent,
   });
 
   revalidatePath('/ajustements');
@@ -58,5 +60,16 @@ export async function actionDeleteAjustement(formData: FormData): Promise<void> 
   await deleteAjustement(id);
 
   revalidatePath('/ajustements');
+  revalidatePath('/');
+}
+
+export async function actionToggleAjustementRecurrent(formData: FormData): Promise<void> {
+  const id = Number(formData.get('id'));
+  if (!Number.isInteger(id) || id <= 0) return;
+
+  await toggleAjustementRecurrent(id);
+
+  revalidatePath('/ajustements');
+  revalidatePath('/depenses');
   revalidatePath('/');
 }

@@ -19,6 +19,7 @@ export async function insertDepense(data: {
   montant: number;
   label?: string;
   date_depense: Date;
+  recurrent?: boolean;
 }): Promise<Depense> {
   const [inserted] = await db
     .insert(depenses)
@@ -30,9 +31,16 @@ export async function insertDepense(data: {
       montant: data.montant,
       label: data.label ?? null,
       date_depense: data.date_depense,
+      recurrent: data.recurrent ? 1 : 0,
     })
     .returning();
   return inserted;
+}
+
+export async function toggleDepenseRecurrent(id: number): Promise<void> {
+  const [row] = await db.select({ recurrent: depenses.recurrent }).from(depenses).where(eq(depenses.id, id)).limit(1);
+  if (!row) return;
+  await db.update(depenses).set({ recurrent: row.recurrent ? 0 : 1 }).where(eq(depenses.id, id));
 }
 
 export async function deleteDepense(id: number): Promise<void> {

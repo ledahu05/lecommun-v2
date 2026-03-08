@@ -2,7 +2,7 @@
 
 import { z } from 'zod';
 import { revalidatePath } from 'next/cache';
-import { insertDepense, deleteDepense } from '@/lib/db/queries/depenses';
+import { insertDepense, deleteDepense, toggleDepenseRecurrent } from '@/lib/db/queries/depenses';
 import { getOrCreateCurrentMois } from '@/lib/db/queries/mois';
 import { CATEGORIES } from '@/lib/categories';
 
@@ -43,6 +43,7 @@ export async function actionCreateDepense(
   }
 
   const moisCourant = await getOrCreateCurrentMois();
+  const recurrent = formData.get('recurrent') === 'on';
 
   await insertDepense({
     mois_id: moisCourant.id,
@@ -52,6 +53,7 @@ export async function actionCreateDepense(
     montant: parsed.data.montant,
     label: parsed.data.label || undefined,
     date_depense: new Date(parsed.data.date_depense),
+    recurrent,
   });
 
   revalidatePath('/depenses');
@@ -66,5 +68,16 @@ export async function actionDeleteDepense(formData: FormData): Promise<void> {
   await deleteDepense(id);
 
   revalidatePath('/depenses');
+  revalidatePath('/');
+}
+
+export async function actionToggleDepenseRecurrent(formData: FormData): Promise<void> {
+  const id = Number(formData.get('id'));
+  if (!Number.isInteger(id) || id <= 0) return;
+
+  await toggleDepenseRecurrent(id);
+
+  revalidatePath('/depenses');
+  revalidatePath('/ajustements');
   revalidatePath('/');
 }
