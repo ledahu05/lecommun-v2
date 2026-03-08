@@ -2,10 +2,10 @@
 gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: Balance Initiale
-status: executing
-stopped_at: completed 06-01-PLAN.md
-last_updated: "2026-03-08T12:33:53.000Z"
-last_activity: "2026-03-08 — Completed 06-01 balance initiale plan"
+status: completed
+stopped_at: Completed 06-01-PLAN.md (balance initiale)
+last_updated: "2026-03-08T12:37:39.415Z"
+last_activity: 2026-03-08 — Completed 06-01 balance initiale plan
 progress:
   total_phases: 1
   completed_phases: 1
