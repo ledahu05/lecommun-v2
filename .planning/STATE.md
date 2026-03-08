@@ -5,7 +5,7 @@ milestone_name: Modales d'ajout
 status: in_progress
 stopped_at: Completed 07-01-PLAN.md — Dialog modals for depense/ajustement forms
 last_updated: "2026-03-08"
-last_activity: 2026-03-08 — Plan 07-01 complete (modales Dialog)
+last_activity: 2026-03-08 - Completed quick task 1: Inverser direction ajustements
 progress:
   total_phases: 1
   completed_phases: 0
@@ -57,6 +57,12 @@ None.
 ### Blockers/Concerns
 
 None.
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 1 | Inverser direction ajustements: "X donne à Y" | 2026-03-08 | a86efa5 | [1-dans-les-ajustements-remplacer-chris-ver](./quick/1-dans-les-ajustements-remplacer-chris-ver/) |
 
 ## Session Continuity
 
