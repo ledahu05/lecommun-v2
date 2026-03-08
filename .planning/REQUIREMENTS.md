@@ -7,11 +7,11 @@
 
 ### Initialisation
 
-- [ ] **INIT-01**: Quand le mois courant n'a pas de mois précédent en base, le dashboard affiche un champ pour saisir/modifier la balance reportée
-- [ ] **INIT-02**: L'utilisateur peut saisir un montant (positif = Chris doit à Alex, négatif = Alex doit à Chris) et valider
-- [ ] **INIT-03**: La valeur saisie met à jour `balance_reportee` du mois courant — la balance se recalcule immédiatement
-- [ ] **INIT-04**: Le champ reste éditable tant qu'aucun mois précédent n'existe en base (permet de corriger une erreur)
-- [ ] **INIT-05**: Quand un mois précédent existe en base, la balance reportée est calculée automatiquement et non éditable (comportement actuel préservé)
+- [x] **INIT-01**: Quand le mois courant n'a pas de mois précédent en base, le dashboard affiche un champ pour saisir/modifier la balance reportée
+- [x] **INIT-02**: L'utilisateur peut saisir un montant (positif = Chris doit à Alex, négatif = Alex doit à Chris) et valider
+- [x] **INIT-03**: La valeur saisie met à jour `balance_reportee` du mois courant — la balance se recalcule immédiatement
+- [x] **INIT-04**: Le champ reste éditable tant qu'aucun mois précédent n'existe en base (permet de corriger une erreur)
+- [x] **INIT-05**: Quand un mois précédent existe en base, la balance reportée est calculée automatiquement et non éditable (comportement actuel préservé)
 
 ## Future Requirements (v2)
 
@@ -29,11 +29,11 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INIT-01 | Phase 6 | Pending |
-| INIT-02 | Phase 6 | Pending |
-| INIT-03 | Phase 6 | Pending |
-| INIT-04 | Phase 6 | Pending |
-| INIT-05 | Phase 6 | Pending |
+| INIT-01 | Phase 6 | Complete |
+| INIT-02 | Phase 6 | Complete |
+| INIT-03 | Phase 6 | Complete |
+| INIT-04 | Phase 6 | Complete |
+| INIT-05 | Phase 6 | Complete |
 
 **Coverage:**
 - v1.2 requirements: 5 total
@@ -42,4 +42,4 @@
 
 ---
 *Requirements defined: 2026-03-08*
-*Last updated: 2026-03-08 after roadmap creation*
+*Last updated: 2026-03-08 after 06-01 plan completion*

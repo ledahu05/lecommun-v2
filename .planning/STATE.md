@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: Balance Initiale
-status: ready_to_plan
-stopped_at: roadmap created
-last_updated: "2026-03-08T00:00:00.000Z"
-last_activity: "2026-03-08 — Roadmap created for v1.2"
+status: executing
+stopped_at: completed 06-01-PLAN.md
+last_updated: "2026-03-08T12:33:53.000Z"
+last_activity: "2026-03-08 — Completed 06-01 balance initiale plan"
 progress:
   total_phases: 1
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 0
+  completed_phases: 1
+  total_plans: 1
+  completed_plans: 1
+  percent: 100
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-08 after v1.2 start)
 ## Current Position
 
 Phase: 6 of 6 (Balance Initiale)
-Plan: — (ready to plan)
-Status: Ready to plan
-Last activity: 2026-03-08 — Roadmap created for v1.2
+Plan: 1 of 1 (Complete)
+Status: Phase complete
+Last activity: 2026-03-08 — Completed 06-01 balance initiale plan
 
-Progress: ░░░░░░░░░░ 0%
+Progress: ██████████ 100%
 
 ## Performance Metrics
 
@@ -47,6 +47,8 @@ Recent decisions affecting current work:
 - [Phase 02-balance]: Algorithm correction: total_chris_vers_alex includes balance_mensuelle
 - [Phase 02-balance]: onConflictDoUpdate on (annee, mois) for idempotent month creation
 - [Phase 05-import-delete]: router.refresh() after server actions — revalidatePath alone insufficient with useTransition
+- [Phase 06-balance-initiale]: key={currentValue} on uncontrolled input to force React remount when server data changes
+- [Phase 06-balance-initiale]: page.reload() in E2E test for re-edit verification instead of relying on router.refresh() timing
 
 ### Pending Todos
 
@@ -59,5 +61,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-08
-Stopped at: Roadmap created for v1.2, ready to plan Phase 6
+Stopped at: Completed 06-01-PLAN.md (balance initiale)
 Resume file: None

@@ -4,7 +4,7 @@
 
 - ✅ **v1.0 MVP** — Phases 1-4 (shipped 2026-03-05)
 - ✅ **v1.1 Import & Gestion des Mois** — Phase 5 (shipped 2026-03-08)
-- 🚧 **v1.2 Balance Initiale** — Phase 6 (in progress)
+- ✅ **v1.2 Balance Initiale** — Phase 6 (shipped 2026-03-08)
 
 ## Phases
 
@@ -29,7 +29,7 @@ Full archive: `.planning/milestones/v1.0-ROADMAP.md`
 
 ### v1.2 Balance Initiale
 
-- [ ] **Phase 6: Balance Initiale** - Saisie manuelle de la balance reportée quand aucun mois précédent n'existe en base
+- [x] **Phase 6: Balance Initiale** - Saisie manuelle de la balance reportée quand aucun mois précédent n'existe en base (completed 2026-03-08)
 
 ## Phase Details
 
@@ -45,7 +45,7 @@ Full archive: `.planning/milestones/v1.0-ROADMAP.md`
 **Plans**: 1 plan
 
 Plans:
-- [ ] 06-01-PLAN.md — Backend queries, InitialBalanceForm component, dashboard wiring, E2E tests
+- [x] 06-01-PLAN.md — Backend queries, InitialBalanceForm component, dashboard wiring, E2E tests (completed 2026-03-08)
 
 ## Progress
 
@@ -59,4 +59,4 @@ Phases execute in numeric order.
 | 3. Saisie | v1.0 | 4/4 | Complete | 2026-03-05 |
 | 4. Historique | v1.0 | 2/2 | Complete | 2026-03-05 |
 | 5. Import & Gestion | v1.1 | 1/1 | Complete | 2026-03-08 |
-| 6. Balance Initiale | v1.2 | 0/1 | Not started | - |
+| 6. Balance Initiale | v1.2 | 1/1 | Complete | 2026-03-08 |
