@@ -21,6 +21,7 @@ export const depenses = sqliteTable('depenses', {
   montant: real('montant').notNull(),
   label: text('label'),
   date_depense: integer('date_depense', { mode: 'timestamp' }).notNull(),
+  recurrent: integer('recurrent').notNull().default(0),
   cree_le: integer('cree_le', { mode: 'timestamp' })
     .notNull().$defaultFn(() => new Date()),
 });
@@ -34,6 +35,7 @@ export const ajustements = sqliteTable('ajustements', {
   montant: real('montant').notNull(),
   label: text('label').notNull(),
   date_ajustement: integer('date_ajustement', { mode: 'timestamp' }).notNull(),
+  recurrent: integer('recurrent').notNull().default(0),
   cree_le: integer('cree_le', { mode: 'timestamp' })
     .notNull().$defaultFn(() => new Date()),
 });

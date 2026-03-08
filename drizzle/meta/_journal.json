@@ -15,6 +15,13 @@
       "when": 1772698322887,
       "tag": "0001_modern_tattoo",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1772988717995,
+      "tag": "0002_nervous_marvel_apes",
+      "breakpoints": true
     }
   ]
 }
