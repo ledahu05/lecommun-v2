@@ -117,4 +117,4 @@ Phases execute in numeric order.
 | 7. Modales et saisie rapide | v1.3 | 2/2 | Complete | 2026-03-08 |
 | 8. Flag récurrent | v1.4 | 2/2 | Complete | 2026-03-08 |
 | 9. Report automatique | v1.4 | 1/1 | Complete | 2026-03-08 |
-| 10. Export/Import récurrent + fix fixtures | 1/1 | Complete   | 2026-03-08 | - |
+| 10. Export/Import récurrent + fix fixtures | 1/1 | Complete    | 2026-03-08 | - |
