@@ -33,7 +33,7 @@ export async function actionCreateDepense(
     paye_par: formData.get('paye_par'),
     montant: formData.get('montant'),
     date_depense: formData.get('date_depense'),
-    label: formData.get('label'),
+    label: formData.get('label') || undefined,
   };
 
   const parsed = DepenseSchema.safeParse(raw);
