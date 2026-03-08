@@ -1,5 +1,5 @@
 import { auth, signOut } from '@/lib/auth/index';
-import { getOrCreateCurrentMois } from '@/lib/db/queries/mois';
+import { getOrCreateCurrentMois, hasPreviousMois } from '@/lib/db/queries/mois';
 import { getDepensesByMois } from '@/lib/db/queries/depenses';
 import { getAjustementsByMois } from '@/lib/db/queries/ajustements';
 import { calculerBalance } from '@/lib/balance';
@@ -16,6 +16,7 @@ export default async function HomePage() {
   const depenses = await getDepensesByMois(moisCourant.id);
   const ajustements = await getAjustementsByMois(moisCourant.id);
   const balance = calculerBalance(depenses, ajustements, moisCourant.balance_reportee);
+  const hasPrev = await hasPreviousMois(moisCourant.annee, moisCourant.mois);
 
   return (
     <main className="p-4 space-y-6 pb-6">
@@ -38,7 +39,7 @@ export default async function HomePage() {
         </div>
       </header>
 
-      <BalanceCard balance={balance} mois={moisCourant} />
+      <BalanceCard balance={balance} mois={moisCourant} editableBalanceReportee={!hasPrev} />
 
       <BalanceSynthese depenses={depenses} />
     </main>

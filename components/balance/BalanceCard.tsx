@@ -5,6 +5,7 @@ import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import type { BalanceResult } from '@/lib/balance';
 import type { Mois } from '@/types';
+import { InitialBalanceForm } from '@/components/balance/InitialBalanceForm';
 
 function formatEur(amount: number): string {
   return Math.abs(amount).toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' });
@@ -17,9 +18,10 @@ function formatSigned(amount: number): string {
 interface Props {
   balance: BalanceResult;
   mois: Mois;
+  editableBalanceReportee?: boolean;
 }
 
-export function BalanceCard({ balance, mois }: Props) {
+export function BalanceCard({ balance, mois, editableBalanceReportee }: Props) {
   const { balance_finale, total_chris, total_alex, balance_mensuelle, balance_reportee } = balance;
   const moisLabel = format(new Date(mois.annee, mois.mois - 1, 1), 'MMMM yyyy', { locale: fr });
 
@@ -75,10 +77,14 @@ export function BalanceCard({ balance, mois }: Props) {
           <span data-testid="balance-mensuelle">{formatSigned(balance_mensuelle)}</span>
         </div>
         <Separator />
-        <div className="flex justify-between items-center min-h-[48px]">
-          <span className="text-muted-foreground">Report mois préc.</span>
-          <span data-testid="balance-reportee">{formatSigned(balance_reportee)}</span>
-        </div>
+        {editableBalanceReportee ? (
+          <InitialBalanceForm moisId={mois.id} currentValue={balance_reportee} />
+        ) : (
+          <div className="flex justify-between items-center min-h-[48px]">
+            <span className="text-muted-foreground">Report mois préc.</span>
+            <span data-testid="balance-reportee">{formatSigned(balance_reportee)}</span>
+          </div>
+        )}
       </div>
     </div>
   );
