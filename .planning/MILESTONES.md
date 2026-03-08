@@ -1,5 +1,21 @@
 # Milestones
 
+## v1.4 Récurrences (Shipped: 2026-03-08)
+
+**Phases completed:** 3 phases, 4 plans, 8 tasks
+**Timeline:** 2026-03-08 (1 day)
+**Codebase:** 7,660 LOC TypeScript (+1,799 / -99 lines changed)
+**Requirements:** 9/9 satisfied (REC-01..05, RPT-01..04)
+
+**Key accomplishments:**
+- Colonne `recurrent` (integer 0/1) ajoutée aux tables depenses et ajustements avec migration Drizzle, toggle CRUD via server actions
+- Toggle récurrence dans les formulaires modaux de création + indicateur visuel Repeat dans toutes les vues (listes et historique)
+- Report automatique : les items récurrents sont copiés comme lignes indépendantes lors de la création d'un nouveau mois via `getOrCreateCurrentMois`
+- Export/import JSON préserve le champ récurrent avec Zod `optional().default(false)` pour compatibilité ascendante
+- Fixtures de test alignées avec le schéma Phase 8 — `tsc --noEmit` clean
+
+---
+
 ## v1.3 Modales d'ajout (Shipped: 2026-03-08)
 
 **Phases completed:** 1 phases, 2 plans, 0 tasks

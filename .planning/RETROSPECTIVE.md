@@ -163,6 +163,52 @@
 
 ---
 
+## Milestone: v1.4 — Récurrences
+
+**Shipped:** 2026-03-08
+**Phases:** 3 | **Plans:** 4
+**Timeline:** 2026-03-08 (1 day)
+**Tests:** 38/38 Playwright green | **LOC:** 7,660 TypeScript
+
+### What Was Built
+
+- **Phase 8 (Flag récurrent):** Recurrent integer column on depenses/ajustements, toggle in creation forms, Repeat icon indicators in all list views, toggle buttons to flip recurrence on existing items
+- **Phase 9 (Report automatique):** Auto-copy recurrent items on new month creation via getOrCreateCurrentMois, independent rows with recurrent=1 preserved
+- **Phase 10 (Export/Import fix):** Recurrent field added to JSON export/import round-trip, test fixtures aligned with Phase 8 schema
+
+### What Worked
+
+- **3-phase scope with clear audit** — milestone audit identified the export/import gap (INT-01) which became Phase 10, preventing a shipped regression
+- **Reuse of existing patterns** — Button variant toggle, hidden input for FormData, server actions all followed established v1.3 patterns
+- **Minimal execution time** — 4 plans in 7 minutes total, zero deviations on 3 of 4 plans
+- **Backward-compatible Zod extension** — `optional().default(false)` pattern ensures old JSON exports still import cleanly
+
+### What Was Inefficient
+
+- **SUMMARY.md one_liner field still not populated** — CLI extracted 0 accomplishments for 4th consecutive milestone (known issue, not addressed)
+- **Phase 10 was a gap closure phase** — could have been avoided if Phase 8 plan had included export/import considerations from the start
+
+### Patterns Established
+
+- `integer 0/1` for boolean columns in SQLite/Drizzle with `.notNull().default(0)`
+- Toggle pattern: read current value then flip (select + update in same query function)
+- Recurrent copy: query prev month items where recurrent=1, insert as new rows in new month
+- Zod `optional().default(false)` for backward-compatible schema extensions in import
+
+### Key Lessons
+
+1. When adding a new column to a schema, audit ALL code paths that serialize/deserialize that entity (export, import, fixtures) — Phase 10 was remediation
+2. Milestone audits are worth the cost — INT-01 gap detection prevented shipping broken export/import
+3. Auto-copy logic belongs in the creation function (getOrCreateCurrentMois) not as a separate hook — single entry point eliminates missed copies
+
+### Cost Observations
+
+- Model mix: balanced profile (sonnet for executors)
+- Sessions: 1
+- Notable: 7 min total execution time for 4 plans across 3 phases
+
+---
+
 ## Cross-Milestone Trends
 
 | Milestone | Duration | LOC | Tests | Requirements | Tech Debt |
@@ -171,10 +217,12 @@
 | v1.1 Import | 3 days | ~4,500 TS | 33/33 | 8/8 | None new |
 | v1.2 Balance Init | 1 day | 6,380 TS | 38/38 | 5/5 | None new |
 | v1.3 Modales | 1 day | ~7,800 TS | 38/38 | 8/8 | None new |
+| v1.4 Récurrences | 1 day | 7,660 TS | 38/38 | 9/9 | None |
 
 ### Top Lessons (Verified Across Milestones)
 
 1. Always verify business logic against fixtures, not documentation — validated v1.0, reinforced v1.1/v1.2
 2. Small focused milestones (1 phase) ship faster with fewer issues — confirmed v1.1, v1.2, v1.3
-3. RSC + Server Actions + revalidatePath/router.refresh is the clean mutation pattern — stable across all 4 milestones
+3. RSC + Server Actions + revalidatePath/router.refresh is the clean mutation pattern — stable across all 5 milestones
 4. Button grids > native `<select>` on mobile for bounded option sets — validated v1.3
+5. Milestone audits catch integration gaps that phase-level verification misses — validated v1.4 (INT-01 → Phase 10)

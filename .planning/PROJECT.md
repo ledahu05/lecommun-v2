@@ -10,19 +10,10 @@ v1.0 MVP livré le 2026-03-05 — l'app est production-ready et remplace le Goog
 
 La balance nette entre Chris et Alex est toujours visible et juste — report automatique chaque mois, zéro saisie manuelle, zéro risque d'erreur de copie.
 
-## Current Milestone: v1.4 Récurrences
-
-**Goal:** Permettre de marquer des dépenses et ajustements comme récurrents pour qu'ils soient automatiquement reportés à chaque nouveau mois.
-
-**Target features:**
-- Flag "récurrent" (toggle on/off) dans les formulaires de saisie existants
-- Report automatique des items récurrents lors de la création d'un nouveau mois
-- Les items reportés sont des copies indépendantes (modifiables, supprimables)
-
 ## Current State
 
-v1.0 MVP shipped 2026-03-05, v1.1 shipped 2026-03-08, v1.2 shipped 2026-03-08, v1.3 shipped 2026-03-08.
-All core features live — shared expense tracking replaces the 55-month Google Sheets entirely. Formulaires en modales Dialog avec saisie rapide depuis le dashboard.
+v1.0 → v1.4 shipped (2026-03-04 → 2026-03-08).
+All core features live — shared expense tracking replaces the 55-month Google Sheets entirely. Formulaires en modales Dialog avec saisie rapide depuis le dashboard. Dépenses et ajustements récurrents avec report automatique mensuel.
 
 ## Requirements
 
@@ -41,12 +32,13 @@ All core features live — shared expense tracking replaces the 55-month Google 
 - ✓ Modales Dialog pour dépenses et ajustements (remplacent les formulaires inline) — v1.3
 - ✓ Saisie rapide depuis le dashboard via boutons quick-add — v1.3
 - ✓ Grille de boutons pour sous-catégories (remplace `<select>`) — v1.3
+- ✓ Marquer une dépense ou un ajustement comme récurrent (toggle on/off) — v1.4
+- ✓ Reporter automatiquement les items récurrents à la création d'un nouveau mois — v1.4
+- ✓ Les items reportés sont des copies indépendantes (modifiables, supprimables) — v1.4
 
 ### Active
 
-- [ ] Marquer une dépense ou un ajustement comme récurrent (toggle on/off)
-- [ ] Reporter automatiquement les items récurrents à la création d'un nouveau mois
-- [ ] Les items reportés sont des copies indépendantes (modifiables, supprimables)
+(None — planning next milestone)
 
 ### Out of Scope
 
@@ -60,13 +52,14 @@ All core features live — shared expense tracking replaces the 55-month Google 
 
 ## Context
 
-**Current state (post v1.3):**
-- ~7,800 LOC TypeScript — Next.js 15 App Router + Turso (SQLite cloud) + Drizzle ORM + NextAuth v5 + shadcn/ui
+**Current state (post v1.4):**
+- ~7,660 LOC TypeScript — Next.js 15 App Router + Turso (SQLite cloud) + Drizzle ORM + NextAuth v5 + shadcn/ui
 - 38/38 Playwright E2E tests green
 - Deployed on Vercel with CD on push to main
 - Remplace intégralement le Google Sheets de 55 mois
 - Import JSON + suppression de mois + balance initiale éditable
 - Formulaires en modales Dialog + quick-add dashboard + sous-catégories boutons
+- Dépenses/ajustements récurrents avec report automatique à chaque nouveau mois
 
 **Background:**
 - Remplace un Google Sheets avec 55 onglets (1 par mois), utilisé depuis juillet 2021
@@ -102,6 +95,10 @@ All core features live — shared expense tracking replaces the 55-month Google 
 | useTransition + async onSubmit dans modales | Capture les erreurs server action sans fermer la modale | ✓ Good — pattern Dialog modal form fiable |
 | Sous-catégories en grille 3 boutons | Sélection mobile plus rapide que `<select>` natif | ✓ Good — touch targets 44px min, UX approuvée |
 | Quick-add dans page.tsx RSC (pas BalanceCard) | Évite les problèmes de frontière RSC/client component | ✓ Good — composants modaux réutilisables via props trigger |
+| Recurrent flag en integer 0/1 SQLite (pas boolean) | SQLite n'a pas de type boolean natif, .notNull().default(0) | ✓ Good — pattern standard Drizzle/SQLite |
+| Checkbox formData `val === 'on'` hors Zod | Évite la complexité de coercion boolean dans Zod | ✓ Good — simple et fiable |
+| Copie récurrente dans getOrCreateCurrentMois | Un seul point d'entrée pour la création de mois | ✓ Good — zéro risque d'oublier la copie |
+| Zod `optional().default(false)` pour champ recurrent import | Compatibilité ascendante avec JSON sans recurrent | ✓ Good — import ancien format fonctionne |
 
 ---
-*Last updated: 2026-03-08 after v1.4 milestone start*
+*Last updated: 2026-03-08 after v1.4 milestone*
