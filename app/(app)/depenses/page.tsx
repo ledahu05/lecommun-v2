@@ -3,7 +3,7 @@ export const dynamic = 'force-dynamic';
 import { getOrCreateCurrentMois } from '@/lib/db/queries/mois';
 import { getDepensesByMois } from '@/lib/db/queries/depenses';
 import DepenseForm from '@/components/depenses/DepenseForm';
-import DepensesList from '@/components/depenses/DepensesList';
+import TwoColumnDepenses from '@/components/depenses/TwoColumnDepenses';
 
 export default async function DepensesPage() {
   const moisCourant = await getOrCreateCurrentMois();
@@ -15,7 +15,7 @@ export default async function DepensesPage() {
         <h1 className="text-xl font-semibold">Depenses</h1>
         <DepenseForm />
       </div>
-      <DepensesList depenses={depensesList} />
+      <TwoColumnDepenses depenses={depensesList} />
     </main>
   );
 }
