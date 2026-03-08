@@ -5,6 +5,7 @@ interface Props {
 }
 
 export function HistoriqueAjustementItem({ ajustement }: Props) {
+  const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
   const montant = ajustement.montant.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' });
 
   return (
@@ -15,7 +16,7 @@ export function HistoriqueAjustementItem({ ajustement }: Props) {
       <div>
         <p className="font-medium text-base">{ajustement.label}</p>
         <p className="text-sm text-muted-foreground">
-          {ajustement.de} → {ajustement.vers}
+          {capitalize(ajustement.vers)} donne à {capitalize(ajustement.de)}
         </p>
       </div>
       <span className="text-base font-medium">{montant}</span>

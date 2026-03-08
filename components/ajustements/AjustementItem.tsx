@@ -8,6 +8,7 @@ interface AjustementItemProps {
 }
 
 export default function AjustementItem({ ajustement }: AjustementItemProps) {
+  const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
   const montantFormate = ajustement.montant.toLocaleString('fr-FR', {
     style: 'currency',
     currency: 'EUR',
@@ -21,7 +22,7 @@ export default function AjustementItem({ ajustement }: AjustementItemProps) {
       <div className="flex-1 min-w-0 pr-2">
         <p className="font-medium text-base truncate">{ajustement.label}</p>
         <p className="text-sm text-muted-foreground">
-          {ajustement.de} → {ajustement.vers} — {montantFormate}
+          {capitalize(ajustement.vers)} donne à {capitalize(ajustement.de)} — {montantFormate}
         </p>
       </div>
       <form action={actionDeleteAjustement}>

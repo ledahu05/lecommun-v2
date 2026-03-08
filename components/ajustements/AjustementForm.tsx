@@ -31,6 +31,7 @@ export default function AjustementForm({ triggerLabel, triggerVariant, triggerTe
   const [isPending, startTransition] = useTransition();
 
   const vers = de === 'chris' ? 'alex' : 'chris';
+  const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -79,7 +80,7 @@ export default function AjustementForm({ triggerLabel, triggerVariant, triggerTe
           {/* Direction — segmented buttons for "De" */}
           <div>
             <Label className="text-base mb-2 block">
-              De ({de} vers {vers})
+              {capitalize(vers)} donne à {capitalize(de)}
             </Label>
             <div className="flex gap-2">
               <Button
