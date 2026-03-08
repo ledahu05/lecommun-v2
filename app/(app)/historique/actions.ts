@@ -2,9 +2,12 @@
 
 import { z } from 'zod';
 import { revalidatePath } from 'next/cache';
+import { db } from '@/lib/db';
+import { mois as moisTable } from '@/lib/db/schema';
+import { eq } from 'drizzle-orm';
 import { getMoisByAnneeEtMois, insertMois, deleteMois } from '@/lib/db/queries/mois';
-import { insertDepense } from '@/lib/db/queries/depenses';
-import { insertAjustement } from '@/lib/db/queries/ajustements';
+import { getDepensesByMois, insertDepense } from '@/lib/db/queries/depenses';
+import { getAjustementsByMois, insertAjustement } from '@/lib/db/queries/ajustements';
 
 // ── Zod schemas for fixture validation ──────────────────────────────────────
 
@@ -117,4 +120,65 @@ export async function actionDeleteMois(formData: FormData): Promise<void> {
   await deleteMois(id);
 
   revalidatePath('/historique');
+}
+
+// ── actionExportMois ─────────────────────────────────────────────────────────
+
+export async function actionExportMois(
+  moisId: number
+): Promise<{ error: string } | { json: string; filename: string }> {
+  // Fetch mois
+  const rows = await db
+    .select()
+    .from(moisTable)
+    .where(eq(moisTable.id, moisId))
+    .limit(1);
+
+  const m = rows[0];
+  if (!m) {
+    return { error: 'Mois introuvable.' };
+  }
+
+  // Fetch depenses and ajustements
+  const deps = await getDepensesByMois(moisId);
+  const adjs = await getAjustementsByMois(moisId);
+
+  // Format dates as YYYY-MM-DD strings (DB stores as timestamp)
+  const formatDate = (d: Date) => {
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
+  // Assemble round-trip compatible JSON (same structure as import)
+  const exportData = {
+    mois: [{
+      annee: m.annee,
+      mois: m.mois,
+      balance_reportee: m.balance_reportee,
+    }],
+    depenses: deps.map((d) => ({
+      mois_id: 1,
+      categorie: d.categorie,
+      sous_categorie: d.sous_categorie,
+      paye_par: d.paye_par,
+      montant: d.montant,
+      label: d.label ?? null,
+      date_depense: formatDate(d.date_depense),
+    })),
+    ajustements: adjs.map((a) => ({
+      mois_id: 1,
+      de: a.de,
+      vers: a.vers,
+      montant: a.montant,
+      label: a.label,
+      date_ajustement: formatDate(a.date_ajustement),
+    })),
+  };
+
+  const pad = String(m.mois).padStart(2, '0');
+  const filename = `lecommun-${m.annee}-${pad}.json`;
+
+  return { json: JSON.stringify(exportData, null, 2), filename };
 }
