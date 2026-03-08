@@ -9,10 +9,10 @@ Requirements pour le milestone v1.3 Modales d'ajout. Chaque requirement map vers
 
 ### Modales
 
-- [ ] **MOD-01**: L'utilisateur peut ajouter une depense via une modale Dialog depuis la page depenses
-- [ ] **MOD-02**: L'utilisateur peut ajouter un ajustement via une modale Dialog depuis la page ajustements
-- [ ] **MOD-03**: La modale se ferme automatiquement apres soumission reussie et les donnees se rafraichissent
-- [ ] **MOD-04**: En cas d'erreur, la modale reste ouverte avec un message d'erreur inline
+- [x] **MOD-01**: L'utilisateur peut ajouter une depense via une modale Dialog depuis la page depenses
+- [x] **MOD-02**: L'utilisateur peut ajouter un ajustement via une modale Dialog depuis la page ajustements
+- [x] **MOD-03**: La modale se ferme automatiquement apres soumission reussie et les donnees se rafraichissent
+- [x] **MOD-04**: En cas d'erreur, la modale reste ouverte avec un message d'erreur inline
 
 ### Dashboard
 
@@ -21,8 +21,8 @@ Requirements pour le milestone v1.3 Modales d'ajout. Chaque requirement map vers
 
 ### UX Formulaire
 
-- [ ] **UX-01**: Les sous-categories sont selectionnees via une grille de boutons (remplace le `<select>`)
-- [ ] **UX-02**: Les formulaires inline Card sont supprimes des pages liste
+- [x] **UX-01**: Les sous-categories sont selectionnees via une grille de boutons (remplace le `<select>`)
+- [x] **UX-02**: Les formulaires inline Card sont supprimes des pages liste
 
 ## Future Requirements
 
@@ -42,14 +42,14 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| MOD-01 | Phase 7 | Pending |
-| MOD-02 | Phase 7 | Pending |
-| MOD-03 | Phase 7 | Pending |
-| MOD-04 | Phase 7 | Pending |
+| MOD-01 | Phase 7 | Complete |
+| MOD-02 | Phase 7 | Complete |
+| MOD-03 | Phase 7 | Complete |
+| MOD-04 | Phase 7 | Complete |
 | DASH-01 | Phase 7 | Pending |
 | DASH-02 | Phase 7 | Pending |
-| UX-01 | Phase 7 | Pending |
-| UX-02 | Phase 7 | Pending |
+| UX-01 | Phase 7 | Complete |
+| UX-02 | Phase 7 | Complete |
 
 **Coverage:**
 - v1.3 requirements: 8 total
