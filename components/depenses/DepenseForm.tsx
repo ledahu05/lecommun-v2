@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
-import { Plus } from 'lucide-react';
+import { Plus, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -33,6 +33,7 @@ export default function DepenseForm({ triggerLabel, triggerVariant, triggerTestI
     CATEGORIES.alimentation.sous_categories[0]
   );
   const [payePar, setPayePar] = useState<'chris' | 'alex'>('chris');
+  const [showOptional, setShowOptional] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
 
@@ -162,34 +163,48 @@ export default function DepenseForm({ triggerLabel, triggerVariant, triggerTestI
             />
           </div>
 
-          {/* Date */}
-          <div>
-            <Label htmlFor="date_depense" className="text-base mb-2 block">
-              Date
-            </Label>
-            <Input
-              id="date_depense"
-              name="date_depense"
-              type="date"
-              defaultValue={today}
-              className="min-h-[48px] text-base"
-              required
-            />
-          </div>
-
-          {/* Libelle optionnel */}
-          <div>
-            <Label htmlFor="label" className="text-base mb-2 block">
-              Libelle (optionnel)
-            </Label>
-            <Input
-              id="label"
-              name="label"
-              type="text"
-              placeholder="Libelle optionnel"
-              className="min-h-[48px] text-base"
-            />
-          </div>
+          {/* Date & Libelle — repliables */}
+          {showOptional ? (
+            <>
+              <div>
+                <Label htmlFor="date_depense" className="text-base mb-2 block">
+                  Date
+                </Label>
+                <Input
+                  id="date_depense"
+                  name="date_depense"
+                  type="date"
+                  defaultValue={today}
+                  className="min-h-[48px] text-base"
+                  required
+                />
+              </div>
+              <div>
+                <Label htmlFor="label" className="text-base mb-2 block">
+                  Libelle (optionnel)
+                </Label>
+                <Input
+                  id="label"
+                  name="label"
+                  type="text"
+                  placeholder="Libelle optionnel"
+                  className="min-h-[48px] text-base"
+                />
+              </div>
+            </>
+          ) : (
+            <>
+              <input type="hidden" name="date_depense" value={today} />
+              <button
+                type="button"
+                onClick={() => setShowOptional(true)}
+                className="flex items-center gap-1 text-sm text-muted-foreground underline underline-offset-4"
+              >
+                <ChevronDown className="h-4 w-4" />
+                Modifier la date ou ajouter un libelle
+              </button>
+            </>
+          )}
 
           {error && (
             <p className="text-sm text-destructive" data-testid="depense-error">
