@@ -2,10 +2,10 @@
 gsd_state_version: 1.0
 milestone: v1.3
 milestone_name: Modales d'ajout
-status: complete
-stopped_at: Completed 07-02-PLAN.md — Quick-add buttons on dashboard
-last_updated: "2026-03-08"
-last_activity: 2026-03-08 — Plan 07-02 complete (quick-add dashboard buttons)
+status: completed
+stopped_at: Completed 07-02-PLAN.md — Quick-add dashboard buttons. Milestone v1.3 complete.
+last_updated: "2026-03-08T13:47:53.357Z"
+last_activity: 2026-03-08 — Plan 07-02 complete (quick-add dashboard)
 progress:
   total_phases: 1
   completed_phases: 1
