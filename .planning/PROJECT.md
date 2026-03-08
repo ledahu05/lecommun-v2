@@ -10,6 +10,15 @@ v1.0 MVP livré le 2026-03-05 — l'app est production-ready et remplace le Goog
 
 La balance nette entre Chris et Alex est toujours visible et juste — report automatique chaque mois, zéro saisie manuelle, zéro risque d'erreur de copie.
 
+## Current Milestone: v1.4 Récurrences
+
+**Goal:** Permettre de marquer des dépenses et ajustements comme récurrents pour qu'ils soient automatiquement reportés à chaque nouveau mois.
+
+**Target features:**
+- Flag "récurrent" (toggle on/off) dans les formulaires de saisie existants
+- Report automatique des items récurrents lors de la création d'un nouveau mois
+- Les items reportés sont des copies indépendantes (modifiables, supprimables)
+
 ## Current State
 
 v1.0 MVP shipped 2026-03-05, v1.1 shipped 2026-03-08, v1.2 shipped 2026-03-08, v1.3 shipped 2026-03-08.
@@ -35,7 +44,9 @@ All core features live — shared expense tracking replaces the 55-month Google 
 
 ### Active
 
-(None — planning next milestone)
+- [ ] Marquer une dépense ou un ajustement comme récurrent (toggle on/off)
+- [ ] Reporter automatiquement les items récurrents à la création d'un nouveau mois
+- [ ] Les items reportés sont des copies indépendantes (modifiables, supprimables)
 
 ### Out of Scope
 
@@ -93,4 +104,4 @@ All core features live — shared expense tracking replaces the 55-month Google 
 | Quick-add dans page.tsx RSC (pas BalanceCard) | Évite les problèmes de frontière RSC/client component | ✓ Good — composants modaux réutilisables via props trigger |
 
 ---
-*Last updated: 2026-03-08 after v1.3 milestone*
+*Last updated: 2026-03-08 after v1.4 milestone start*
