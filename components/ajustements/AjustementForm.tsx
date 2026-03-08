@@ -17,7 +17,13 @@ import { actionCreateAjustement } from '@/app/(app)/ajustements/actions';
 
 const today = new Date().toISOString().slice(0, 10);
 
-export default function AjustementForm() {
+interface AjustementFormProps {
+  triggerLabel?: string;
+  triggerVariant?: 'default' | 'outline';
+  triggerTestId?: string;
+}
+
+export default function AjustementForm({ triggerLabel, triggerVariant, triggerTestId }: AjustementFormProps = {}) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [de, setDe] = useState<'chris' | 'alex'>('chris');
@@ -52,9 +58,13 @@ export default function AjustementForm() {
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
-        <Button className="min-h-[48px] text-base gap-2">
+        <Button
+          variant={triggerVariant ?? 'default'}
+          className="min-h-[48px] text-base gap-2"
+          data-testid={triggerTestId}
+        >
           <Plus className="h-5 w-5" />
-          Ajouter
+          {triggerLabel ?? 'Ajouter'}
         </Button>
       </DialogTrigger>
       <DialogContent className="max-h-[90vh] overflow-y-auto">

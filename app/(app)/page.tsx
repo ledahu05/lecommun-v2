@@ -6,6 +6,8 @@ import { calculerBalance } from '@/lib/balance';
 import { BalanceCard } from '@/components/balance/BalanceCard';
 import { BalanceSynthese } from '@/components/balance/BalanceSynthese';
 import { Button } from '@/components/ui/button';
+import DepenseForm from '@/components/depenses/DepenseForm';
+import AjustementForm from '@/components/ajustements/AjustementForm';
 
 // DASH-04: jamais de cache — la balance doit être fraîche à chaque requête
 export const dynamic = 'force-dynamic';
@@ -42,6 +44,11 @@ export default async function HomePage() {
       <BalanceCard balance={balance} mois={moisCourant} editableBalanceReportee={!hasPrev} />
 
       <BalanceSynthese depenses={depenses} />
+
+      <div className="grid grid-cols-2 gap-3">
+        <DepenseForm triggerLabel="+ Depense" triggerVariant="outline" triggerTestId="quick-add-depense" />
+        <AjustementForm triggerLabel="+ Ajustement" triggerVariant="outline" triggerTestId="quick-add-ajustement" />
+      </div>
     </main>
   );
 }

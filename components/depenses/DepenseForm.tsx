@@ -19,7 +19,13 @@ import { actionCreateDepense } from '@/app/(app)/depenses/actions';
 
 const today = new Date().toISOString().slice(0, 10);
 
-export default function DepenseForm() {
+interface DepenseFormProps {
+  triggerLabel?: string;
+  triggerVariant?: 'default' | 'outline';
+  triggerTestId?: string;
+}
+
+export default function DepenseForm({ triggerLabel, triggerVariant, triggerTestId }: DepenseFormProps = {}) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [categorie, setCategorie] = useState<Categorie>('alimentation');
@@ -63,9 +69,13 @@ export default function DepenseForm() {
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
-        <Button className="min-h-[48px] text-base gap-2">
+        <Button
+          variant={triggerVariant ?? 'default'}
+          className="min-h-[48px] text-base gap-2"
+          data-testid={triggerTestId}
+        >
           <Plus className="h-5 w-5" />
-          Ajouter
+          {triggerLabel ?? 'Ajouter'}
         </Button>
       </DialogTrigger>
       <DialogContent className="max-h-[90vh] overflow-y-auto">
