@@ -1,13 +1,13 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.1
-milestone_name: Import & Gestion des Mois
+milestone: v1.2
+milestone_name: Balance Initiale
 status: not_started
 stopped_at: defining requirements
-last_updated: "2026-03-05T00:00:00.000Z"
-last_activity: "2026-03-05 — Milestone v1.1 started"
+last_updated: "2026-03-08T00:00:00.000Z"
+last_activity: "2026-03-08 — Milestone v1.2 started"
 progress:
-  total_phases: 1
+  total_phases: 0
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -18,38 +18,24 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-05 after v1.0)
+See: .planning/PROJECT.md (updated 2026-03-08 after v1.2 start)
 
 **Core value:** La balance nette entre Chris et Alex est toujours visible et juste — report automatique, zéro saisie manuelle, zéro erreur de copie.
-**Current focus:** v1.0 archived — planning next milestone with `/gsd:new-milestone`
+**Current focus:** Permettre l'initialisation manuelle de la balance reportée quand l'app démarre sans données.
 
 ## Current Position
 
-Phase: 1 of 4 (Fondation) — COMPLETE
-Plan: 3 of 3 in phase 1 (all done)
-Status: Phase 1 complete, ready for Phase 2
-Last activity: 2026-03-04 — Phase 1 complete: DB + Vercel + auth tests + mobile sign-off
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-03-08 — Milestone v1.2 started
 
-Progress: [██████████] 100%
+Progress: ░░░░░░░░░░ 0%
 
 ## Performance Metrics
 
-**Velocity:**
-- Total plans completed: 0
-- Average duration: -
-- Total execution time: 0 hours
+*Carried from v1.0 + v1.1*
 
-**By Phase:**
-
-| Phase | Plans | Total | Avg/Plan |
-|-------|-------|-------|----------|
-| - | - | - | - |
-
-**Recent Trend:**
-- Last 5 plans: -
-- Trend: -
-
-*Updated after each plan completion*
 | Phase 01-fondation P01 | 5min | 3 tasks | 24 files |
 | Phase 01-fondation P02 | 3min | 3 tasks | 10 files |
 | Phase 01-fondation P03 | 180 | 4 tasks | 2 files |
@@ -82,26 +68,15 @@ Recent decisions affecting current work:
 - [Phase 01-fondation]: signIn from next-auth/react in Client Components (not lib/auth/index which is server-only)
 - [Phase 01-fondation]: Route group (app) for protected pages; root page.tsx deleted to avoid route conflict
 - [Phase 01-fondation]: BottomNav: exact match for /, startsWith for /depenses, /ajustements, /historique
-- [Phase 01-fondation]: Turso DB provisioned by user via CLI — DB name lecommun matches project name
-- [Phase 01-fondation]: Vercel CD linked to GitHub main branch — automatic deploy on push, no staging needed for 2-person project
 - [Phase 02-balance]: Algorithm correction: total_chris_vers_alex includes balance_mensuelle — CLAUDE.md documentation was wrong, verified against fixtures_e2e.json mars 2026 (balance_finale = -518.5)
 - [Phase 02-balance]: vitest added for unit testing pure business logic; Playwright remains E2E only
 - [Phase 02-balance]: onConflictDoUpdate on (annee, mois) for idempotent month creation (race-condition-safe)
-- [Phase 02-balance]: uniqueIndex defined inside sqliteTable second arg callback — standalone export not picked up by drizzle-kit generate
-- [Phase 02-balance]: SeedDepense/SeedAjustement use (annee, mois) instead of mois_id — resolved internally after INSERT to handle AUTOINCREMENT gaps
-- [Phase 02-balance]: test.fixme(true) instead of test.todo() — test.todo absent in Playwright 1.58.2
-- [Phase 02-balance]: signOut button kept in dashboard header since layout.tsx has no logout mechanism
 - [Phase 02-balance]: BalanceCard uses Math.abs(balance_finale) for display — sign communicated via debiteurText label
-- [Phase 02-balance]: RPT-01 uses dynamic prev-month calculation for date-independent test robustness
-- [Phase 02-balance]: playwright.config.ts testIgnore excludes unit/ dir to prevent vitest CJS import error in Playwright runner
-- [Phase 03-saisie]: test.fixme(true, msg) used instead of test.todo() — consistent with Phase 02 decision (Playwright 1.58.2 has no test.todo)
 - [Phase 03-saisie]: Zod v4: use parsed.error.issues instead of parsed.error.errors
-- [Phase 03-saisie]: Form action type wrapper: handleCreateDepense needed to satisfy React void | Promise<void> signature
 - [Phase 03-saisie]: AjustementForm uses implicit vers derivation from de — eliminates de === vers UX error class
-- [Phase 03-saisie]: Phase 3 gate requires both automated test pass AND explicit human mobile UX sign-off
-- [Phase 04-historique]: test.fixme(true, msg) used as stubs — test.todo() absent in Playwright 1.58.2
 - [Phase 04-historique]: getAllMois() computes balance_finale at query time via Promise.all — no cache, consistent with project pattern
-- [Phase 04-historique]: Separate HistoriqueDepenseItem/HistoriqueAjustementItem components (no delete button) — explicit read-only archive pattern
+- [Phase 05-import-delete]: Native DOM event listener for file input — Playwright setInputFiles doesn't trigger React synthetic onChange
+- [Phase 05-import-delete]: router.refresh() after server actions — revalidatePath alone insufficient with useTransition
 
 ### Pending Todos
 
@@ -113,6 +88,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-05T09:49:22.889Z
-Stopped at: Completed 04-historique-04-02-PLAN.md
+Last session: 2026-03-08
+Stopped at: Starting milestone v1.2
 Resume file: None

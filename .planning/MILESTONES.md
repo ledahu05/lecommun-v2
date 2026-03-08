@@ -1,5 +1,18 @@
 # Milestones
 
+## v1.1 Import & Gestion des Mois (Shipped: 2026-03-08)
+
+**Phases completed:** 1 phase, 1 plan
+**Timeline:** 2026-03-05 → 2026-03-08
+**Requirements:** 8/8 satisfied (IMPORT-01..05, DELETE-01..03)
+
+**Key accomplishments:**
+- Import de mois depuis fichier JSON fixture avec validation Zod, remapping mois_id, balance_reportee préservée
+- Suppression de mois avec AlertDialog confirmation et cascade sur dépenses/ajustements
+- 11 nouveaux tests E2E (7 import + 4 delete), 33/33 total green
+
+---
+
 ## v1.0 MVP (Shipped: 2026-03-05)
 
 **Phases completed:** 4 phases, 13 plans
