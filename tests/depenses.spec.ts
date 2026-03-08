@@ -25,6 +25,10 @@ test.describe('DEP-01: Saisir une dépense via le formulaire', () => {
     await loginAs(page, 'chris');
     await page.goto('/depenses');
 
+    // Ouvrir la modale d'ajout
+    await page.getByRole('button', { name: /ajouter/i }).click();
+    await page.getByRole('dialog').waitFor();
+
     // Cliquer sur le bouton catégorie alimentation
     await page.getByRole('button', { name: /alimentation/i }).click();
 
@@ -38,8 +42,11 @@ test.describe('DEP-01: Saisir une dépense via le formulaire', () => {
     // Libellé
     await page.locator('input[name="label"]').fill('test label');
 
-    // Soumettre
-    await page.getByRole('button', { name: /ajouter/i }).click();
+    // Soumettre (bouton dans le dialog)
+    await page.getByRole('dialog').getByRole('button', { name: /ajouter/i }).click();
+
+    // Attendre que le dialog se ferme (soumission reussie)
+    await page.getByRole('dialog').waitFor({ state: 'hidden' });
 
     // La dépense doit apparaître dans la liste
     await expect(page.getByTestId('depenses-list')).toBeVisible();
@@ -81,12 +88,17 @@ test.describe('DEP-04: Rejeter montant ≤ 0', () => {
     await loginAs(page, 'chris');
     await page.goto('/depenses');
 
-    // Tester avec montant = 0
-    await page.locator('input[name="montant"]').fill('0');
+    // Ouvrir la modale d'ajout
     await page.getByRole('button', { name: /ajouter/i }).click();
+    await page.getByRole('dialog').waitFor();
+
+    // Tester avec montant = 0
+    await page.getByRole('dialog').locator('input[name="montant"]').fill('0');
+    await page.getByRole('dialog').getByRole('button', { name: /ajouter/i }).click();
 
     // Le formulaire HTML5 devrait bloquer (min="0.01") ou la validation serveur rejette
-    // Dans tous les cas la liste reste vide
+    // Dans tous les cas la liste reste vide — fermer le dialog pour verifier
+    await page.keyboard.press('Escape');
     await expect(page.getByTestId('depenses-vides')).toBeVisible();
   });
 });
@@ -96,6 +108,10 @@ test.describe('DEP-05: Catégories conformes à lib/categories.ts', () => {
     await seedDatabase(MARCH_2026_EMPTY);
     await loginAs(page, 'chris');
     await page.goto('/depenses');
+
+    // Ouvrir la modale d'ajout
+    await page.getByRole('button', { name: /ajouter/i }).click();
+    await page.getByRole('dialog').waitFor();
 
     const form = page.getByTestId('depense-form');
 

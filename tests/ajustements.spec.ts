@@ -51,10 +51,17 @@ test.describe('AJU-01: Saisir un ajustement via le formulaire', () => {
     await loginAs(page, 'chris');
     await page.goto('/ajustements');
 
-    // Chris is selected by default (de=chris, vers=alex implicit)
-    await page.getByLabel(/montant/i).fill('75');
-    await page.getByLabel(/libellé/i).fill('test ajustement');
+    // Ouvrir la modale d'ajout
     await page.getByRole('button', { name: /ajouter/i }).click();
+    await page.getByRole('dialog').waitFor();
+
+    // Chris is selected by default (de=chris, vers=alex implicit)
+    await page.getByRole('dialog').getByLabel(/montant/i).fill('75');
+    await page.getByRole('dialog').getByLabel(/libellé/i).fill('test ajustement');
+    await page.getByRole('dialog').getByRole('button', { name: /ajouter/i }).click();
+
+    // Attendre que le dialog se ferme (soumission reussie)
+    await page.getByRole('dialog').waitFor({ state: 'hidden' });
 
     // After submit the list should appear
     await expect(page.getByTestId('ajustements-list')).toBeVisible();
@@ -93,11 +100,19 @@ test.describe('AJU-04: Ajustement intégré dans la balance finale', () => {
 
     // Go to /ajustements and add an alex→chris ajustement of 30
     await page.goto('/ajustements');
-    // Click Alex button (de=alex, vers=chris)
-    await page.getByRole('button', { name: /alex/i }).first().click();
-    await page.getByLabel(/montant/i).fill('30');
-    await page.getByLabel(/libellé/i).fill('virement alex chris');
+
+    // Ouvrir la modale d'ajout
     await page.getByRole('button', { name: /ajouter/i }).click();
+    await page.getByRole('dialog').waitFor();
+
+    // Click Alex button (de=alex, vers=chris)
+    await page.getByRole('dialog').getByRole('button', { name: /alex/i }).first().click();
+    await page.getByRole('dialog').getByLabel(/montant/i).fill('30');
+    await page.getByRole('dialog').getByLabel(/libellé/i).fill('virement alex chris');
+    await page.getByRole('dialog').getByRole('button', { name: /ajouter/i }).click();
+
+    // Attendre que le dialog se ferme
+    await page.getByRole('dialog').waitFor({ state: 'hidden' });
 
     // After adding ajustement, check dashboard balance
     // balance_finale = total_chris_vers_alex - total_alex_vers_chris

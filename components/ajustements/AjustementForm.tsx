@@ -111,13 +111,13 @@ export default function AjustementForm() {
           {/* Libelle obligatoire */}
           <div>
             <Label htmlFor="label" className="text-base mb-2 block">
-              Libelle
+              Libellé
             </Label>
             <Input
               id="label"
               name="label"
               type="text"
-              placeholder="Libelle obligatoire"
+              placeholder="Libellé obligatoire"
               className="min-h-[48px] text-base"
               required
             />
