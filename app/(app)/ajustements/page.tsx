@@ -11,8 +11,10 @@ export default async function AjustementsPage() {
 
   return (
     <main className="p-4">
-      <h1 className="text-xl font-semibold mb-4">Ajustements</h1>
-      <AjustementForm />
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-xl font-semibold">Ajustements</h1>
+        <AjustementForm />
+      </div>
       <AjustementsList ajustements={ajustementsList} />
     </main>
   );

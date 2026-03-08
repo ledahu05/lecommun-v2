@@ -47,6 +47,7 @@ export async function actionCreateAjustement(
   });
 
   revalidatePath('/ajustements');
+  revalidatePath('/depenses');
   revalidatePath('/');
 }
 
