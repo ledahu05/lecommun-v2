@@ -38,6 +38,7 @@ export function InitialBalanceForm({ moisId, currentValue }: Props) {
       >
         <input type="hidden" name="mois_id" value={moisId} />
         <Input
+          key={currentValue}
           name="balance_reportee"
           type="number"
           step="0.01"

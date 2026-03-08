@@ -58,11 +58,11 @@ test.describe('DASH-02: Détail complet de la balance', () => {
     await expect(page.getByTestId('total-alex')).toContainText('200');
     // balance_mensuelle = +50€ (positif — Chris doit compenser)
     await expect(page.getByTestId('balance-mensuelle')).toContainText('50');
-    // balance_reportee = 0 (premier mois — pas de report)
-    const balanceReportee = page.getByTestId('balance-reportee');
-    await expect(balanceReportee).toBeVisible();
-    // 0 s'affiche soit comme "0,00 €" ou "+ 0,00 €" — vérifier la présence de l'élément
-    await expect(balanceReportee).toContainText('0');
+    // balance_reportee = 0 (premier mois, pas de mois precedent en DB)
+    // Avec la feature balance initiale, le formulaire editable s'affiche a la place du texte statique
+    const balanceInput = page.getByTestId('initial-balance-input');
+    await expect(balanceInput).toBeVisible();
+    await expect(balanceInput).toHaveValue('0');
   });
 });
 
