@@ -11,8 +11,10 @@ export default async function DepensesPage() {
 
   return (
     <main className="p-4">
-      <h1 className="text-xl font-semibold mb-4">Dépenses</h1>
-      <DepenseForm />
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-xl font-semibold">Depenses</h1>
+        <DepenseForm />
+      </div>
       <DepensesList depenses={depensesList} />
     </main>
   );

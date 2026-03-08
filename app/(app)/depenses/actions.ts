@@ -55,6 +55,7 @@ export async function actionCreateDepense(
   });
 
   revalidatePath('/depenses');
+  revalidatePath('/ajustements');
   revalidatePath('/');
 }
 
