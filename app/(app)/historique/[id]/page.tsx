@@ -36,7 +36,7 @@ export default async function HistoriqueDetailPage({
         ← Historique
       </Link>
 
-      <BalanceCard balance={balance} mois={moisRow} />
+      <BalanceCard balance={balance} mois={moisRow} detailHref={`/historique/${moisRow.id}/detail`} />
       <BalanceSynthese depenses={depensesList} />
 
       <section>

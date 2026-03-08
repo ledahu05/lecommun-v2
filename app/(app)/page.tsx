@@ -41,7 +41,7 @@ export default async function HomePage() {
         </div>
       </header>
 
-      <BalanceCard balance={balance} mois={moisCourant} editableBalanceReportee={!hasPrev} />
+      <BalanceCard balance={balance} mois={moisCourant} editableBalanceReportee={!hasPrev} detailHref={`/historique/${moisCourant.id}/detail`} />
 
       <BalanceSynthese depenses={depenses} />
 

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
@@ -19,9 +20,10 @@ interface Props {
   balance: BalanceResult;
   mois: Mois;
   editableBalanceReportee?: boolean;
+  detailHref?: string;
 }
 
-export function BalanceCard({ balance, mois, editableBalanceReportee }: Props) {
+export function BalanceCard({ balance, mois, editableBalanceReportee, detailHref }: Props) {
   const { balance_finale, total_chris, total_alex, balance_mensuelle, balance_reportee } = balance;
   const moisLabel = format(new Date(mois.annee, mois.mois - 1, 1), 'MMMM yyyy', { locale: fr });
 
@@ -86,6 +88,16 @@ export function BalanceCard({ balance, mois, editableBalanceReportee }: Props) {
           </div>
         )}
       </div>
+
+      {detailHref && (
+        <Link
+          href={detailHref}
+          className="text-center text-sm text-primary underline underline-offset-4 min-h-12 flex items-center justify-center"
+          data-testid="detail-link"
+        >
+          Voir le détail du calcul
+        </Link>
+      )}
     </div>
   );
 }
