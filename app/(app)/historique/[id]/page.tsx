@@ -8,7 +8,7 @@ import { getAjustementsByMois } from '@/lib/db/queries/ajustements';
 import { calculerBalance } from '@/lib/balance';
 import { BalanceCard } from '@/components/balance/BalanceCard';
 import { BalanceSynthese } from '@/components/balance/BalanceSynthese';
-import { HistoriqueDepenseItem } from '@/components/historique/HistoriqueDepenseItem';
+import TwoColumnDepenses from '@/components/depenses/TwoColumnDepenses';
 import { HistoriqueAjustementItem } from '@/components/historique/HistoriqueAjustementItem';
 
 export const dynamic = 'force-dynamic';
@@ -41,15 +41,7 @@ export default async function HistoriqueDetailPage({
 
       <section>
         <h2 className="text-lg font-semibold mb-2">Dépenses</h2>
-        {depensesList.length === 0 ? (
-          <p className="text-muted-foreground text-sm">Aucune dépense ce mois-ci.</p>
-        ) : (
-          <div>
-            {depensesList.map((depense) => (
-              <HistoriqueDepenseItem key={depense.id} depense={depense} />
-            ))}
-          </div>
-        )}
+        <TwoColumnDepenses depenses={depensesList} readOnly />
       </section>
 
       <section>

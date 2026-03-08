@@ -10,7 +10,7 @@ export default async function DepensesPage() {
   const depensesList = await getDepensesByMois(moisCourant.id);
 
   return (
-    <main className="p-4">
+    <main className="p-4 pb-24 overflow-y-auto">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-xl font-semibold">Depenses</h1>
         <DepenseForm />
