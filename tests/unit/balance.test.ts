@@ -14,6 +14,7 @@ function makeDepense(paye_par: 'chris' | 'alex', montant: number): Depense {
     label: null,
     date_depense: new Date('2026-03-01'),
     cree_le: new Date('2026-03-01'),
+    recurrent: 0,
   };
 }
 
@@ -28,6 +29,7 @@ function makeAjustement(de: 'chris' | 'alex', vers: 'chris' | 'alex', montant: n
     label: 'test',
     date_ajustement: new Date('2026-03-01'),
     cree_le: new Date('2026-03-01'),
+    recurrent: 0,
   };
 }
 
