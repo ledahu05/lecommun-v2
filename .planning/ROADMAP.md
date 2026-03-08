@@ -82,10 +82,10 @@ Plans:
   2. Quand un nouveau mois est créé, les ajustements marqués récurrents du mois précédent apparaissent automatiquement dans le nouveau mois
   3. User peut modifier ou supprimer un item reporté sans affecter l'original du mois précédent
   4. Les items reportés conservent le flag récurrent (ils seront à nouveau reportés au mois suivant)
-**Plans**: TBD
+**Plans:** 1 plan
 
 Plans:
-- [ ] 09-01: TBD
+- [ ] 09-01-PLAN.md — Copy recurrent items into new month on creation
 
 ## Progress
 
@@ -102,4 +102,4 @@ Phases execute in numeric order.
 | 6. Balance Initiale | v1.2 | 1/1 | Complete | 2026-03-08 |
 | 7. Modales et saisie rapide | v1.3 | 2/2 | Complete | 2026-03-08 |
 | 8. Flag récurrent | v1.4 | 2/2 | Complete | 2026-03-08 |
-| 9. Report automatique | v1.4 | 0/? | Not started | - |
+| 9. Report automatique | v1.4 | 0/1 | Not started | - |
