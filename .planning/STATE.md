@@ -1,11 +1,11 @@
 ---
 gsd_state_version: 1.0
-milestone: null
-milestone_name: null
-status: idle
-stopped_at: Milestone v1.2 Balance Initiale complete
+milestone: v1.3
+milestone_name: Modales d'ajout
+status: defining_requirements
+stopped_at: Defining requirements for v1.3
 last_updated: "2026-03-08"
-last_activity: 2026-03-08 — Milestone v1.2 complete, archived
+last_activity: 2026-03-08 — Milestone v1.3 started
 progress:
   total_phases: 0
   completed_phases: 0
@@ -18,16 +18,17 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-08 after v1.2 complete)
+See: .planning/PROJECT.md (updated 2026-03-08)
 
 **Core value:** La balance nette entre Chris et Alex est toujours visible et juste — report automatique, zéro saisie manuelle, zéro erreur de copie.
-**Current focus:** No active milestone — planning next version
+**Current focus:** v1.3 Modales d'ajout — defining requirements
 
 ## Current Position
 
-No active milestone.
-Milestones shipped: v1.0 (2026-03-05), v1.1 (2026-03-08), v1.2 (2026-03-08)
-Total: 6 phases, 15 plans across 3 milestones
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-03-08 — Milestone v1.3 started
 
 ## Performance Metrics
 
@@ -50,5 +51,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-08
-Stopped at: Milestone v1.2 complete
+Stopped at: Defining requirements for v1.3
 Resume file: None

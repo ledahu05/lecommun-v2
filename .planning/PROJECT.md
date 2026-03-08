@@ -10,11 +10,20 @@ v1.0 MVP livré le 2026-03-05 — l'app est production-ready et remplace le Goog
 
 La balance nette entre Chris et Alex est toujours visible et juste — report automatique chaque mois, zéro saisie manuelle, zéro risque d'erreur de copie.
 
+## Current Milestone: v1.3 Modales d'ajout
+
+**Goal:** Remplacer les formulaires Card inline par des modales Dialog (shadcn/ui) et ajouter la saisie rapide depuis le dashboard.
+
+**Target features:**
+- Modales Dialog pour dépenses et ajustements
+- Boutons d'ajout rapide sur le dashboard (BalanceCard header)
+- Grille de boutons pour les sous-catégories (remplace `<select>`)
+- Suppression des formulaires inline des pages liste
+
 ## Current State
 
 v1.0 MVP shipped 2026-03-05, v1.1 shipped 2026-03-08, v1.2 shipped 2026-03-08.
 All core features live — shared expense tracking replaces the 55-month Google Sheets entirely.
-No active milestone — ready for `/gsd:new-milestone` to plan next version.
 
 ## Requirements
 
@@ -33,7 +42,10 @@ No active milestone — ready for `/gsd:new-milestone` to plan next version.
 
 ### Active
 
-(None — define next milestone with `/gsd:new-milestone`)
+- [ ] Modales Dialog pour dépenses et ajustements (remplacent les formulaires inline)
+- [ ] Saisie rapide depuis le dashboard via boutons dans BalanceCard
+- [ ] Grille de boutons pour sous-catégories (remplace `<select>`)
+- [ ] Mise à jour des tests E2E pour les modales
 
 ### Out of Scope
 
@@ -87,4 +99,4 @@ No active milestone — ready for `/gsd:new-milestone` to plan next version.
 | key={currentValue} sur Input uncontrolled | Force remount React quand server data change après submit | ✓ Good — pattern standard pour sync uncontrolled inputs |
 
 ---
-*Last updated: 2026-03-08 after v1.2 milestone complete*
+*Last updated: 2026-03-08 after v1.3 milestone started*
