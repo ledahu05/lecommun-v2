@@ -3,6 +3,7 @@ import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import type { Mois } from '@/types';
 import { DeleteMoisButton } from './DeleteMoisButton';
+import { ExportButton } from './ExportButton';
 
 interface Props {
   mois: Mois;
@@ -34,6 +35,7 @@ export function MoisCard({ mois, balance_finale }: Props) {
         <span className="font-medium text-base capitalize">{moisLabel}</span>
         <span className="text-sm text-muted-foreground">{debiteurText}</span>
       </Link>
+      <ExportButton moisId={mois.id} />
       <DeleteMoisButton moisId={mois.id} moisLabel={moisLabel} />
     </div>
   );
