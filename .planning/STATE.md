@@ -1,65 +1,54 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.2
-milestone_name: Balance Initiale
-status: completed
-stopped_at: Completed 06-01-PLAN.md (balance initiale)
-last_updated: "2026-03-08T12:37:39.415Z"
-last_activity: 2026-03-08 — Completed 06-01 balance initiale plan
+milestone: null
+milestone_name: null
+status: idle
+stopped_at: Milestone v1.2 Balance Initiale complete
+last_updated: "2026-03-08"
+last_activity: 2026-03-08 — Milestone v1.2 complete, archived
 progress:
-  total_phases: 1
-  completed_phases: 1
-  total_plans: 1
-  completed_plans: 1
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-08 after v1.2 start)
+See: .planning/PROJECT.md (updated 2026-03-08 after v1.2 complete)
 
 **Core value:** La balance nette entre Chris et Alex est toujours visible et juste — report automatique, zéro saisie manuelle, zéro erreur de copie.
-**Current focus:** Phase 6 — Balance Initiale
+**Current focus:** No active milestone — planning next version
 
 ## Current Position
 
-Phase: 6 of 6 (Balance Initiale)
-Plan: 1 of 1 (Complete)
-Status: Phase complete
-Last activity: 2026-03-08 — Completed 06-01 balance initiale plan
-
-Progress: ██████████ 100%
+No active milestone.
+Milestones shipped: v1.0 (2026-03-05), v1.1 (2026-03-08), v1.2 (2026-03-08)
+Total: 6 phases, 15 plans across 3 milestones
 
 ## Performance Metrics
 
-*Carried from v1.0 + v1.1 — 14 plans completed across 5 phases*
+*Carried from v1.0 + v1.1 + v1.2 — 15 plans completed across 6 phases*
 
 ## Accumulated Context
 
 ### Decisions
 
 Decisions are logged in PROJECT.md Key Decisions table.
-Recent decisions affecting current work:
-
-- Balance recalculée à chaque requête (pas de cache, jamais de désynchronisation)
-- [Phase 02-balance]: Algorithm correction: total_chris_vers_alex includes balance_mensuelle
-- [Phase 02-balance]: onConflictDoUpdate on (annee, mois) for idempotent month creation
-- [Phase 05-import-delete]: router.refresh() after server actions — revalidatePath alone insufficient with useTransition
-- [Phase 06-balance-initiale]: key={currentValue} on uncontrolled input to force React remount when server data changes
-- [Phase 06-balance-initiale]: page.reload() in E2E test for re-edit verification instead of relying on router.refresh() timing
 
 ### Pending Todos
 
-None yet.
+None.
 
 ### Blockers/Concerns
 
-None yet.
+None.
 
 ## Session Continuity
 
 Last session: 2026-03-08
-Stopped at: Completed 06-01-PLAN.md (balance initiale)
+Stopped at: Milestone v1.2 complete
 Resume file: None

@@ -54,8 +54,84 @@
 
 ---
 
+## Milestone: v1.1 — Import & Gestion des Mois
+
+**Shipped:** 2026-03-08
+**Phases:** 1 | **Plans:** 1
+**Timeline:** 2026-03-05 → 2026-03-08
+**Tests:** 33/33 Playwright green | **LOC:** ~4,500 TypeScript
+
+### What Was Built
+
+- **Phase 5 (Import & Gestion):** JSON fixture import with Zod validation + mois_id remapping, month deletion with AlertDialog confirmation and cascade on dépenses/ajustements, 11 new E2E tests
+
+### What Worked
+
+- **Single-phase milestone** kept scope tight — import + delete shipped cleanly
+- **router.refresh() discovery** — revalidatePath alone insufficient with useTransition, now a known pattern
+
+### What Was Inefficient
+
+- **Paused mid-implementation** (wip commit) — context restore required for continuation
+
+### Patterns Established
+
+- `router.refresh()` after server actions when using useTransition for optimistic updates
+
+### Key Lessons
+
+1. Small focused milestones ship faster and have fewer integration issues
+
+---
+
+## Milestone: v1.2 — Balance Initiale
+
+**Shipped:** 2026-03-08
+**Phases:** 1 | **Plans:** 1
+**Timeline:** 2026-03-08 (1 day)
+**Tests:** 38/38 Playwright green | **LOC:** 6,380 TypeScript
+
+### What Was Built
+
+- **Phase 6 (Balance Initiale):** Editable initial balance on dashboard when no previous month exists — hasPreviousMois query, Zod-validated server action, InitialBalanceForm client component, conditional BalanceCard rendering, 5 E2E tests
+
+### What Worked
+
+- **Single plan, 3 tasks** — minimal overhead for a focused feature
+- **key={currentValue} pattern** for uncontrolled input sync — clean React pattern discovered and immediately applied
+- **Auto-fixed deviations** (3 total) were all caught during E2E testing and resolved without scope creep
+
+### What Was Inefficient
+
+- Nothing notable — small scope executed cleanly
+
+### Patterns Established
+
+- `key={serverValue}` on uncontrolled inputs to force React remount when server data changes after mutations
+
+### Key Lessons
+
+1. Small features with clear requirements (5 INIT-xx) are ideal for single-plan execution
+2. Key-prop reset pattern is the canonical way to handle uncontrolled input sync with server state
+
+### Cost Observations
+
+- Model mix: sonnet for executor + verifier
+- Sessions: 1
+- Notable: 8 min execution time for full plan including 5 E2E tests
+
+---
+
 ## Cross-Milestone Trends
 
 | Milestone | Duration | LOC | Tests | Requirements | Tech Debt |
 |-----------|----------|-----|-------|--------------|-----------|
 | v1.0 MVP | 2 days | 2,535 TS | 22/22 | 23/23 | 7 items (process) |
+| v1.1 Import | 3 days | ~4,500 TS | 33/33 | 8/8 | None new |
+| v1.2 Balance Init | 1 day | 6,380 TS | 38/38 | 5/5 | None new |
+
+### Top Lessons (Verified Across Milestones)
+
+1. Always verify business logic against fixtures, not documentation — validated v1.0, reinforced v1.1/v1.2
+2. Small focused milestones (1 phase) ship faster with fewer issues — confirmed v1.1 and v1.2
+3. RSC + Server Actions + revalidatePath/router.refresh is the clean mutation pattern — stable across all 3 milestones

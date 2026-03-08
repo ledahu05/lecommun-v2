@@ -1,5 +1,19 @@
 # Milestones
 
+## v1.2 Balance Initiale (Shipped: 2026-03-08)
+
+**Phases completed:** 1 phase, 1 plan, 3 tasks
+**Timeline:** 2026-03-08 (1 day)
+**Requirements:** 5/5 satisfied (INIT-01..05)
+
+**Key accomplishments:**
+- Champ balance initiale éditable sur le dashboard quand aucun mois précédent n'existe en base — permet d'initialiser le report depuis le Google Sheets
+- Server action Zod-validée pour montants signés (positif = Chris doit à Alex, négatif = inverse)
+- Affichage conditionnel — le champ s'efface automatiquement quand un mois précédent est créé
+- 5 nouveaux tests E2E (38 total green, zéro régressions)
+
+---
+
 ## v1.1 Import & Gestion des Mois (Shipped: 2026-03-08)
 
 **Phases completed:** 1 phase, 1 plan

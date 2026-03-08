@@ -10,12 +10,11 @@ v1.0 MVP livré le 2026-03-05 — l'app est production-ready et remplace le Goog
 
 La balance nette entre Chris et Alex est toujours visible et juste — report automatique chaque mois, zéro saisie manuelle, zéro risque d'erreur de copie.
 
-## Current Milestone: v1.2 Balance Initiale
+## Current State
 
-**Goal:** Permettre l'initialisation manuelle de la balance reportée quand l'app démarre sans données (premier mois en base).
-
-**Target features:**
-- Saisie d'une balance initiale sur le mois courant quand aucun mois précédent n'existe en base
+v1.0 MVP shipped 2026-03-05, v1.1 shipped 2026-03-08, v1.2 shipped 2026-03-08.
+All core features live — shared expense tracking replaces the 55-month Google Sheets entirely.
+No active milestone — ready for `/gsd:new-milestone` to plan next version.
 
 ## Requirements
 
@@ -30,10 +29,11 @@ La balance nette entre Chris et Alex est toujours visible et juste — report au
 - ✓ Authentification simple (Chris / Alex, credentials en env vars) — v1.0
 - ✓ Import d'un mois depuis un fichier JSON fixture — v1.1
 - ✓ Suppression d'un mois avec confirmation et cascade — v1.1
+- ✓ Initialisation manuelle de la balance reportée quand aucun mois précédent n'existe — v1.2
 
 ### Active
 
-- Initialisation manuelle de la balance reportée quand aucun mois précédent n'existe — v1.2
+(None — define next milestone with `/gsd:new-milestone`)
 
 ### Out of Scope
 
@@ -47,11 +47,12 @@ La balance nette entre Chris et Alex est toujours visible et juste — report au
 
 ## Context
 
-**Current state (post v1.0):**
-- 2,535 LOC TypeScript — Next.js 15 App Router + Turso (SQLite cloud) + Drizzle ORM + NextAuth v5 + shadcn/ui
-- 22/22 Playwright E2E tests green
+**Current state (post v1.2):**
+- 6,380 LOC TypeScript — Next.js 15 App Router + Turso (SQLite cloud) + Drizzle ORM + NextAuth v5 + shadcn/ui
+- 38/38 Playwright E2E tests green
 - Deployed on Vercel with CD on push to main
 - Remplace intégralement le Google Sheets de 55 mois
+- Import JSON + suppression de mois + balance initiale éditable
 
 **Background:**
 - Remplace un Google Sheets avec 55 onglets (1 par mois), utilisé depuis juillet 2021
@@ -83,6 +84,7 @@ La balance nette entre Chris et Alex est toujours visible et juste — report au
 | vitest pour tests unitaires, Playwright E2E uniquement | Playwright a un bug CJS import avec testIgnore | ✓ Good — testIgnore: ['**/unit/**'] en config |
 | AjustementForm : vers implicitement dérivé de de | Élimine la classe d'erreur de === vers | ✓ Good — UX simplifiée |
 | HistoriqueDepenseItem/AjustementItem séparés (sans bouton supprimer) | Patron lecture-seule explicite pour l'archive | ✓ Good — HIS-02 E2E vérifie l'absence de delete buttons |
+| key={currentValue} sur Input uncontrolled | Force remount React quand server data change après submit | ✓ Good — pattern standard pour sync uncontrolled inputs |
 
 ---
-*Last updated: 2026-03-08 after v1.2 milestone start*
+*Last updated: 2026-03-08 after v1.2 milestone complete*
