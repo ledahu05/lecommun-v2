@@ -122,6 +122,47 @@
 
 ---
 
+## Milestone: v1.3 — Modales d'ajout
+
+**Shipped:** 2026-03-08
+**Phases:** 1 | **Plans:** 2
+**Timeline:** 2026-03-08 (1 day)
+**Tests:** 38/38 Playwright green | **LOC:** ~7,800 TypeScript
+
+### What Was Built
+
+- **Phase 7 Plan 01 (Modales Dialog):** Replaced inline Card forms with Dialog modals on /depenses and /ajustements, subcategory 3-col button grid, useTransition error handling, cross-page revalidation, 38 E2E tests pass
+- **Phase 7 Plan 02 (Quick-add Dashboard):** Quick-add buttons on dashboard for one-tap depense/ajustement creation, composable trigger props on modal components
+
+### What Worked
+
+- **Dialog modal + useTransition pattern** — captures server action errors inline without closing the modal, clean separation of concerns
+- **Composable trigger props** (triggerLabel, triggerVariant, triggerTestId) made modal reuse across pages trivial
+- **2 quick tasks** executed smoothly between plans — direction inversion and collapsible fields shipped without disrupting main plan flow
+
+### What Was Inefficient
+
+- **SUMMARY.md one_liner field still not emitted** — CLI extracted 0 accomplishments, had to populate MILESTONES.md manually (same issue as v1.0)
+
+### Patterns Established
+
+- Dialog modal form: Dialog wrapper with controlled open state, useTransition for pending, inline error display, router.refresh() on success
+- Button grid selection: grid of outline/default variant buttons with hidden input for form value
+- Quick-add buttons in RSC page.tsx (not inside client components) to avoid RSC/client boundary issues
+
+### Key Lessons
+
+1. Subcategory button grids are significantly faster than native `<select>` on mobile — user validated at 390x844
+2. Placing quick-add modals in page.tsx RSC avoids RSC/client boundary issues entirely
+
+### Cost Observations
+
+- Model mix: balanced profile (sonnet)
+- Sessions: 1
+- Notable: 14 min total execution time for 2 plans (6min + 8min)
+
+---
+
 ## Cross-Milestone Trends
 
 | Milestone | Duration | LOC | Tests | Requirements | Tech Debt |
@@ -129,9 +170,11 @@
 | v1.0 MVP | 2 days | 2,535 TS | 22/22 | 23/23 | 7 items (process) |
 | v1.1 Import | 3 days | ~4,500 TS | 33/33 | 8/8 | None new |
 | v1.2 Balance Init | 1 day | 6,380 TS | 38/38 | 5/5 | None new |
+| v1.3 Modales | 1 day | ~7,800 TS | 38/38 | 8/8 | None new |
 
 ### Top Lessons (Verified Across Milestones)
 
 1. Always verify business logic against fixtures, not documentation — validated v1.0, reinforced v1.1/v1.2
-2. Small focused milestones (1 phase) ship faster with fewer issues — confirmed v1.1 and v1.2
-3. RSC + Server Actions + revalidatePath/router.refresh is the clean mutation pattern — stable across all 3 milestones
+2. Small focused milestones (1 phase) ship faster with fewer issues — confirmed v1.1, v1.2, v1.3
+3. RSC + Server Actions + revalidatePath/router.refresh is the clean mutation pattern — stable across all 4 milestones
+4. Button grids > native `<select>` on mobile for bounded option sets — validated v1.3

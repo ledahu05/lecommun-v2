@@ -1,5 +1,18 @@
 # Milestones
 
+## v1.3 Modales d'ajout (Shipped: 2026-03-08)
+
+**Phases completed:** 1 phases, 2 plans, 0 tasks
+
+**Key accomplishments:**
+- Formulaires dépense/ajustement refactorés en modales Dialog avec useTransition pour la capture d'erreurs inline
+- Sous-catégories affichées en grille de 3 boutons — remplace le `<select>` natif pour une sélection mobile plus rapide
+- Boutons quick-add sur le dashboard pour créer dépense/ajustement sans quitter la page
+- Composants modaux réutilisables avec props trigger personnalisables (label, variant, testId)
+- 2 quick tasks : direction ajustements inversée ("X donne à Y"), champs date/libellé repliés par défaut
+
+---
+
 ## v1.2 Balance Initiale (Shipped: 2026-03-08)
 
 **Phases completed:** 1 phase, 1 plan, 3 tasks

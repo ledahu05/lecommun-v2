@@ -10,20 +10,10 @@ v1.0 MVP livré le 2026-03-05 — l'app est production-ready et remplace le Goog
 
 La balance nette entre Chris et Alex est toujours visible et juste — report automatique chaque mois, zéro saisie manuelle, zéro risque d'erreur de copie.
 
-## Current Milestone: v1.3 Modales d'ajout
-
-**Goal:** Remplacer les formulaires Card inline par des modales Dialog (shadcn/ui) et ajouter la saisie rapide depuis le dashboard.
-
-**Target features:**
-- Modales Dialog pour dépenses et ajustements
-- Boutons d'ajout rapide sur le dashboard (BalanceCard header)
-- Grille de boutons pour les sous-catégories (remplace `<select>`)
-- Suppression des formulaires inline des pages liste
-
 ## Current State
 
-v1.0 MVP shipped 2026-03-05, v1.1 shipped 2026-03-08, v1.2 shipped 2026-03-08.
-All core features live — shared expense tracking replaces the 55-month Google Sheets entirely.
+v1.0 MVP shipped 2026-03-05, v1.1 shipped 2026-03-08, v1.2 shipped 2026-03-08, v1.3 shipped 2026-03-08.
+All core features live — shared expense tracking replaces the 55-month Google Sheets entirely. Formulaires en modales Dialog avec saisie rapide depuis le dashboard.
 
 ## Requirements
 
@@ -39,13 +29,13 @@ All core features live — shared expense tracking replaces the 55-month Google 
 - ✓ Import d'un mois depuis un fichier JSON fixture — v1.1
 - ✓ Suppression d'un mois avec confirmation et cascade — v1.1
 - ✓ Initialisation manuelle de la balance reportée quand aucun mois précédent n'existe — v1.2
+- ✓ Modales Dialog pour dépenses et ajustements (remplacent les formulaires inline) — v1.3
+- ✓ Saisie rapide depuis le dashboard via boutons quick-add — v1.3
+- ✓ Grille de boutons pour sous-catégories (remplace `<select>`) — v1.3
 
 ### Active
 
-- [ ] Modales Dialog pour dépenses et ajustements (remplacent les formulaires inline)
-- [ ] Saisie rapide depuis le dashboard via boutons dans BalanceCard
-- [ ] Grille de boutons pour sous-catégories (remplace `<select>`)
-- [ ] Mise à jour des tests E2E pour les modales
+(None — planning next milestone)
 
 ### Out of Scope
 
@@ -59,12 +49,13 @@ All core features live — shared expense tracking replaces the 55-month Google 
 
 ## Context
 
-**Current state (post v1.2):**
-- 6,380 LOC TypeScript — Next.js 15 App Router + Turso (SQLite cloud) + Drizzle ORM + NextAuth v5 + shadcn/ui
+**Current state (post v1.3):**
+- ~7,800 LOC TypeScript — Next.js 15 App Router + Turso (SQLite cloud) + Drizzle ORM + NextAuth v5 + shadcn/ui
 - 38/38 Playwright E2E tests green
 - Deployed on Vercel with CD on push to main
 - Remplace intégralement le Google Sheets de 55 mois
 - Import JSON + suppression de mois + balance initiale éditable
+- Formulaires en modales Dialog + quick-add dashboard + sous-catégories boutons
 
 **Background:**
 - Remplace un Google Sheets avec 55 onglets (1 par mois), utilisé depuis juillet 2021
@@ -97,6 +88,9 @@ All core features live — shared expense tracking replaces the 55-month Google 
 | AjustementForm : vers implicitement dérivé de de | Élimine la classe d'erreur de === vers | ✓ Good — UX simplifiée |
 | HistoriqueDepenseItem/AjustementItem séparés (sans bouton supprimer) | Patron lecture-seule explicite pour l'archive | ✓ Good — HIS-02 E2E vérifie l'absence de delete buttons |
 | key={currentValue} sur Input uncontrolled | Force remount React quand server data change après submit | ✓ Good — pattern standard pour sync uncontrolled inputs |
+| useTransition + async onSubmit dans modales | Capture les erreurs server action sans fermer la modale | ✓ Good — pattern Dialog modal form fiable |
+| Sous-catégories en grille 3 boutons | Sélection mobile plus rapide que `<select>` natif | ✓ Good — touch targets 44px min, UX approuvée |
+| Quick-add dans page.tsx RSC (pas BalanceCard) | Évite les problèmes de frontière RSC/client component | ✓ Good — composants modaux réutilisables via props trigger |
 
 ---
-*Last updated: 2026-03-08 after v1.3 milestone started*
+*Last updated: 2026-03-08 after v1.3 milestone*
