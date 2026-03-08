@@ -78,6 +78,23 @@ export async function getAllMois(): Promise<Array<{ mois: Mois; balance_finale: 
   return results;
 }
 
+export async function hasPreviousMois(annee: number, moisNum: number): Promise<boolean> {
+  const prevMoisNum = moisNum === 1 ? 12 : moisNum - 1;
+  const prevAnnee = moisNum === 1 ? annee - 1 : annee;
+
+  const rows = await db
+    .select({ id: mois.id })
+    .from(mois)
+    .where(and(eq(mois.annee, prevAnnee), eq(mois.mois, prevMoisNum)))
+    .limit(1);
+
+  return rows.length > 0;
+}
+
+export async function updateBalanceReportee(id: number, value: number): Promise<void> {
+  await db.update(mois).set({ balance_reportee: value }).where(eq(mois.id, id));
+}
+
 async function computeBalanceReportee(annee: number, moisNum: number): Promise<number> {
   // Mois précédent calendaire
   const prevMoisNum = moisNum === 1 ? 12 : moisNum - 1;
