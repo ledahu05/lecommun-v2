@@ -13,7 +13,7 @@ Requirements for milestone v1.4 — Récurrences. Each maps to roadmap phases.
 - [x] **REC-02**: User peut marquer un ajustement comme récurrent via un toggle dans le formulaire
 - [x] **REC-03**: User peut désactiver la récurrence sur une dépense existante
 - [x] **REC-04**: User peut désactiver la récurrence sur un ajustement existant
-- [ ] **REC-05**: Les items récurrents sont visuellement identifiables dans les listes
+- [x] **REC-05**: Les items récurrents sont visuellement identifiables dans les listes
 
 ### Report automatique
 
@@ -44,7 +44,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | REC-02 | Phase 8 | Complete |
 | REC-03 | Phase 8 | Complete |
 | REC-04 | Phase 8 | Complete |
-| REC-05 | Phase 8 | Pending |
+| REC-05 | Phase 8 | Complete |
 | RPT-01 | Phase 9 | Pending |
 | RPT-02 | Phase 9 | Pending |
 | RPT-03 | Phase 9 | Pending |
