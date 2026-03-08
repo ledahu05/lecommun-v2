@@ -55,7 +55,7 @@ Full archive: `.planning/milestones/v1.3-ROADMAP.md`
 
 - [x] **Phase 8: Flag récurrent** - Schema DB, toggle dans les formulaires, indicateur visuel dans les listes
 - [x] **Phase 9: Report automatique** - Copie automatique des items récurrents lors de la création d'un nouveau mois (completed 2026-03-08)
-- [ ] **Phase 10: Export/Import récurrent + fix fixtures** - Inclure le champ récurrent dans export/import JSON et corriger les fixtures de test
+- [x] **Phase 10: Export/Import récurrent + fix fixtures** - Inclure le champ récurrent dans export/import JSON et corriger les fixtures de test (completed 2026-03-08)
 
 ## Phase Details
 
@@ -117,4 +117,4 @@ Phases execute in numeric order.
 | 7. Modales et saisie rapide | v1.3 | 2/2 | Complete | 2026-03-08 |
 | 8. Flag récurrent | v1.4 | 2/2 | Complete | 2026-03-08 |
 | 9. Report automatique | v1.4 | 1/1 | Complete | 2026-03-08 |
-| 10. Export/Import récurrent + fix fixtures | v1.4 | 0/1 | Pending | - |
+| 10. Export/Import récurrent + fix fixtures | 1/1 | Complete   | 2026-03-08 | - |
