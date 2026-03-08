@@ -1,6 +1,6 @@
-import { Trash2 } from 'lucide-react';
+import { Trash2, Repeat } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { actionDeleteAjustement } from '@/app/(app)/ajustements/actions';
+import { actionDeleteAjustement, actionToggleAjustementRecurrent } from '@/app/(app)/ajustements/actions';
 import type { Ajustement } from '@/types';
 
 interface AjustementItemProps {
@@ -20,23 +20,42 @@ export default function AjustementItem({ ajustement }: AjustementItemProps) {
       className="flex items-center justify-between min-h-[48px] py-3 border-b last:border-b-0"
     >
       <div className="flex-1 min-w-0 pr-2">
-        <p className="font-medium text-base truncate">{ajustement.label}</p>
+        <p className="font-medium text-base truncate">
+          {ajustement.label}
+          {ajustement.recurrent === 1 && (
+            <Repeat className="h-3.5 w-3.5 text-primary inline-block ml-1 shrink-0" />
+          )}
+        </p>
         <p className="text-sm text-muted-foreground">
           {capitalize(ajustement.vers)} donne à {capitalize(ajustement.de)} — {montantFormate}
         </p>
       </div>
-      <form action={actionDeleteAjustement}>
-        <input type="hidden" name="id" value={ajustement.id} />
-        <Button
-          variant="ghost"
-          size="icon"
-          type="submit"
-          className="min-h-[48px] min-w-[48px]"
-          aria-label="Supprimer"
-        >
-          <Trash2 className="w-4 h-4 text-destructive" />
-        </Button>
-      </form>
+      <div className="flex items-center">
+        <form action={actionToggleAjustementRecurrent}>
+          <input type="hidden" name="id" value={ajustement.id} />
+          <Button
+            variant="ghost"
+            size="icon"
+            type="submit"
+            className="min-h-[48px] min-w-[48px]"
+            aria-label="Basculer récurrent"
+          >
+            <Repeat className={`w-4 h-4 ${ajustement.recurrent === 1 ? 'text-primary' : 'text-muted-foreground'}`} />
+          </Button>
+        </form>
+        <form action={actionDeleteAjustement}>
+          <input type="hidden" name="id" value={ajustement.id} />
+          <Button
+            variant="ghost"
+            size="icon"
+            type="submit"
+            className="min-h-[48px] min-w-[48px]"
+            aria-label="Supprimer"
+          >
+            <Trash2 className="w-4 h-4 text-destructive" />
+          </Button>
+        </form>
+      </div>
     </div>
   );
 }

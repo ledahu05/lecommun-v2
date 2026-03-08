@@ -1,3 +1,4 @@
+import { Repeat } from 'lucide-react';
 import type { Ajustement } from '@/types';
 
 interface Props {
@@ -14,7 +15,12 @@ export function HistoriqueAjustementItem({ ajustement }: Props) {
       className="flex items-center justify-between min-h-[48px] py-3 border-b last:border-b-0"
     >
       <div>
-        <p className="font-medium text-base">{ajustement.label}</p>
+        <p className="font-medium text-base">
+          {ajustement.label}
+          {ajustement.recurrent === 1 && (
+            <Repeat className="h-3.5 w-3.5 text-primary inline-block ml-1 shrink-0" />
+          )}
+        </p>
         <p className="text-sm text-muted-foreground">
           {capitalize(ajustement.vers)} donne à {capitalize(ajustement.de)}
         </p>

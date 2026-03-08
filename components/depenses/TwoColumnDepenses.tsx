@@ -1,6 +1,6 @@
-import { Trash2 } from 'lucide-react';
+import { Trash2, Repeat } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { actionDeleteDepense } from '@/app/(app)/depenses/actions';
+import { actionDeleteDepense, actionToggleDepenseRecurrent } from '@/app/(app)/depenses/actions';
 import { CATEGORIES, type Categorie } from '@/lib/categories';
 import type { Depense } from '@/types';
 
@@ -97,20 +97,39 @@ function DepenseColumnItem({ depense, readOnly }: { depense: Depense; readOnly: 
       className="min-h-12 py-2 border-b last:border-b-0"
     >
       <div className="flex items-center justify-between">
-        <p className="font-medium text-base truncate flex-1 min-w-0">{displayLabel}</p>
+        <p className="font-medium text-base truncate flex-1 min-w-0">
+          {displayLabel}
+          {depense.recurrent === 1 && (
+            <Repeat className="h-3.5 w-3.5 text-primary inline-block ml-1 shrink-0" />
+          )}
+        </p>
         {!readOnly && (
-          <form action={actionDeleteDepense}>
-            <input type="hidden" name="id" value={depense.id} />
-            <Button
-              variant="ghost"
-              size="icon"
-              type="submit"
-              className="min-h-12 min-w-12 -mr-3"
-              aria-label="Supprimer"
-            >
-              <Trash2 className="w-4 h-4 text-destructive" />
-            </Button>
-          </form>
+          <div className="flex items-center">
+            <form action={actionToggleDepenseRecurrent}>
+              <input type="hidden" name="id" value={depense.id} />
+              <Button
+                variant="ghost"
+                size="icon"
+                type="submit"
+                className="min-h-12 min-w-12"
+                aria-label="Basculer récurrent"
+              >
+                <Repeat className={`w-4 h-4 ${depense.recurrent === 1 ? 'text-primary' : 'text-muted-foreground'}`} />
+              </Button>
+            </form>
+            <form action={actionDeleteDepense}>
+              <input type="hidden" name="id" value={depense.id} />
+              <Button
+                variant="ghost"
+                size="icon"
+                type="submit"
+                className="min-h-12 min-w-12 -mr-3"
+                aria-label="Supprimer"
+              >
+                <Trash2 className="w-4 h-4 text-destructive" />
+              </Button>
+            </form>
+          </div>
         )}
       </div>
       <p className="text-sm text-muted-foreground">{montantFormate}</p>
