@@ -1,6 +1,6 @@
 import { db } from '@/lib/db';
 import { depenses } from '@/lib/db/schema';
-import { eq, desc } from 'drizzle-orm';
+import { eq, desc, and } from 'drizzle-orm';
 import type { Depense } from '@/types';
 
 export async function getDepensesByMois(moisId: number): Promise<Depense[]> {
@@ -41,6 +41,13 @@ export async function toggleDepenseRecurrent(id: number): Promise<void> {
   const [row] = await db.select({ recurrent: depenses.recurrent }).from(depenses).where(eq(depenses.id, id)).limit(1);
   if (!row) return;
   await db.update(depenses).set({ recurrent: row.recurrent ? 0 : 1 }).where(eq(depenses.id, id));
+}
+
+export async function getRecurrentDepensesByMois(moisId: number): Promise<Depense[]> {
+  return db
+    .select()
+    .from(depenses)
+    .where(and(eq(depenses.mois_id, moisId), eq(depenses.recurrent, 1)));
 }
 
 export async function deleteDepense(id: number): Promise<void> {
