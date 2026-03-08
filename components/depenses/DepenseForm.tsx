@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
-import { Plus, ChevronDown } from 'lucide-react';
+import { Plus, ChevronDown, Repeat } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -34,6 +34,7 @@ export default function DepenseForm({ triggerLabel, triggerVariant, triggerTestI
   );
   const [payePar, setPayePar] = useState<'chris' | 'alex'>('chris');
   const [showOptional, setShowOptional] = useState(false);
+  const [recurrent, setRecurrent] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
 
@@ -205,6 +206,20 @@ export default function DepenseForm({ triggerLabel, triggerVariant, triggerTestI
               </button>
             </>
           )}
+
+          {/* Recurrent toggle */}
+          <div className="flex items-center gap-3">
+            <input type="hidden" name="recurrent" value={recurrent ? 'on' : ''} />
+            <Button
+              type="button"
+              variant={recurrent ? 'default' : 'outline'}
+              className="min-h-[48px] text-base gap-2"
+              onClick={() => setRecurrent(!recurrent)}
+            >
+              <Repeat className="h-4 w-4" />
+              Récurrent
+            </Button>
+          </div>
 
           {error && (
             <p className="text-sm text-destructive" data-testid="depense-error">

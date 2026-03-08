@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
-import { Plus } from 'lucide-react';
+import { Plus, Repeat } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -27,6 +27,7 @@ export default function AjustementForm({ triggerLabel, triggerVariant, triggerTe
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [de, setDe] = useState<'chris' | 'alex'>('chris');
+  const [recurrent, setRecurrent] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
 
@@ -147,6 +148,20 @@ export default function AjustementForm({ triggerLabel, triggerVariant, triggerTe
               className="min-h-[48px] text-base"
               required
             />
+          </div>
+
+          {/* Recurrent toggle */}
+          <div className="flex items-center gap-3">
+            <input type="hidden" name="recurrent" value={recurrent ? 'on' : ''} />
+            <Button
+              type="button"
+              variant={recurrent ? 'default' : 'outline'}
+              className="min-h-[48px] text-base gap-2"
+              onClick={() => setRecurrent(!recurrent)}
+            >
+              <Repeat className="h-4 w-4" />
+              Récurrent
+            </Button>
           </div>
 
           {error && (
