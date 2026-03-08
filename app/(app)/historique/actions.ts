@@ -25,6 +25,7 @@ const FixtureDepenseSchema = z.object({
   montant: z.number().positive(),
   label: z.string().optional().nullable(),
   date_depense: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  recurrent: z.boolean().optional().default(false),
 });
 
 const FixtureAjustementSchema = z.object({
@@ -34,6 +35,7 @@ const FixtureAjustementSchema = z.object({
   montant: z.number().positive(),
   label: z.string().min(1),
   date_ajustement: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  recurrent: z.boolean().optional().default(false),
 });
 
 const FixtureSchema = z.object({
@@ -69,46 +71,63 @@ export async function actionImportMois(
 
   // Check for duplicate
   const existing = await getMoisByAnneeEtMois(fixtureMois.annee, fixtureMois.mois);
-  if (existing) {
-    const pad = String(fixtureMois.mois).padStart(2, '0');
-    return {
-      error: `Ce mois existe déjà (${fixtureMois.annee}-${pad}). Supprimez-le d'abord si vous souhaitez le remplacer.`,
-    };
-  }
+  let moisId: number;
 
-  // Insert mois — use balance_reportee from fixture as-is (IMPORT-03)
-  const inserted = await insertMois({
-    annee: fixtureMois.annee,
-    moisNum: fixtureMois.mois,
-    balance_reportee: fixtureMois.balance_reportee,
-  });
+  if (existing) {
+    // If existing month is empty (auto-created by dashboard), reuse it
+    const existingDeps = await getDepensesByMois(existing.id);
+    const existingAdjs = await getAjustementsByMois(existing.id);
+    if (existingDeps.length > 0 || existingAdjs.length > 0) {
+      const pad = String(fixtureMois.mois).padStart(2, '0');
+      return {
+        error: `Ce mois existe déjà (${fixtureMois.annee}-${pad}). Supprimez-le d'abord si vous souhaitez le remplacer.`,
+      };
+    }
+    // Update balance_reportee from fixture
+    await db
+      .update(moisTable)
+      .set({ balance_reportee: fixtureMois.balance_reportee })
+      .where(eq(moisTable.id, existing.id));
+    moisId = existing.id;
+  } else {
+    // Insert mois — use balance_reportee from fixture as-is (IMPORT-03)
+    const inserted = await insertMois({
+      annee: fixtureMois.annee,
+      moisNum: fixtureMois.mois,
+      balance_reportee: fixtureMois.balance_reportee,
+    });
+    moisId = inserted.id;
+  }
 
   // Insert depenses — ignore fixture mois_id, use real DB id (IMPORT-05)
   for (const d of fixture.depenses) {
     await insertDepense({
-      mois_id: inserted.id,
+      mois_id: moisId,
       categorie: d.categorie,
       sous_categorie: d.sous_categorie,
       paye_par: d.paye_par,
       montant: d.montant,
       label: d.label ?? undefined,
       date_depense: new Date(d.date_depense),
+      recurrent: d.recurrent,
     });
   }
 
   // Insert ajustements — ignore fixture mois_id, use real DB id (IMPORT-05)
   for (const a of fixture.ajustements) {
     await insertAjustement({
-      mois_id: inserted.id,
+      mois_id: moisId,
       de: a.de,
       vers: a.vers,
       montant: a.montant,
       label: a.label,
       date_ajustement: new Date(a.date_ajustement),
+      recurrent: a.recurrent,
     });
   }
 
   revalidatePath('/historique');
+  revalidatePath('/');
 }
 
 // ── actionDeleteMois ─────────────────────────────────────────────────────────
@@ -166,6 +185,7 @@ export async function actionExportMois(
       montant: d.montant,
       label: d.label ?? null,
       date_depense: formatDate(d.date_depense),
+      recurrent: !!d.recurrent,
     })),
     ajustements: adjs.map((a) => ({
       mois_id: 1,
@@ -174,6 +194,7 @@ export async function actionExportMois(
       montant: a.montant,
       label: a.label,
       date_ajustement: formatDate(a.date_ajustement),
+      recurrent: !!a.recurrent,
     })),
   };
 
