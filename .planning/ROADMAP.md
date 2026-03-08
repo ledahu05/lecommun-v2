@@ -5,6 +5,7 @@
 - ✅ **v1.0 MVP** — Phases 1-4 (shipped 2026-03-05)
 - ✅ **v1.1 Import & Gestion des Mois** — Phase 5 (shipped 2026-03-08)
 - ✅ **v1.2 Balance Initiale** — Phase 6 (shipped 2026-03-08)
+- 🚧 **v1.3 Modales d'ajout** — Phase 7 (in progress)
 
 ## Phases
 
@@ -38,6 +39,29 @@ Full archive: `.planning/milestones/v1.2-ROADMAP.md`
 
 </details>
 
+### 🚧 v1.3 Modales d'ajout (In Progress)
+
+**Milestone Goal:** Remplacer les formulaires Card inline par des modales Dialog et ajouter la saisie rapide depuis le dashboard.
+
+- [ ] **Phase 7: Modales et saisie rapide** — Formulaires en modales Dialog avec sous-categories en boutons et saisie rapide depuis le dashboard
+
+## Phase Details
+
+### Phase 7: Modales et saisie rapide
+**Goal**: L'utilisateur saisit depenses et ajustements via des modales Dialog depuis n'importe quelle page, avec sous-categories selectionnees par boutons
+**Depends on**: Phase 6 (v1.2 shipped)
+**Requirements**: MOD-01, MOD-02, MOD-03, MOD-04, DASH-01, DASH-02, UX-01, UX-02
+**Success Criteria** (what must be TRUE):
+  1. L'utilisateur clique un bouton sur la page depenses ou ajustements et une modale s'ouvre avec le formulaire correspondant — aucun formulaire inline n'est visible sur les pages liste
+  2. L'utilisateur clique un bouton quick-add sur le dashboard (BalanceCard) et peut saisir une depense ou un ajustement sans quitter la page
+  3. Les sous-categories sont presentees comme une grille de boutons cliquables (plus de menu deroulant select)
+  4. Apres soumission reussie, la modale se ferme automatiquement et les donnees affichees se rafraichissent
+  5. En cas d'erreur de validation, la modale reste ouverte avec un message d'erreur visible
+**Plans**: TBD
+
+Plans:
+- [ ] 07-01: TBD
+
 ## Progress
 
 **Execution Order:**
@@ -51,3 +75,4 @@ Phases execute in numeric order.
 | 4. Historique | v1.0 | 2/2 | Complete | 2026-03-05 |
 | 5. Import & Gestion | v1.1 | 1/1 | Complete | 2026-03-08 |
 | 6. Balance Initiale | v1.2 | 1/1 | Complete | 2026-03-08 |
+| 7. Modales et saisie rapide | v1.3 | 0/? | Not started | - |

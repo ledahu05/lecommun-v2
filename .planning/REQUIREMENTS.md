@@ -1,7 +1,7 @@
 # Requirements: Le Commun
 
 **Defined:** 2026-03-08
-**Core Value:** La balance nette entre Chris et Alex est toujours visible et juste — report automatique, zéro saisie manuelle, zéro erreur de copie.
+**Core Value:** La balance nette entre Chris et Alex est toujours visible et juste — report automatique, zero saisie manuelle, zero erreur de copie.
 
 ## v1.3 Requirements
 
@@ -9,32 +9,32 @@ Requirements pour le milestone v1.3 Modales d'ajout. Chaque requirement map vers
 
 ### Modales
 
-- [ ] **MOD-01**: L'utilisateur peut ajouter une dépense via une modale Dialog depuis la page dépenses
+- [ ] **MOD-01**: L'utilisateur peut ajouter une depense via une modale Dialog depuis la page depenses
 - [ ] **MOD-02**: L'utilisateur peut ajouter un ajustement via une modale Dialog depuis la page ajustements
-- [ ] **MOD-03**: La modale se ferme automatiquement après soumission réussie et les données se rafraîchissent
+- [ ] **MOD-03**: La modale se ferme automatiquement apres soumission reussie et les donnees se rafraichissent
 - [ ] **MOD-04**: En cas d'erreur, la modale reste ouverte avec un message d'erreur inline
 
 ### Dashboard
 
-- [ ] **DASH-01**: L'utilisateur peut ajouter une dépense depuis le dashboard via le bouton quick-add
+- [ ] **DASH-01**: L'utilisateur peut ajouter une depense depuis le dashboard via le bouton quick-add
 - [ ] **DASH-02**: L'utilisateur peut ajouter un ajustement depuis le dashboard via le bouton quick-add
 
 ### UX Formulaire
 
-- [ ] **UX-01**: Les sous-catégories sont sélectionnées via une grille de boutons (remplace le `<select>`)
-- [ ] **UX-02**: Les formulaires inline Card sont supprimés des pages liste
+- [ ] **UX-01**: Les sous-categories sont selectionnees via une grille de boutons (remplace le `<select>`)
+- [ ] **UX-02**: Les formulaires inline Card sont supprimes des pages liste
 
 ## Future Requirements
 
-Aucun requirement reporté pour ce milestone.
+Aucun requirement reporte pour ce milestone.
 
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| Modification de dépense/ajustement via modale | Scope limité à l'ajout — l'édition est un milestone futur |
+| Modification de depense/ajustement via modale | Scope limite a l'ajout — l'edition est un milestone futur |
 | Modale sur les pages historique | L'historique est en lecture seule |
-| Animations de transition modale | Complexité non nécessaire, shadcn Dialog suffit |
+| Animations de transition modale | Complexite non necessaire, shadcn Dialog suffit |
 
 ## Traceability
 
@@ -42,20 +42,20 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| MOD-01 | — | Pending |
-| MOD-02 | — | Pending |
-| MOD-03 | — | Pending |
-| MOD-04 | — | Pending |
-| DASH-01 | — | Pending |
-| DASH-02 | — | Pending |
-| UX-01 | — | Pending |
-| UX-02 | — | Pending |
+| MOD-01 | Phase 7 | Pending |
+| MOD-02 | Phase 7 | Pending |
+| MOD-03 | Phase 7 | Pending |
+| MOD-04 | Phase 7 | Pending |
+| DASH-01 | Phase 7 | Pending |
+| DASH-02 | Phase 7 | Pending |
+| UX-01 | Phase 7 | Pending |
+| UX-02 | Phase 7 | Pending |
 
 **Coverage:**
 - v1.3 requirements: 8 total
-- Mapped to phases: 0
-- Unmapped: 8
+- Mapped to phases: 8
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-08*
-*Last updated: 2026-03-08 after initial definition*
+*Last updated: 2026-03-08 after roadmap creation*
