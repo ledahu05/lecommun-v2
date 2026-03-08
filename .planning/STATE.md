@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.3
 milestone_name: Modales d'ajout
-status: in_progress
-stopped_at: Completed 07-01-PLAN.md — Dialog modals for depense/ajustement forms
+status: complete
+stopped_at: Completed 07-02-PLAN.md — Quick-add buttons on dashboard
 last_updated: "2026-03-08"
-last_activity: 2026-03-08 - Completed quick task 2: Replier date/libelle dans modale depense
+last_activity: 2026-03-08 — Plan 07-02 complete (quick-add dashboard buttons)
 progress:
   total_phases: 1
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 2
-  completed_plans: 1
-  percent: 50
+  completed_plans: 2
+  percent: 100
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-08)
 
 **Core value:** La balance nette entre Chris et Alex est toujours visible et juste — report automatique, zero saisie manuelle, zero erreur de copie.
-**Current focus:** v1.3 Modales d'ajout — Plan 07-01 complete, Plan 07-02 next
+**Current focus:** v1.3 Modales d'ajout — Milestone complete (2/2 plans done)
 
 ## Current Position
 
 Phase: 7 of 7 (Modales et saisie rapide)
-Plan: 07-02 next
-Status: In progress
-Last activity: 2026-03-08 — Plan 07-01 complete (modales Dialog)
+Plan: 07-02 complete
+Status: Milestone v1.3 complete
+Last activity: 2026-03-08 — Plan 07-02 complete (quick-add dashboard)
 
-Progress: [█████████████████████] 94% (16/17 plans across all milestones)
+Progress: [██████████] 100% (17/17 plans across all milestones)
 
 ## Performance Metrics
 
@@ -39,6 +39,7 @@ Progress: [█████████████████████] 94% 
 | Phase | Plan | Duration | Tasks | Files |
 |-------|------|----------|-------|-------|
 | 07 | 01 | 6min | 3 | 9 |
+| 07 | 02 | 8min | 2 | 3 |
 
 ## Accumulated Context
 
@@ -47,6 +48,8 @@ Progress: [█████████████████████] 94% 
 - useTransition + async onSubmit for error capture in Dialog modal forms instead of form action binding
 - Subcategories as 3-col button grid for faster mobile selection than native select
 - Cross-page revalidation added (depenses revalidates /ajustements and vice versa)
+- Quick-add buttons placed in page.tsx RSC (not BalanceCard) to avoid RSC/client boundary issues
+- Modal form components accept optional trigger customization props for context-specific rendering
 
 Decisions are also logged in PROJECT.md Key Decisions table.
 
@@ -68,5 +71,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-08
-Stopped at: Completed quick task 2 — Replier date/libelle dans modale depense
-Resume file: .planning/phases/07-modales-et-saisie-rapide/07-02-PLAN.md
+Stopped at: Completed 07-02-PLAN.md — Quick-add dashboard buttons. Milestone v1.3 complete.
+Resume file: none (milestone complete)

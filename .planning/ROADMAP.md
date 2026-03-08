@@ -43,7 +43,7 @@ Full archive: `.planning/milestones/v1.2-ROADMAP.md`
 
 **Milestone Goal:** Remplacer les formulaires Card inline par des modales Dialog et ajouter la saisie rapide depuis le dashboard.
 
-- [ ] **Phase 7: Modales et saisie rapide** — Formulaires en modales Dialog avec sous-categories en boutons et saisie rapide depuis le dashboard
+- [x] **Phase 7: Modales et saisie rapide** — Formulaires en modales Dialog avec sous-categories en boutons et saisie rapide depuis le dashboard (completed 2026-03-08)
 
 ## Phase Details
 
@@ -57,7 +57,7 @@ Full archive: `.planning/milestones/v1.2-ROADMAP.md`
   3. Les sous-categories sont presentees comme une grille de boutons cliquables (plus de menu deroulant select)
   4. Apres soumission reussie, la modale se ferme automatiquement et les donnees affichees se rafraichissent
   5. En cas d'erreur de validation, la modale reste ouverte avec un message d'erreur visible
-**Plans:** 2 plans
+**Plans:** 2/2 plans complete
 
 Plans:
 - [x] 07-01-PLAN.md — Refactorer formulaires depense/ajustement en modales Dialog avec sous-categories boutons
@@ -76,4 +76,4 @@ Phases execute in numeric order.
 | 4. Historique | v1.0 | 2/2 | Complete | 2026-03-05 |
 | 5. Import & Gestion | v1.1 | 1/1 | Complete | 2026-03-08 |
 | 6. Balance Initiale | v1.2 | 1/1 | Complete | 2026-03-08 |
-| 7. Modales et saisie rapide | v1.3 | 1/2 | In progress | - |
+| 7. Modales et saisie rapide | 2/2 | Complete   | 2026-03-08 | - |

@@ -16,8 +16,8 @@ Requirements pour le milestone v1.3 Modales d'ajout. Chaque requirement map vers
 
 ### Dashboard
 
-- [ ] **DASH-01**: L'utilisateur peut ajouter une depense depuis le dashboard via le bouton quick-add
-- [ ] **DASH-02**: L'utilisateur peut ajouter un ajustement depuis le dashboard via le bouton quick-add
+- [x] **DASH-01**: L'utilisateur peut ajouter une depense depuis le dashboard via le bouton quick-add
+- [x] **DASH-02**: L'utilisateur peut ajouter un ajustement depuis le dashboard via le bouton quick-add
 
 ### UX Formulaire
 
@@ -46,8 +46,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | MOD-02 | Phase 7 | Complete |
 | MOD-03 | Phase 7 | Complete |
 | MOD-04 | Phase 7 | Complete |
-| DASH-01 | Phase 7 | Pending |
-| DASH-02 | Phase 7 | Pending |
+| DASH-01 | Phase 7 | Complete |
+| DASH-02 | Phase 7 | Complete |
 | UX-01 | Phase 7 | Complete |
 | UX-02 | Phase 7 | Complete |
 
