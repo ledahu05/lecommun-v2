@@ -48,7 +48,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | RPT-01 | Phase 9 | Complete |
 | RPT-02 | Phase 9 | Complete |
 | RPT-03 | Phase 9 | Complete |
-| RPT-04 | Phase 9 | Complete |
+| RPT-04 | Phase 9, Phase 10 | Complete |
 
 **Coverage:**
 - v1.4 requirements: 9 total

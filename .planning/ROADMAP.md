@@ -6,7 +6,7 @@
 - ✅ **v1.1 Import & Gestion des Mois** — Phase 5 (shipped 2026-03-08)
 - ✅ **v1.2 Balance Initiale** — Phase 6 (shipped 2026-03-08)
 - ✅ **v1.3 Modales d'ajout** — Phase 7 (shipped 2026-03-08)
-- 🚧 **v1.4 Récurrences** — Phases 8-9 (in progress)
+- 🚧 **v1.4 Récurrences** — Phases 8-10 (in progress)
 
 ## Phases
 
@@ -55,6 +55,7 @@ Full archive: `.planning/milestones/v1.3-ROADMAP.md`
 
 - [x] **Phase 8: Flag récurrent** - Schema DB, toggle dans les formulaires, indicateur visuel dans les listes
 - [x] **Phase 9: Report automatique** - Copie automatique des items récurrents lors de la création d'un nouveau mois (completed 2026-03-08)
+- [ ] **Phase 10: Export/Import récurrent + fix fixtures** - Inclure le champ récurrent dans export/import JSON et corriger les fixtures de test
 
 ## Phase Details
 
@@ -87,6 +88,19 @@ Plans:
 Plans:
 - [ ] 09-01-PLAN.md — Copy recurrent items into new month on creation
 
+### Phase 10: Export/Import récurrent + fix fixtures
+**Goal**: Le champ récurrent est préservé lors d'un export/import JSON et les fixtures de test sont à jour
+**Depends on**: Phase 9
+**Requirements**: RPT-04
+**Gap Closure:** Closes INT-01, FLOW-01, tech debt from audit
+**Success Criteria** (what must be TRUE):
+  1. Un export JSON d'un mois contient le champ `recurrent` pour chaque dépense et ajustement
+  2. Un import JSON avec des items récurrents préserve le flag `recurrent` en base
+  3. Les fixtures de test unitaire compilent sans erreur TypeScript (`tsc --noEmit` passe)
+
+Plans:
+- [ ] 10-01-PLAN.md — Fix export/import recurrent field + test fixtures
+
 ## Progress
 
 **Execution Order:**
@@ -102,4 +116,5 @@ Phases execute in numeric order.
 | 6. Balance Initiale | v1.2 | 1/1 | Complete | 2026-03-08 |
 | 7. Modales et saisie rapide | v1.3 | 2/2 | Complete | 2026-03-08 |
 | 8. Flag récurrent | v1.4 | 2/2 | Complete | 2026-03-08 |
-| 9. Report automatique | 1/1 | Complete   | 2026-03-08 | - |
+| 9. Report automatique | v1.4 | 1/1 | Complete | 2026-03-08 |
+| 10. Export/Import récurrent + fix fixtures | v1.4 | 0/1 | Pending | - |
