@@ -2,10 +2,10 @@
 gsd_state_version: 1.0
 milestone: v1.4
 milestone_name: Récurrences
-status: executing
+status: completed
 stopped_at: Completed 08-02-PLAN.md
-last_updated: "2026-03-08T16:57:24Z"
-last_activity: 2026-03-08 — Completed phase 08 recurrence UI
+last_updated: "2026-03-08T17:01:30.309Z"
+last_activity: 2026-03-08 — Completed 08-02-PLAN.md
 progress:
   total_phases: 2
   completed_phases: 1
