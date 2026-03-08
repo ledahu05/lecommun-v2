@@ -3,6 +3,8 @@ import { mois, depenses, ajustements } from '@/lib/db/schema';
 import { eq, and, desc } from 'drizzle-orm';
 import type { Mois } from '@/types';
 import { calculerBalance } from '@/lib/balance';
+import { getRecurrentDepensesByMois, insertDepense } from '@/lib/db/queries/depenses';
+import { getRecurrentAjustementsByMois, insertAjustement } from '@/lib/db/queries/ajustements';
 
 export async function getMoisByAnneeEtMois(annee: number, moisNum: number): Promise<Mois | null> {
   const rows = await db
@@ -56,6 +58,18 @@ export async function getOrCreateCurrentMois() {
       set: { balance_reportee }, // no-op si déjà créé en parallèle
     })
     .returning();
+
+  // Copy recurrent items from previous month (RPT-01, RPT-02)
+  const prevMoisNum = moisNum === 1 ? 12 : moisNum - 1;
+  const prevAnnee = moisNum === 1 ? annee - 1 : annee;
+  const prevRows = await db
+    .select({ id: mois.id })
+    .from(mois)
+    .where(and(eq(mois.annee, prevAnnee), eq(mois.mois, prevMoisNum)))
+    .limit(1);
+  if (prevRows.length > 0) {
+    await copyRecurrentItems(prevRows[0].id, inserted.id, annee, moisNum);
+  }
 
   return inserted;
 }
@@ -127,4 +141,43 @@ async function computeBalanceReportee(annee: number, moisNum: number): Promise<n
   );
 
   return balance_finale;
+}
+
+async function copyRecurrentItems(
+  prevMoisId: number,
+  newMoisId: number,
+  newAnnee: number,
+  newMoisNum: number
+): Promise<void> {
+  // Date for copied items: 1st of the new month
+  const newDate = new Date(newAnnee, newMoisNum - 1, 1);
+
+  // Copy recurrent depenses
+  const recDepenses = await getRecurrentDepensesByMois(prevMoisId);
+  for (const d of recDepenses) {
+    await insertDepense({
+      mois_id: newMoisId,
+      categorie: d.categorie,
+      sous_categorie: d.sous_categorie,
+      paye_par: d.paye_par,
+      montant: d.montant,
+      label: d.label ?? undefined,
+      date_depense: newDate,
+      recurrent: true, // RPT-04: conserve le flag
+    });
+  }
+
+  // Copy recurrent ajustements
+  const recAjustements = await getRecurrentAjustementsByMois(prevMoisId);
+  for (const a of recAjustements) {
+    await insertAjustement({
+      mois_id: newMoisId,
+      de: a.de as 'chris' | 'alex',
+      vers: a.vers as 'chris' | 'alex',
+      montant: a.montant,
+      label: a.label,
+      date_ajustement: newDate,
+      recurrent: true, // RPT-04: conserve le flag
+    });
+  }
 }
