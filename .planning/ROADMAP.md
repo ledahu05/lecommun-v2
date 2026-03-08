@@ -42,10 +42,10 @@ Full archive: `.planning/milestones/v1.0-ROADMAP.md`
   2. User enters a signed amount (positive = Chris owes Alex, negative = Alex owes Chris) and submits — the balance recalculates immediately on the page
   3. User can re-edit the initial balance as many times as needed while no previous month exists
   4. When a previous month exists in the database, the balance reportee is computed automatically and no edit field appears (existing behavior unchanged)
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 06-01: TBD
+- [ ] 06-01-PLAN.md — Backend queries, InitialBalanceForm component, dashboard wiring, E2E tests
 
 ## Progress
 
@@ -59,4 +59,4 @@ Phases execute in numeric order.
 | 3. Saisie | v1.0 | 4/4 | Complete | 2026-03-05 |
 | 4. Historique | v1.0 | 2/2 | Complete | 2026-03-05 |
 | 5. Import & Gestion | v1.1 | 1/1 | Complete | 2026-03-08 |
-| 6. Balance Initiale | v1.2 | 0/? | Not started | - |
+| 6. Balance Initiale | v1.2 | 0/1 | Not started | - |
